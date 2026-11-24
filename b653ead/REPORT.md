@@ -80,8 +80,8 @@ The last row shows the same effect without any upgrade. In phase 1 the account's
 
 *Who is affected.* Inferred: every existing installation on its first start after upgrading, for each account whose listener has seen more than about 1,000 matching notifications since it began. Afterwards, any account whose own mark is absent or held, for example after a cut first backfill. The receipts here were committed directly instead of being produced by a real delivery history. That is the kit's established technique, but it is one difference from a live account.
 
-*Possible directions, for hum to judge.*
-- On a start where an account has no mark of its own, seed it once from the shared `listeners_live` mark when that mark exists. That is what earlier builds used, so the upgrade would reach back exactly as before.
+*Possible directions, for hum to judge. Neither was implemented or tested here, and their effect is not demonstrated.*
+- On a start where an account has no mark of its own, seed it once from the shared `listeners_live` mark when that mark exists. Earlier builds used that mark, so it may limit the first start after an upgrade to the same reach as before. It is a lead, not a verified fix: it would not cover an account whose first backfill is cut (the last row above), and its interaction with the per-account fixes is untested.
 - Separately, stop a backfill's read once a full page lies entirely beyond the oldest receipt the listener still holds, instead of only after 50 reads.
 
 ## Minor observation

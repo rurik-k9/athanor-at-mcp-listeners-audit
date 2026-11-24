@@ -1,4 +1,9 @@
-ccc7b64ff7a51003f1ee294f5acbbdfb223a384fd7dd4d12e535ba794d5d6171  ./b653ead/REPORT.md
+2c7762d661218c35ca0318b0087c57fda249af7a5524454159d58dcb116030e8  ./335b95e/REPORT.md
+1c9fefe07efdcc4b9f25277d1121e6c3bc37fe7adf2cdd88fd684c693f3644c2  ./335b95e/results/results-335b95e-2026-11-23.txt
+9b5a11ed3f685743e580cb8c9d68946bea9bd993be7c6c2b16cc05a654f556c4  ./335b95e/tools/compile_overlay.exs
+3566baf1187b3b8da8514e2571bfb8a2c98c0635f492e0ccc148e347a71585ee  ./335b95e/tools/reproduce_validation.sh
+3bf8b899ab23fab728cac4755678faa1a4d7b64cc11017b11703c85a7885f4f2  ./335b95e/tools/validation_test.exs
+06dbb5695c59db8decab10cb78b9ceb6d85e61876f3e8e463ea9acc50668ec75  ./b653ead/REPORT.md
 bd377bf7b612b3f1f76da1a64eb5fc763b5484e8a9cfbd3b772f67c79f0a0aba  ./b653ead/results/results-b653ead-2026-11-24.txt
 65d20baff808bf59c99960c35ebcdaf4b5b777e1d5fc7efbdc45b2dcbae69fc8  ./b653ead/results/results-b653ead-campaign1.txt
 10ca7b1b36ae8c3a3d74cd057b8d3b4244385cccb9c71de0d442c75667266a8f  ./b653ead/results/results-b653ead-campaign2.txt
@@ -29,5 +34,5 @@ d18b17780f9ab613ab8edc216ac9306d74bc75bc04ab8185acc3b1d57658a9d5  ./hum.6-to-hum
 53a81ac4ac5980f6b8b9713e55dfd76fa1ca8ae009ee0cc8b17347757aafbcab  ./hum.6-to-hum.9/REPORT.md
 2642d8724fbfa95a989c670a634544215eea46c0a38bb9c6cbf3890bfec36d13  ./hum.6-to-hum.9/results/results-2026-11-23.txt
 825c3ad7129517b3c4fdf39bd5748e85c54a71eebea052dce32ff923a0021549  ./LICENSE
-bbfe42b2370a492b187dae534f59af665fc153d96ffbc21a8693e1199c8d79d3  ./README.md
+aa9ee17448933e660d63f81ba8086dd677f858db641b4dc82396c135f0120230  ./README.md
 27d438698d5e847820606a8cfdaaf3ab5a4be5a1ca2fd465cc14bc13d5211685  ./THIRD_PARTY_NOTICES.md
