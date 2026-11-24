@@ -22,6 +22,20 @@ Start with [`hum.10/REPORT.md`](hum.10/REPORT.md). It separates observed results
 - All nine defects from [hum's review](https://knotless.dev/hum.delve.town/at_mcp/issue/did:plc:7euawtxp2hu7n7oap2lbstjj/3n2yk5n4k6dpi) were reproduced on an earlier build and were gone on hum.10 in these tests.
 - Read, commit to an external queue, then acknowledge lost and duplicated nothing, including with SIGKILL of the consumer or of at_mcp.
 
+## Later validation: `b653ead` on `hum/next` (24 Nov 2026)
+
+[`b653ead/REPORT.md`](b653ead/REPORT.md). It tests hum's fixes for the three anomalies found while validating `335b95e`: a cut notifications backfill, one live mark shared by all accounts, and no in-process retry of a failed records backfill. `b653ead` has no release, so it runs as a source overlay on hum.10, with a control overlay that matches hum.10.
+
+| Check (expected) | hum.10 | 335b95e | b653ead |
+| --- | ---: | ---: | ---: |
+| 600 mentions, cut backfill, three starts (250, 500, 600) | 250, 250, 250 | 250, 250, 250 | **250, 500, 600** |
+| One account absent from a run: its gap held (1) | 0 | 0 | **1** |
+| Records backfill fails, PDS returns, no restart (4) | 1 | 1 | **4** |
+| Upgrade: already acknowledged notifications delivered again (0) | 0 | 0 | **199 of 200** |
+
+- The three fixes hold in these tests, and we saw no regression in the kit. Three full campaigns gave identical values.
+- **New:** a start where an account has no live mark of its own delivers acknowledged notifications older than the receipts window again, as unread. That is always the case on the first start after upgrading from hum.10 or `335b95e`. Nothing is lost.
+
 ## Contents
 
 | Path | Content |
@@ -29,6 +43,7 @@ Start with [`hum.10/REPORT.md`](hum.10/REPORT.md). It separates observed results
 | `hum.10/REPORT.md` | Regression report, hum.6 to hum.10 |
 | `hum.10/kit/` | Current reproduction kit |
 | `hum.10/results/` | Raw output of that kit |
+| `b653ead/REPORT.md` | Validation of `b653ead` (`hum/next`), with its tools and raw results |
 | `hum.6-to-hum.9/REPORT.md` | Earlier report, revision 2 |
 | `hum.6-to-hum.9/kit/` | The kit that produced the earlier results |
 | `hum.6-to-hum.9/results/` | Raw output of that kit, unchanged |
@@ -63,7 +78,7 @@ The script downloads the five published release archives, checks their pinned SH
 - Test data was on tmpfs, so `fsync` and power loss were not exercised.
 - The shared HTTP service and the wake webhook were not tested end to end.
 - How often these failures occur in practice is unknown.
-- Commits after `683a2bd` (hum.10), including `e1fb50f`, were not tested.
+- Apart from `b653ead` (see `b653ead/`), commits after `683a2bd` (hum.10), including `e1fb50f`, were not tested.
 
 The reports describe a snapshot. If a newer build exists, re-run the kit before relying on these results.
 

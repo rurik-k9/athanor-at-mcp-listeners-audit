@@ -1,0 +1,956 @@
+kit commit: 8123ba36ba86e3abe470d611975ce1097b78955b
+base release: 0.3.3-hum.10 (683a2bd226ee3bacd00af8d4d025017052040e12) sha256 090510cbfa24c96e259c5d1b16d52f3ab3d95de148085b56f3ae8f02fd3d0830
+target commit: b653eade156339a8bd89b61fb24c71adb0d8eb77
+COMPILED	AtMcp.Listeners,AtMcp.Repos	warnings=0
+overlay control from 683a2bd: d51eaec98adf14a6 Elixir.AtMcp.Listeners.beam c8829ecbba066d87 Elixir.AtMcp.Repos.beam 
+COMPILED	AtMcp.Listeners,AtMcp.Repos	warnings=0
+overlay previous from 335b95e: cb29c4936dbbf03d Elixir.AtMcp.Listeners.beam da2c9c7fc0a3ff2f Elixir.AtMcp.Repos.beam 
+COMPILED	AtMcp.Listeners,AtMcp.Repos	warnings=0
+overlay candidate from b653ead: f1054f3e38bab699 Elixir.AtMcp.Listeners.beam da2c9c7fc0a3ff2f Elixir.AtMcp.Repos.beam 
+
+=== official  build 0.3.3-hum.10-683a2bd
+--- backfill scenarios, run 1
+RESULT	A control: mention in a 1 h gap recovered (expect 1)	1
+RESULT	B backfill failed once, next start healthy: recovered (1 = ok, 0 = lost)	0
+RESULT	C restart during backfill: recovered (1 = ok, 0 = lost)	0
+RESULT	D 120 replies in a gap: recovered (expect 120 if fully paged)	120
+RESULT	D notification calls / any call with a cursor	{3, true}
+DONE
+--- features, run 1
+RESULT	build has records listeners	true
+RESULT	S1 same sender, 10 replies: kept / wakes (expect 10 / 6)	{10, 6}
+RESULT	S1 capped counter	4
+RESULT	S1 an event still goes out when all of a batch is capped (subscribers are told)	{1, 0}
+RESULT	S2 another sender still wakes (expect 1)	1
+RESULT	S3 same sender after one hour wakes again (expect 1)	1
+RESULT	S4 cap already spent, process restarted: wakes in the same hour (0 = persisted, 6 = reset)	6
+RESULT	L1 last_saved before anything is caught (expect nil)	nil
+RESULT	L2 last_saved after a match	"2027-01-15T08:00:05Z"
+RESULT	L3 duplicate leaves last_saved unchanged	true
+RESULT	L4 last_saved survives a restart	true
+RESULT	L5 stream_live_at, connected and quiet for 2 h: age in s	7150
+RESULT	L6 stream_live_at, stream dead at the same time: age in s	7150
+RESULT	L7 can the two be told apart from stream_live_at? (false = no)	false
+RESULT	P1 from: only the named sender (expect 1)	1
+RESULT	P2 paused, agent re-listens, restart: nothing added (expect 1)	1
+RESULT	R1 control, 40 h gap, 3 records, PDS healthy: held (expect 4)	4
+RESULT	R1b restart again: no duplicate (expect 4)	4
+RESULT	R2 1 h gap: PDS reads (expect 0, Jetstream replays it)	0
+RESULT	R2b replayed records saved (expect 4)	4
+RESULT	R3 250 in gap, page 2 fails once, then healthy restart: held after fail / after restart (expect 251)	{101, 251}
+RESULT	R3b unrecovered counter	nil
+RESULT	R4 PDS down on start, one live record, healthy restart: held (expect 5)	2
+RESULT	R4b unrecovered counter	nil
+RESULT	R5 a live record is saved while the PDS read runs: held (expect 5)	5
+RESULT	R5c control, same slow PDS read, no live record meanwhile: held (expect 4)	4
+RESULT	R6 650 in gap, 5-page bound: held / unrecovered counter	{501, 1}
+RESULT	R6b after a restart: held / unrecovered counter (the 150 past the bound stay lost)	{501, nil}
+DONE
+--- review defects, run 1
+RESULT	build has the notifications poll	true
+RESULT	H1 live record saved while the DID is resolved: held (expect 4)	4
+RESULT	H2 logout and login while another account holds the stream: gap record held (expect 1)	1
+RESULT	H3 old record behind 1,000 receipts, coverage mark present: delivered again (expect 0)	0
+RESULT	N1 same, state from an older build, no coverage mark yet: delivered again (expect 0)	1
+RESULT	H4a real Repos.records on a non-string uri (expect {:error, _})	{:error, :unreadable_answer}
+RESULT	H4b one author's reader raises: other author's record held / unrecovered (expect 1 / 1)	{1, 1}
+RESULT	H5 a poll task exits (store busy past 5 s): polls in the next second (expect > 0)	10
+RESULT	H7 notification during a 10 min poll outage: held (expect 1)	1
+RESULT	H8 records client killed: a new live client (expect true)	true
+RESULT	H9 indexed_at taken from the author's record (expect false)	false
+RESULT	N2 page 2 fails, one live record, healthy restart: held (expect 252)	102
+RESULT	N3 listRecords answers an error: unrecovered counter (expect 1)	nil
+RESULT	N3b healthy restart, no live record in between: held (expect 4)	4
+RESULT	N4 did:web host localhost: refused by the name check / address from :inet.getaddr	{true, nil}
+RESULT	N4 did:web host 127.0.0.1: refused by the name check / address from :inet.getaddr	{true, "127.0.0.1"}
+RESULT	N4 did:web host foo.localhost: refused by the name check / address from :inet.getaddr	{true, nil}
+RESULT	N4 did:web host 127.1: refused by the name check / address from :inet.getaddr	{true, "127.0.0.1"}
+RESULT	N4 did:web host 0x7f.1: refused by the name check / address from :inet.getaddr	{false, nil}
+RESULT	N4 did:web host 0x7f.0.0.1: refused by the name check / address from :inet.getaddr	{false, nil}
+RESULT	N4 did:web host example.test: refused by the name check / address from :inet.getaddr	{false, nil}
+DONE
+--- validation supplement, run 1
+RESULT	V1 live mark after a failed backfill / held after healthy restart / mark after success (expect 0 / 1 / 3700)	{3600, 0, 3700}
+RESULT	V1b another restart: held, duplicates (expect 1, 0)	{0, 0}
+RESULT	V2 failed connect, recheck in the same process: held / mark (expect 1 / 3600)	{1, 3600}
+RESULT	V3 120 mentions, notifications page 2 fails, healthy restart: held before / mark before / held, duplicates after (expect 50 / 0 / {120, 0})	{50, 3600, {50, 0}}
+RESULT	V4 300 mentions, 5-page bound: held / unrecovered / mark / held after restart (expect the cut to be counted)	{250, nil, 3600, 250}
+RESULT	V5 two accounts; B absent from one run while A succeeds: mark / B's gap held (expect 0 / 1)	{3600, 0}
+RESULT	V6 B's backfill fails twice, A healthy: mark held / A held, dup / B held after recovery / mark (expect 0 / {1,0} / 1 / 3800)	{3600, {1, 0}, 0, 3800}
+RESULT	V7 PDS not found, live record, two healthy restarts: unrecovered / held, dup / held, dup (expect 1 / {5,0} / {5,0})	{nil, {2, 0}, {2, 0}}
+RESULT	V8 page 2 fails on two starts, a live record after each, then healthy: held, dup (expect {253, 0})	{103, 0}
+RESULT	V9 restart during a records backfill: held, dup (expect {4, 0})	{4, 0}
+RESULT	V10 records backfill fails, PDS returns, no restart: held after the recheck (4 = retried in-process)	1
+DONE
+--- b653ead checks, run 1
+RESULT	W1 failed first backfill: own mark / held after healthy restart / own mark after (expect nil / 1 / 3700)	{nil, 0, nil}
+RESULT	W2 600 mentions, three starts: held,dup / unrecovered / mark / held,dup / held,dup, mark (expect {250,0} / >=1 / held / {500,0} / {600,0}, 3800)	{{250, 0}, nil, nil, {250, 0}, {{250, 0}, nil}}
+RESULT	W3 400 mentions, recheck every 0.6 s, no restart: held, dup / own mark (expect {400, 0} / an integer)	{{250, 0}, nil}
+RESULT	W4 B absent from one run: marks (A, B) after it / B held / marks after B returns (expect {3600, 0 or nil} / 1 / {3700, 3700})	{{nil, nil}, 0, {nil, nil}}
+RESULT	W5 PDS down for about 4 rechecks, then back, no restart: unrecovered while down / held, dup after (observed / expect {4, 0})	{nil, {1, 0}}
+RESULT	W6 B tracked while connected: B held / B mark in that run / B held after a restart (expect 0 or 1 / not past an uncovered gap / 0 or 1, no loss across both)	{0, nil, 0}
+RESULT	W7 failed connect, recheck in the same process: own mark before / held / own mark after (expect nil / 1 / 3600)	{nil, 1, nil}
+RESULT	W8 two healthy accounts, two starts: A held,dup / B held,dup / marks (expect {1,0} / {1,0} / {3700, 3700})	{{1, 0}, {1, 0}, {nil, nil}}
+DONE
+--- real at_mcp-stdio, fake services, run 1
+RESULT	E1a stream connected before any client request	True
+RESULT	E1b process alive 4 s after a save, no request sent yet	True
+RESULT	E1c update readable afterwards (expect 1)	1
+RESULT	E2a initialized, not subscribed: told / alive (expect 0 / True)	(0, True)
+RESULT	E2b subscribed: told at least once (expect True)	True
+RESULT	E2c after unsubscribe: new announcements (expect 0)	0
+RESULT	E2d all three updates still readable (expect 3)	3
+RESULT	B1 120 live updates: stored / rows / unread after ack (expect 120 / 120 / 0)	(120, 120, 0)
+RESULT	B2 stop between commit and ack: rows, unread / re-read adds / rows, unread (expect (10,10) / 0 / (10,0))	((10, 10), 0, (10, 0))
+RESULT	B3 kill -9 of at_mcp between commit and ack: rows / unread after restart / re-read adds / final rows, unread (expect 10 / 10 / 0 / (10,0))	(10, 10, 0, (10, 0))
+RESULT	B4 post reads failing, then back: rows, unread during / rows, unread after (expect (0,3) / (3,0))	((0, 3), (3, 0))
+RESULT	B5 duplicate live event + one deleted post: unread before / rows / unread (expect 2 / 2 / 0)	(2, 2, 0)
+RESULT	B6 SIGKILL of the consumer between commit and ack: exit / rows / unread after / re-read adds / final rows, unread (expect -9 / 10 / 10 / 0 / (10,0))	(-9, 10, 10, 0, (10, 0))
+RESULT	H6 ack of A only, unacknowledged B indexed earlier: seenAt is before B (expect True)	True
+RESULT	H6b seenAt moved / exactly 1 ms before B	(True, True)
+DONE
+--- backfill scenarios, run 2
+RESULT	A control: mention in a 1 h gap recovered (expect 1)	1
+RESULT	B backfill failed once, next start healthy: recovered (1 = ok, 0 = lost)	0
+RESULT	C restart during backfill: recovered (1 = ok, 0 = lost)	0
+RESULT	D 120 replies in a gap: recovered (expect 120 if fully paged)	120
+RESULT	D notification calls / any call with a cursor	{3, true}
+DONE
+--- features, run 2
+RESULT	build has records listeners	true
+RESULT	S1 same sender, 10 replies: kept / wakes (expect 10 / 6)	{10, 6}
+RESULT	S1 capped counter	4
+RESULT	S1 an event still goes out when all of a batch is capped (subscribers are told)	{1, 0}
+RESULT	S2 another sender still wakes (expect 1)	1
+RESULT	S3 same sender after one hour wakes again (expect 1)	1
+RESULT	S4 cap already spent, process restarted: wakes in the same hour (0 = persisted, 6 = reset)	6
+RESULT	L1 last_saved before anything is caught (expect nil)	nil
+RESULT	L2 last_saved after a match	"2027-01-15T08:00:05Z"
+RESULT	L3 duplicate leaves last_saved unchanged	true
+RESULT	L4 last_saved survives a restart	true
+RESULT	L5 stream_live_at, connected and quiet for 2 h: age in s	7150
+RESULT	L6 stream_live_at, stream dead at the same time: age in s	7150
+RESULT	L7 can the two be told apart from stream_live_at? (false = no)	false
+RESULT	P1 from: only the named sender (expect 1)	1
+RESULT	P2 paused, agent re-listens, restart: nothing added (expect 1)	1
+RESULT	R1 control, 40 h gap, 3 records, PDS healthy: held (expect 4)	4
+RESULT	R1b restart again: no duplicate (expect 4)	4
+RESULT	R2 1 h gap: PDS reads (expect 0, Jetstream replays it)	0
+RESULT	R2b replayed records saved (expect 4)	4
+RESULT	R3 250 in gap, page 2 fails once, then healthy restart: held after fail / after restart (expect 251)	{101, 251}
+RESULT	R3b unrecovered counter	nil
+RESULT	R4 PDS down on start, one live record, healthy restart: held (expect 5)	2
+RESULT	R4b unrecovered counter	nil
+RESULT	R5 a live record is saved while the PDS read runs: held (expect 5)	5
+RESULT	R5c control, same slow PDS read, no live record meanwhile: held (expect 4)	4
+RESULT	R6 650 in gap, 5-page bound: held / unrecovered counter	{501, 1}
+RESULT	R6b after a restart: held / unrecovered counter (the 150 past the bound stay lost)	{501, nil}
+DONE
+--- review defects, run 2
+RESULT	build has the notifications poll	true
+RESULT	H1 live record saved while the DID is resolved: held (expect 4)	4
+RESULT	H2 logout and login while another account holds the stream: gap record held (expect 1)	1
+RESULT	H3 old record behind 1,000 receipts, coverage mark present: delivered again (expect 0)	0
+RESULT	N1 same, state from an older build, no coverage mark yet: delivered again (expect 0)	1
+RESULT	H4a real Repos.records on a non-string uri (expect {:error, _})	{:error, :unreadable_answer}
+RESULT	H4b one author's reader raises: other author's record held / unrecovered (expect 1 / 1)	{1, 1}
+RESULT	H5 a poll task exits (store busy past 5 s): polls in the next second (expect > 0)	10
+RESULT	H7 notification during a 10 min poll outage: held (expect 1)	1
+RESULT	H8 records client killed: a new live client (expect true)	true
+RESULT	H9 indexed_at taken from the author's record (expect false)	false
+RESULT	N2 page 2 fails, one live record, healthy restart: held (expect 252)	102
+RESULT	N3 listRecords answers an error: unrecovered counter (expect 1)	nil
+RESULT	N3b healthy restart, no live record in between: held (expect 4)	4
+RESULT	N4 did:web host localhost: refused by the name check / address from :inet.getaddr	{true, nil}
+RESULT	N4 did:web host 127.0.0.1: refused by the name check / address from :inet.getaddr	{true, "127.0.0.1"}
+RESULT	N4 did:web host foo.localhost: refused by the name check / address from :inet.getaddr	{true, nil}
+RESULT	N4 did:web host 127.1: refused by the name check / address from :inet.getaddr	{true, "127.0.0.1"}
+RESULT	N4 did:web host 0x7f.1: refused by the name check / address from :inet.getaddr	{false, nil}
+RESULT	N4 did:web host 0x7f.0.0.1: refused by the name check / address from :inet.getaddr	{false, nil}
+RESULT	N4 did:web host example.test: refused by the name check / address from :inet.getaddr	{false, nil}
+DONE
+--- validation supplement, run 2
+RESULT	V1 live mark after a failed backfill / held after healthy restart / mark after success (expect 0 / 1 / 3700)	{3600, 0, 3700}
+RESULT	V1b another restart: held, duplicates (expect 1, 0)	{0, 0}
+RESULT	V2 failed connect, recheck in the same process: held / mark (expect 1 / 3600)	{1, 3600}
+RESULT	V3 120 mentions, notifications page 2 fails, healthy restart: held before / mark before / held, duplicates after (expect 50 / 0 / {120, 0})	{50, 3600, {50, 0}}
+RESULT	V4 300 mentions, 5-page bound: held / unrecovered / mark / held after restart (expect the cut to be counted)	{250, nil, 3600, 250}
+RESULT	V5 two accounts; B absent from one run while A succeeds: mark / B's gap held (expect 0 / 1)	{3600, 0}
+RESULT	V6 B's backfill fails twice, A healthy: mark held / A held, dup / B held after recovery / mark (expect 0 / {1,0} / 1 / 3800)	{3600, {1, 0}, 0, 3800}
+RESULT	V7 PDS not found, live record, two healthy restarts: unrecovered / held, dup / held, dup (expect 1 / {5,0} / {5,0})	{nil, {2, 0}, {2, 0}}
+RESULT	V8 page 2 fails on two starts, a live record after each, then healthy: held, dup (expect {253, 0})	{103, 0}
+RESULT	V9 restart during a records backfill: held, dup (expect {4, 0})	{4, 0}
+RESULT	V10 records backfill fails, PDS returns, no restart: held after the recheck (4 = retried in-process)	1
+DONE
+--- b653ead checks, run 2
+RESULT	W1 failed first backfill: own mark / held after healthy restart / own mark after (expect nil / 1 / 3700)	{nil, 0, nil}
+RESULT	W2 600 mentions, three starts: held,dup / unrecovered / mark / held,dup / held,dup, mark (expect {250,0} / >=1 / held / {500,0} / {600,0}, 3800)	{{250, 0}, nil, nil, {250, 0}, {{250, 0}, nil}}
+RESULT	W3 400 mentions, recheck every 0.6 s, no restart: held, dup / own mark (expect {400, 0} / an integer)	{{250, 0}, nil}
+RESULT	W4 B absent from one run: marks (A, B) after it / B held / marks after B returns (expect {3600, 0 or nil} / 1 / {3700, 3700})	{{nil, nil}, 0, {nil, nil}}
+RESULT	W5 PDS down for about 4 rechecks, then back, no restart: unrecovered while down / held, dup after (observed / expect {4, 0})	{nil, {1, 0}}
+RESULT	W6 B tracked while connected: B held / B mark in that run / B held after a restart (expect 0 or 1 / not past an uncovered gap / 0 or 1, no loss across both)	{0, nil, 0}
+RESULT	W7 failed connect, recheck in the same process: own mark before / held / own mark after (expect nil / 1 / 3600)	{nil, 1, nil}
+RESULT	W8 two healthy accounts, two starts: A held,dup / B held,dup / marks (expect {1,0} / {1,0} / {3700, 3700})	{{1, 0}, {1, 0}, {nil, nil}}
+DONE
+--- real at_mcp-stdio, fake services, run 2
+RESULT	E1a stream connected before any client request	True
+RESULT	E1b process alive 4 s after a save, no request sent yet	True
+RESULT	E1c update readable afterwards (expect 1)	1
+RESULT	E2a initialized, not subscribed: told / alive (expect 0 / True)	(0, True)
+RESULT	E2b subscribed: told at least once (expect True)	True
+RESULT	E2c after unsubscribe: new announcements (expect 0)	0
+RESULT	E2d all three updates still readable (expect 3)	3
+RESULT	B1 120 live updates: stored / rows / unread after ack (expect 120 / 120 / 0)	(120, 120, 0)
+RESULT	B2 stop between commit and ack: rows, unread / re-read adds / rows, unread (expect (10,10) / 0 / (10,0))	((10, 10), 0, (10, 0))
+RESULT	B3 kill -9 of at_mcp between commit and ack: rows / unread after restart / re-read adds / final rows, unread (expect 10 / 10 / 0 / (10,0))	(10, 10, 0, (10, 0))
+RESULT	B4 post reads failing, then back: rows, unread during / rows, unread after (expect (0,3) / (3,0))	((0, 3), (3, 0))
+RESULT	B5 duplicate live event + one deleted post: unread before / rows / unread (expect 2 / 2 / 0)	(2, 2, 0)
+RESULT	B6 SIGKILL of the consumer between commit and ack: exit / rows / unread after / re-read adds / final rows, unread (expect -9 / 10 / 10 / 0 / (10,0))	(-9, 10, 10, 0, (10, 0))
+RESULT	H6 ack of A only, unacknowledged B indexed earlier: seenAt is before B (expect True)	True
+RESULT	H6b seenAt moved / exactly 1 ms before B	(True, True)
+DONE
+--- store checks
+RESULT	1a unread after kill (expect 3)	3
+RESULT	1b ack with no read after restart keeps unread (expect 3)	3
+RESULT	2a ack past shown stops at shown (expect [3])	[3]
+RESULT	3 read, crash, no ack: redelivered (expect 1)	1
+RESULT	4a same uri again adds (expect 0)	0
+RESULT	4b same uri after ack adds (expect 0)	0
+RESULT	5 one post, two listeners: updates for the same uri	{2, 1}
+RESULT	6a 8 unread, bound 5: kept / dropped count	{5, %{"references" => 3}}
+RESULT	6b oldest kept uri	"at://did:plc:sender/town.delve.feed.post/4"
+RESULT	6c dropped unread re-offered by backfill: re-added (0 = lost)	0
+RESULT	6d dropped counter after ack	%{}
+RESULT	7a unread past 7 days, before next commit	1
+RESULT	7b after next commit: uris kept / dropped	{1, %{"references" => 1}}
+RESULT	8 acked record re-offered after 1000 newer: re-added (1 = duplicate)	1
+RESULT	9a ack 3 with item 1 still undecided: unread left (0 = item 1 no longer tracked)	0
+RESULT	9b keep item 1: items 2,3 also stay unread	[1, 2, 3]
+RESULT	10 one commit with 200 held (ms)	1
+DONE
+--- 25 hard kills during writes
+RESULT	kill-9: journaled=2888 held=2889 missing=0 duplicates=0
+
+=== control  build 0.3.3-hum.10-683a2bd-overlay
+--- backfill scenarios, run 1
+RESULT	A control: mention in a 1 h gap recovered (expect 1)	1
+RESULT	B backfill failed once, next start healthy: recovered (1 = ok, 0 = lost)	0
+RESULT	C restart during backfill: recovered (1 = ok, 0 = lost)	0
+RESULT	D 120 replies in a gap: recovered (expect 120 if fully paged)	120
+RESULT	D notification calls / any call with a cursor	{3, true}
+DONE
+--- features, run 1
+RESULT	build has records listeners	true
+RESULT	S1 same sender, 10 replies: kept / wakes (expect 10 / 6)	{10, 6}
+RESULT	S1 capped counter	4
+RESULT	S1 an event still goes out when all of a batch is capped (subscribers are told)	{1, 0}
+RESULT	S2 another sender still wakes (expect 1)	1
+RESULT	S3 same sender after one hour wakes again (expect 1)	1
+RESULT	S4 cap already spent, process restarted: wakes in the same hour (0 = persisted, 6 = reset)	6
+RESULT	L1 last_saved before anything is caught (expect nil)	nil
+RESULT	L2 last_saved after a match	"2027-01-15T08:00:05Z"
+RESULT	L3 duplicate leaves last_saved unchanged	true
+RESULT	L4 last_saved survives a restart	true
+RESULT	L5 stream_live_at, connected and quiet for 2 h: age in s	7150
+RESULT	L6 stream_live_at, stream dead at the same time: age in s	7150
+RESULT	L7 can the two be told apart from stream_live_at? (false = no)	false
+RESULT	P1 from: only the named sender (expect 1)	1
+RESULT	P2 paused, agent re-listens, restart: nothing added (expect 1)	1
+RESULT	R1 control, 40 h gap, 3 records, PDS healthy: held (expect 4)	4
+RESULT	R1b restart again: no duplicate (expect 4)	4
+RESULT	R2 1 h gap: PDS reads (expect 0, Jetstream replays it)	0
+RESULT	R2b replayed records saved (expect 4)	4
+RESULT	R3 250 in gap, page 2 fails once, then healthy restart: held after fail / after restart (expect 251)	{101, 251}
+RESULT	R3b unrecovered counter	nil
+RESULT	R4 PDS down on start, one live record, healthy restart: held (expect 5)	2
+RESULT	R4b unrecovered counter	nil
+RESULT	R5 a live record is saved while the PDS read runs: held (expect 5)	5
+RESULT	R5c control, same slow PDS read, no live record meanwhile: held (expect 4)	4
+RESULT	R6 650 in gap, 5-page bound: held / unrecovered counter	{501, 1}
+RESULT	R6b after a restart: held / unrecovered counter (the 150 past the bound stay lost)	{501, nil}
+DONE
+--- review defects, run 1
+RESULT	build has the notifications poll	true
+RESULT	H1 live record saved while the DID is resolved: held (expect 4)	4
+RESULT	H2 logout and login while another account holds the stream: gap record held (expect 1)	1
+RESULT	H3 old record behind 1,000 receipts, coverage mark present: delivered again (expect 0)	0
+RESULT	N1 same, state from an older build, no coverage mark yet: delivered again (expect 0)	1
+RESULT	H4a real Repos.records on a non-string uri (expect {:error, _})	{:error, :unreadable_answer}
+RESULT	H4b one author's reader raises: other author's record held / unrecovered (expect 1 / 1)	{1, 1}
+RESULT	H5 a poll task exits (store busy past 5 s): polls in the next second (expect > 0)	10
+RESULT	H7 notification during a 10 min poll outage: held (expect 1)	1
+RESULT	H8 records client killed: a new live client (expect true)	true
+RESULT	H9 indexed_at taken from the author's record (expect false)	false
+RESULT	N2 page 2 fails, one live record, healthy restart: held (expect 252)	102
+RESULT	N3 listRecords answers an error: unrecovered counter (expect 1)	nil
+RESULT	N3b healthy restart, no live record in between: held (expect 4)	4
+RESULT	N4 did:web host localhost: refused by the name check / address from :inet.getaddr	{true, nil}
+RESULT	N4 did:web host 127.0.0.1: refused by the name check / address from :inet.getaddr	{true, "127.0.0.1"}
+RESULT	N4 did:web host foo.localhost: refused by the name check / address from :inet.getaddr	{true, nil}
+RESULT	N4 did:web host 127.1: refused by the name check / address from :inet.getaddr	{true, "127.0.0.1"}
+RESULT	N4 did:web host 0x7f.1: refused by the name check / address from :inet.getaddr	{false, nil}
+RESULT	N4 did:web host 0x7f.0.0.1: refused by the name check / address from :inet.getaddr	{false, nil}
+RESULT	N4 did:web host example.test: refused by the name check / address from :inet.getaddr	{false, nil}
+DONE
+--- validation supplement, run 1
+RESULT	V1 live mark after a failed backfill / held after healthy restart / mark after success (expect 0 / 1 / 3700)	{3600, 0, 3700}
+RESULT	V1b another restart: held, duplicates (expect 1, 0)	{0, 0}
+RESULT	V2 failed connect, recheck in the same process: held / mark (expect 1 / 3600)	{1, 3600}
+RESULT	V3 120 mentions, notifications page 2 fails, healthy restart: held before / mark before / held, duplicates after (expect 50 / 0 / {120, 0})	{50, 3600, {50, 0}}
+RESULT	V4 300 mentions, 5-page bound: held / unrecovered / mark / held after restart (expect the cut to be counted)	{250, nil, 3600, 250}
+RESULT	V5 two accounts; B absent from one run while A succeeds: mark / B's gap held (expect 0 / 1)	{3600, 0}
+RESULT	V6 B's backfill fails twice, A healthy: mark held / A held, dup / B held after recovery / mark (expect 0 / {1,0} / 1 / 3800)	{3600, {1, 0}, 0, 3800}
+RESULT	V7 PDS not found, live record, two healthy restarts: unrecovered / held, dup / held, dup (expect 1 / {5,0} / {5,0})	{nil, {2, 0}, {2, 0}}
+RESULT	V8 page 2 fails on two starts, a live record after each, then healthy: held, dup (expect {253, 0})	{103, 0}
+RESULT	V9 restart during a records backfill: held, dup (expect {4, 0})	{4, 0}
+RESULT	V10 records backfill fails, PDS returns, no restart: held after the recheck (4 = retried in-process)	1
+DONE
+--- b653ead checks, run 1
+RESULT	W1 failed first backfill: own mark / held after healthy restart / own mark after (expect nil / 1 / 3700)	{nil, 0, nil}
+RESULT	W2 600 mentions, three starts: held,dup / unrecovered / mark / held,dup / held,dup, mark (expect {250,0} / >=1 / held / {500,0} / {600,0}, 3800)	{{250, 0}, nil, nil, {250, 0}, {{250, 0}, nil}}
+RESULT	W3 400 mentions, recheck every 0.6 s, no restart: held, dup / own mark (expect {400, 0} / an integer)	{{250, 0}, nil}
+RESULT	W4 B absent from one run: marks (A, B) after it / B held / marks after B returns (expect {3600, 0 or nil} / 1 / {3700, 3700})	{{nil, nil}, 0, {nil, nil}}
+RESULT	W5 PDS down for about 4 rechecks, then back, no restart: unrecovered while down / held, dup after (observed / expect {4, 0})	{nil, {1, 0}}
+RESULT	W6 B tracked while connected: B held / B mark in that run / B held after a restart (expect 0 or 1 / not past an uncovered gap / 0 or 1, no loss across both)	{0, nil, 0}
+RESULT	W7 failed connect, recheck in the same process: own mark before / held / own mark after (expect nil / 1 / 3600)	{nil, 1, nil}
+RESULT	W8 two healthy accounts, two starts: A held,dup / B held,dup / marks (expect {1,0} / {1,0} / {3700, 3700})	{{1, 0}, {1, 0}, {nil, nil}}
+DONE
+--- real at_mcp-stdio, fake services, run 1
+RESULT	E1a stream connected before any client request	True
+RESULT	E1b process alive 4 s after a save, no request sent yet	True
+RESULT	E1c update readable afterwards (expect 1)	1
+RESULT	E2a initialized, not subscribed: told / alive (expect 0 / True)	(0, True)
+RESULT	E2b subscribed: told at least once (expect True)	True
+RESULT	E2c after unsubscribe: new announcements (expect 0)	0
+RESULT	E2d all three updates still readable (expect 3)	3
+RESULT	B1 120 live updates: stored / rows / unread after ack (expect 120 / 120 / 0)	(120, 120, 0)
+RESULT	B2 stop between commit and ack: rows, unread / re-read adds / rows, unread (expect (10,10) / 0 / (10,0))	((10, 10), 0, (10, 0))
+RESULT	B3 kill -9 of at_mcp between commit and ack: rows / unread after restart / re-read adds / final rows, unread (expect 10 / 10 / 0 / (10,0))	(10, 10, 0, (10, 0))
+RESULT	B4 post reads failing, then back: rows, unread during / rows, unread after (expect (0,3) / (3,0))	((0, 3), (3, 0))
+RESULT	B5 duplicate live event + one deleted post: unread before / rows / unread (expect 2 / 2 / 0)	(2, 2, 0)
+RESULT	B6 SIGKILL of the consumer between commit and ack: exit / rows / unread after / re-read adds / final rows, unread (expect -9 / 10 / 10 / 0 / (10,0))	(-9, 10, 10, 0, (10, 0))
+RESULT	H6 ack of A only, unacknowledged B indexed earlier: seenAt is before B (expect True)	True
+RESULT	H6b seenAt moved / exactly 1 ms before B	(True, True)
+DONE
+--- backfill scenarios, run 2
+RESULT	A control: mention in a 1 h gap recovered (expect 1)	1
+RESULT	B backfill failed once, next start healthy: recovered (1 = ok, 0 = lost)	0
+RESULT	C restart during backfill: recovered (1 = ok, 0 = lost)	0
+RESULT	D 120 replies in a gap: recovered (expect 120 if fully paged)	120
+RESULT	D notification calls / any call with a cursor	{3, true}
+DONE
+--- features, run 2
+RESULT	build has records listeners	true
+RESULT	S1 same sender, 10 replies: kept / wakes (expect 10 / 6)	{10, 6}
+RESULT	S1 capped counter	4
+RESULT	S1 an event still goes out when all of a batch is capped (subscribers are told)	{1, 0}
+RESULT	S2 another sender still wakes (expect 1)	1
+RESULT	S3 same sender after one hour wakes again (expect 1)	1
+RESULT	S4 cap already spent, process restarted: wakes in the same hour (0 = persisted, 6 = reset)	6
+RESULT	L1 last_saved before anything is caught (expect nil)	nil
+RESULT	L2 last_saved after a match	"2027-01-15T08:00:05Z"
+RESULT	L3 duplicate leaves last_saved unchanged	true
+RESULT	L4 last_saved survives a restart	true
+RESULT	L5 stream_live_at, connected and quiet for 2 h: age in s	7150
+RESULT	L6 stream_live_at, stream dead at the same time: age in s	7150
+RESULT	L7 can the two be told apart from stream_live_at? (false = no)	false
+RESULT	P1 from: only the named sender (expect 1)	1
+RESULT	P2 paused, agent re-listens, restart: nothing added (expect 1)	1
+RESULT	R1 control, 40 h gap, 3 records, PDS healthy: held (expect 4)	4
+RESULT	R1b restart again: no duplicate (expect 4)	4
+RESULT	R2 1 h gap: PDS reads (expect 0, Jetstream replays it)	0
+RESULT	R2b replayed records saved (expect 4)	4
+RESULT	R3 250 in gap, page 2 fails once, then healthy restart: held after fail / after restart (expect 251)	{101, 251}
+RESULT	R3b unrecovered counter	nil
+RESULT	R4 PDS down on start, one live record, healthy restart: held (expect 5)	2
+RESULT	R4b unrecovered counter	nil
+RESULT	R5 a live record is saved while the PDS read runs: held (expect 5)	5
+RESULT	R5c control, same slow PDS read, no live record meanwhile: held (expect 4)	4
+RESULT	R6 650 in gap, 5-page bound: held / unrecovered counter	{501, 1}
+RESULT	R6b after a restart: held / unrecovered counter (the 150 past the bound stay lost)	{501, nil}
+DONE
+--- review defects, run 2
+RESULT	build has the notifications poll	true
+RESULT	H1 live record saved while the DID is resolved: held (expect 4)	4
+RESULT	H2 logout and login while another account holds the stream: gap record held (expect 1)	1
+RESULT	H3 old record behind 1,000 receipts, coverage mark present: delivered again (expect 0)	0
+RESULT	N1 same, state from an older build, no coverage mark yet: delivered again (expect 0)	1
+RESULT	H4a real Repos.records on a non-string uri (expect {:error, _})	{:error, :unreadable_answer}
+RESULT	H4b one author's reader raises: other author's record held / unrecovered (expect 1 / 1)	{1, 1}
+RESULT	H5 a poll task exits (store busy past 5 s): polls in the next second (expect > 0)	10
+RESULT	H7 notification during a 10 min poll outage: held (expect 1)	1
+RESULT	H8 records client killed: a new live client (expect true)	true
+RESULT	H9 indexed_at taken from the author's record (expect false)	false
+RESULT	N2 page 2 fails, one live record, healthy restart: held (expect 252)	102
+RESULT	N3 listRecords answers an error: unrecovered counter (expect 1)	nil
+RESULT	N3b healthy restart, no live record in between: held (expect 4)	4
+RESULT	N4 did:web host localhost: refused by the name check / address from :inet.getaddr	{true, nil}
+RESULT	N4 did:web host 127.0.0.1: refused by the name check / address from :inet.getaddr	{true, "127.0.0.1"}
+RESULT	N4 did:web host foo.localhost: refused by the name check / address from :inet.getaddr	{true, nil}
+RESULT	N4 did:web host 127.1: refused by the name check / address from :inet.getaddr	{true, "127.0.0.1"}
+RESULT	N4 did:web host 0x7f.1: refused by the name check / address from :inet.getaddr	{false, nil}
+RESULT	N4 did:web host 0x7f.0.0.1: refused by the name check / address from :inet.getaddr	{false, nil}
+RESULT	N4 did:web host example.test: refused by the name check / address from :inet.getaddr	{false, nil}
+DONE
+--- validation supplement, run 2
+RESULT	V1 live mark after a failed backfill / held after healthy restart / mark after success (expect 0 / 1 / 3700)	{3600, 0, 3700}
+RESULT	V1b another restart: held, duplicates (expect 1, 0)	{0, 0}
+RESULT	V2 failed connect, recheck in the same process: held / mark (expect 1 / 3600)	{1, 3600}
+RESULT	V3 120 mentions, notifications page 2 fails, healthy restart: held before / mark before / held, duplicates after (expect 50 / 0 / {120, 0})	{50, 3600, {50, 0}}
+RESULT	V4 300 mentions, 5-page bound: held / unrecovered / mark / held after restart (expect the cut to be counted)	{250, nil, 3600, 250}
+RESULT	V5 two accounts; B absent from one run while A succeeds: mark / B's gap held (expect 0 / 1)	{3600, 0}
+RESULT	V6 B's backfill fails twice, A healthy: mark held / A held, dup / B held after recovery / mark (expect 0 / {1,0} / 1 / 3800)	{3600, {1, 0}, 0, 3800}
+RESULT	V7 PDS not found, live record, two healthy restarts: unrecovered / held, dup / held, dup (expect 1 / {5,0} / {5,0})	{nil, {2, 0}, {2, 0}}
+RESULT	V8 page 2 fails on two starts, a live record after each, then healthy: held, dup (expect {253, 0})	{103, 0}
+RESULT	V9 restart during a records backfill: held, dup (expect {4, 0})	{4, 0}
+RESULT	V10 records backfill fails, PDS returns, no restart: held after the recheck (4 = retried in-process)	1
+DONE
+--- b653ead checks, run 2
+RESULT	W1 failed first backfill: own mark / held after healthy restart / own mark after (expect nil / 1 / 3700)	{nil, 0, nil}
+RESULT	W2 600 mentions, three starts: held,dup / unrecovered / mark / held,dup / held,dup, mark (expect {250,0} / >=1 / held / {500,0} / {600,0}, 3800)	{{250, 0}, nil, nil, {250, 0}, {{250, 0}, nil}}
+RESULT	W3 400 mentions, recheck every 0.6 s, no restart: held, dup / own mark (expect {400, 0} / an integer)	{{250, 0}, nil}
+RESULT	W4 B absent from one run: marks (A, B) after it / B held / marks after B returns (expect {3600, 0 or nil} / 1 / {3700, 3700})	{{nil, nil}, 0, {nil, nil}}
+RESULT	W5 PDS down for about 4 rechecks, then back, no restart: unrecovered while down / held, dup after (observed / expect {4, 0})	{nil, {1, 0}}
+RESULT	W6 B tracked while connected: B held / B mark in that run / B held after a restart (expect 0 or 1 / not past an uncovered gap / 0 or 1, no loss across both)	{0, nil, 0}
+RESULT	W7 failed connect, recheck in the same process: own mark before / held / own mark after (expect nil / 1 / 3600)	{nil, 1, nil}
+RESULT	W8 two healthy accounts, two starts: A held,dup / B held,dup / marks (expect {1,0} / {1,0} / {3700, 3700})	{{1, 0}, {1, 0}, {nil, nil}}
+DONE
+--- real at_mcp-stdio, fake services, run 2
+RESULT	E1a stream connected before any client request	True
+RESULT	E1b process alive 4 s after a save, no request sent yet	True
+RESULT	E1c update readable afterwards (expect 1)	1
+RESULT	E2a initialized, not subscribed: told / alive (expect 0 / True)	(0, True)
+RESULT	E2b subscribed: told at least once (expect True)	True
+RESULT	E2c after unsubscribe: new announcements (expect 0)	0
+RESULT	E2d all three updates still readable (expect 3)	3
+RESULT	B1 120 live updates: stored / rows / unread after ack (expect 120 / 120 / 0)	(120, 120, 0)
+RESULT	B2 stop between commit and ack: rows, unread / re-read adds / rows, unread (expect (10,10) / 0 / (10,0))	((10, 10), 0, (10, 0))
+RESULT	B3 kill -9 of at_mcp between commit and ack: rows / unread after restart / re-read adds / final rows, unread (expect 10 / 10 / 0 / (10,0))	(10, 10, 0, (10, 0))
+RESULT	B4 post reads failing, then back: rows, unread during / rows, unread after (expect (0,3) / (3,0))	((0, 3), (3, 0))
+RESULT	B5 duplicate live event + one deleted post: unread before / rows / unread (expect 2 / 2 / 0)	(2, 2, 0)
+RESULT	B6 SIGKILL of the consumer between commit and ack: exit / rows / unread after / re-read adds / final rows, unread (expect -9 / 10 / 10 / 0 / (10,0))	(-9, 10, 10, 0, (10, 0))
+RESULT	H6 ack of A only, unacknowledged B indexed earlier: seenAt is before B (expect True)	True
+RESULT	H6b seenAt moved / exactly 1 ms before B	(True, True)
+DONE
+--- store checks
+RESULT	1a unread after kill (expect 3)	3
+RESULT	1b ack with no read after restart keeps unread (expect 3)	3
+RESULT	2a ack past shown stops at shown (expect [3])	[3]
+RESULT	3 read, crash, no ack: redelivered (expect 1)	1
+RESULT	4a same uri again adds (expect 0)	0
+RESULT	4b same uri after ack adds (expect 0)	0
+RESULT	5 one post, two listeners: updates for the same uri	{2, 1}
+RESULT	6a 8 unread, bound 5: kept / dropped count	{5, %{"references" => 3}}
+RESULT	6b oldest kept uri	"at://did:plc:sender/town.delve.feed.post/4"
+RESULT	6c dropped unread re-offered by backfill: re-added (0 = lost)	0
+RESULT	6d dropped counter after ack	%{}
+RESULT	7a unread past 7 days, before next commit	1
+RESULT	7b after next commit: uris kept / dropped	{1, %{"references" => 1}}
+RESULT	8 acked record re-offered after 1000 newer: re-added (1 = duplicate)	1
+RESULT	9a ack 3 with item 1 still undecided: unread left (0 = item 1 no longer tracked)	0
+RESULT	9b keep item 1: items 2,3 also stay unread	[1, 2, 3]
+RESULT	10 one commit with 200 held (ms)	1
+DONE
+--- 25 hard kills during writes
+RESULT	kill-9: journaled=2894 held=2894 missing=0 duplicates=0
+
+=== previous  build 0.3.3-hum.10-335b95e-overlay
+--- backfill scenarios, run 1
+RESULT	A control: mention in a 1 h gap recovered (expect 1)	1
+RESULT	B backfill failed once, next start healthy: recovered (1 = ok, 0 = lost)	1
+RESULT	C restart during backfill: recovered (1 = ok, 0 = lost)	1
+RESULT	D 120 replies in a gap: recovered (expect 120 if fully paged)	120
+RESULT	D notification calls / any call with a cursor	{3, true}
+DONE
+--- features, run 1
+RESULT	build has records listeners	true
+RESULT	S1 same sender, 10 replies: kept / wakes (expect 10 / 6)	{10, 6}
+RESULT	S1 capped counter	4
+RESULT	S1 an event still goes out when all of a batch is capped (subscribers are told)	{1, 0}
+RESULT	S2 another sender still wakes (expect 1)	1
+RESULT	S3 same sender after one hour wakes again (expect 1)	1
+RESULT	S4 cap already spent, process restarted: wakes in the same hour (0 = persisted, 6 = reset)	6
+RESULT	L1 last_saved before anything is caught (expect nil)	nil
+RESULT	L2 last_saved after a match	"2027-01-15T08:00:05Z"
+RESULT	L3 duplicate leaves last_saved unchanged	true
+RESULT	L4 last_saved survives a restart	true
+RESULT	L5 stream_live_at, connected and quiet for 2 h: age in s	7150
+RESULT	L6 stream_live_at, stream dead at the same time: age in s	7150
+RESULT	L7 can the two be told apart from stream_live_at? (false = no)	false
+RESULT	P1 from: only the named sender (expect 1)	1
+RESULT	P2 paused, agent re-listens, restart: nothing added (expect 1)	1
+RESULT	R1 control, 40 h gap, 3 records, PDS healthy: held (expect 4)	4
+RESULT	R1b restart again: no duplicate (expect 4)	4
+RESULT	R2 1 h gap: PDS reads (expect 0, Jetstream replays it)	0
+RESULT	R2b replayed records saved (expect 4)	4
+RESULT	R3 250 in gap, page 2 fails once, then healthy restart: held after fail / after restart (expect 251)	{101, 251}
+RESULT	R3b unrecovered counter	nil
+RESULT	R4 PDS down on start, one live record, healthy restart: held (expect 5)	5
+RESULT	R4b unrecovered counter	nil
+RESULT	R5 a live record is saved while the PDS read runs: held (expect 5)	5
+RESULT	R5c control, same slow PDS read, no live record meanwhile: held (expect 4)	4
+RESULT	R6 650 in gap, 5-page bound: held / unrecovered counter	{501, 1}
+RESULT	R6b after a restart: held / unrecovered counter (the 150 past the bound stay lost)	{501, nil}
+DONE
+--- review defects, run 1
+RESULT	build has the notifications poll	true
+RESULT	H1 live record saved while the DID is resolved: held (expect 4)	4
+RESULT	H2 logout and login while another account holds the stream: gap record held (expect 1)	1
+RESULT	H3 old record behind 1,000 receipts, coverage mark present: delivered again (expect 0)	0
+RESULT	N1 same, state from an older build, no coverage mark yet: delivered again (expect 0)	1
+RESULT	H4a real Repos.records on a non-string uri (expect {:error, _})	{:error, :unreadable_answer}
+RESULT	H4b one author's reader raises: other author's record held / unrecovered (expect 1 / 1)	{1, 1}
+RESULT	H5 a poll task exits (store busy past 5 s): polls in the next second (expect > 0)	10
+RESULT	H7 notification during a 10 min poll outage: held (expect 1)	1
+RESULT	H8 records client killed: a new live client (expect true)	true
+RESULT	H9 indexed_at taken from the author's record (expect false)	false
+RESULT	N2 page 2 fails, one live record, healthy restart: held (expect 252)	252
+RESULT	N3 listRecords answers an error: unrecovered counter (expect 1)	1
+RESULT	N3b healthy restart, no live record in between: held (expect 4)	4
+RESULT	N4 did:web host localhost: refused by the name check / address from :inet.getaddr	{true, nil}
+RESULT	N4 did:web host 127.0.0.1: refused by the name check / address from :inet.getaddr	{true, "127.0.0.1"}
+RESULT	N4 did:web host foo.localhost: refused by the name check / address from :inet.getaddr	{true, nil}
+RESULT	N4 did:web host 127.1: refused by the name check / address from :inet.getaddr	{true, "127.0.0.1"}
+RESULT	N4 did:web host 0x7f.1: refused by the name check / address from :inet.getaddr	{false, nil}
+RESULT	N4 did:web host 0x7f.0.0.1: refused by the name check / address from :inet.getaddr	{false, nil}
+RESULT	N4 did:web host example.test: refused by the name check / address from :inet.getaddr	{false, nil}
+DONE
+--- validation supplement, run 1
+RESULT	V1 live mark after a failed backfill / held after healthy restart / mark after success (expect 0 / 1 / 3700)	{0, 1, 3700}
+RESULT	V1b another restart: held, duplicates (expect 1, 0)	{1, 0}
+RESULT	V2 failed connect, recheck in the same process: held / mark (expect 1 / 3600)	{1, 3600}
+RESULT	V3 120 mentions, notifications page 2 fails, healthy restart: held before / mark before / held, duplicates after (expect 50 / 0 / {120, 0})	{50, 0, {120, 0}}
+RESULT	V4 300 mentions, 5-page bound: held / unrecovered / mark / held after restart (expect the cut to be counted)	{250, nil, 3600, 250}
+RESULT	V5 two accounts; B absent from one run while A succeeds: mark / B's gap held (expect 0 / 1)	{3600, 0}
+RESULT	V6 B's backfill fails twice, A healthy: mark held / A held, dup / B held after recovery / mark (expect 0 / {1,0} / 1 / 3800)	{0, {1, 0}, 1, 3800}
+RESULT	V7 PDS not found, live record, two healthy restarts: unrecovered / held, dup / held, dup (expect 1 / {5,0} / {5,0})	{1, {5, 0}, {5, 0}}
+RESULT	V8 page 2 fails on two starts, a live record after each, then healthy: held, dup (expect {253, 0})	{253, 0}
+RESULT	V9 restart during a records backfill: held, dup (expect {4, 0})	{4, 0}
+RESULT	V10 records backfill fails, PDS returns, no restart: held after the recheck (4 = retried in-process)	1
+DONE
+--- b653ead checks, run 1
+RESULT	W1 failed first backfill: own mark / held after healthy restart / own mark after (expect nil / 1 / 3700)	{nil, 1, nil}
+RESULT	W2 600 mentions, three starts: held,dup / unrecovered / mark / held,dup / held,dup, mark (expect {250,0} / >=1 / held / {500,0} / {600,0}, 3800)	{{250, 0}, nil, nil, {250, 0}, {{250, 0}, nil}}
+RESULT	W3 400 mentions, recheck every 0.6 s, no restart: held, dup / own mark (expect {400, 0} / an integer)	{{250, 0}, nil}
+RESULT	W4 B absent from one run: marks (A, B) after it / B held / marks after B returns (expect {3600, 0 or nil} / 1 / {3700, 3700})	{{nil, nil}, 0, {nil, nil}}
+RESULT	W5 PDS down for about 4 rechecks, then back, no restart: unrecovered while down / held, dup after (observed / expect {4, 0})	{1, {1, 0}}
+RESULT	W6 B tracked while connected: B held / B mark in that run / B held after a restart (expect 0 or 1 / not past an uncovered gap / 0 or 1, no loss across both)	{0, nil, 0}
+RESULT	W7 failed connect, recheck in the same process: own mark before / held / own mark after (expect nil / 1 / 3600)	{nil, 1, nil}
+RESULT	W8 two healthy accounts, two starts: A held,dup / B held,dup / marks (expect {1,0} / {1,0} / {3700, 3700})	{{1, 0}, {1, 0}, {nil, nil}}
+DONE
+--- real at_mcp-stdio, fake services, run 1
+RESULT	E1a stream connected before any client request	True
+RESULT	E1b process alive 4 s after a save, no request sent yet	True
+RESULT	E1c update readable afterwards (expect 1)	1
+RESULT	E2a initialized, not subscribed: told / alive (expect 0 / True)	(0, True)
+RESULT	E2b subscribed: told at least once (expect True)	True
+RESULT	E2c after unsubscribe: new announcements (expect 0)	0
+RESULT	E2d all three updates still readable (expect 3)	3
+RESULT	B1 120 live updates: stored / rows / unread after ack (expect 120 / 120 / 0)	(120, 120, 0)
+RESULT	B2 stop between commit and ack: rows, unread / re-read adds / rows, unread (expect (10,10) / 0 / (10,0))	((10, 10), 0, (10, 0))
+RESULT	B3 kill -9 of at_mcp between commit and ack: rows / unread after restart / re-read adds / final rows, unread (expect 10 / 10 / 0 / (10,0))	(10, 10, 0, (10, 0))
+RESULT	B4 post reads failing, then back: rows, unread during / rows, unread after (expect (0,3) / (3,0))	((0, 3), (3, 0))
+RESULT	B5 duplicate live event + one deleted post: unread before / rows / unread (expect 2 / 2 / 0)	(2, 2, 0)
+RESULT	B6 SIGKILL of the consumer between commit and ack: exit / rows / unread after / re-read adds / final rows, unread (expect -9 / 10 / 10 / 0 / (10,0))	(-9, 10, 10, 0, (10, 0))
+RESULT	H6 ack of A only, unacknowledged B indexed earlier: seenAt is before B (expect True)	True
+RESULT	H6b seenAt moved / exactly 1 ms before B	(True, True)
+DONE
+--- backfill scenarios, run 2
+RESULT	A control: mention in a 1 h gap recovered (expect 1)	1
+RESULT	B backfill failed once, next start healthy: recovered (1 = ok, 0 = lost)	1
+RESULT	C restart during backfill: recovered (1 = ok, 0 = lost)	1
+RESULT	D 120 replies in a gap: recovered (expect 120 if fully paged)	120
+RESULT	D notification calls / any call with a cursor	{3, true}
+DONE
+--- features, run 2
+RESULT	build has records listeners	true
+RESULT	S1 same sender, 10 replies: kept / wakes (expect 10 / 6)	{10, 6}
+RESULT	S1 capped counter	4
+RESULT	S1 an event still goes out when all of a batch is capped (subscribers are told)	{1, 0}
+RESULT	S2 another sender still wakes (expect 1)	1
+RESULT	S3 same sender after one hour wakes again (expect 1)	1
+RESULT	S4 cap already spent, process restarted: wakes in the same hour (0 = persisted, 6 = reset)	6
+RESULT	L1 last_saved before anything is caught (expect nil)	nil
+RESULT	L2 last_saved after a match	"2027-01-15T08:00:05Z"
+RESULT	L3 duplicate leaves last_saved unchanged	true
+RESULT	L4 last_saved survives a restart	true
+RESULT	L5 stream_live_at, connected and quiet for 2 h: age in s	7150
+RESULT	L6 stream_live_at, stream dead at the same time: age in s	7150
+RESULT	L7 can the two be told apart from stream_live_at? (false = no)	false
+RESULT	P1 from: only the named sender (expect 1)	1
+RESULT	P2 paused, agent re-listens, restart: nothing added (expect 1)	1
+RESULT	R1 control, 40 h gap, 3 records, PDS healthy: held (expect 4)	4
+RESULT	R1b restart again: no duplicate (expect 4)	4
+RESULT	R2 1 h gap: PDS reads (expect 0, Jetstream replays it)	0
+RESULT	R2b replayed records saved (expect 4)	4
+RESULT	R3 250 in gap, page 2 fails once, then healthy restart: held after fail / after restart (expect 251)	{101, 251}
+RESULT	R3b unrecovered counter	nil
+RESULT	R4 PDS down on start, one live record, healthy restart: held (expect 5)	5
+RESULT	R4b unrecovered counter	nil
+RESULT	R5 a live record is saved while the PDS read runs: held (expect 5)	5
+RESULT	R5c control, same slow PDS read, no live record meanwhile: held (expect 4)	4
+RESULT	R6 650 in gap, 5-page bound: held / unrecovered counter	{501, 1}
+RESULT	R6b after a restart: held / unrecovered counter (the 150 past the bound stay lost)	{501, nil}
+DONE
+--- review defects, run 2
+RESULT	build has the notifications poll	true
+RESULT	H1 live record saved while the DID is resolved: held (expect 4)	4
+RESULT	H2 logout and login while another account holds the stream: gap record held (expect 1)	1
+RESULT	H3 old record behind 1,000 receipts, coverage mark present: delivered again (expect 0)	0
+RESULT	N1 same, state from an older build, no coverage mark yet: delivered again (expect 0)	1
+RESULT	H4a real Repos.records on a non-string uri (expect {:error, _})	{:error, :unreadable_answer}
+RESULT	H4b one author's reader raises: other author's record held / unrecovered (expect 1 / 1)	{1, 1}
+RESULT	H5 a poll task exits (store busy past 5 s): polls in the next second (expect > 0)	10
+RESULT	H7 notification during a 10 min poll outage: held (expect 1)	1
+RESULT	H8 records client killed: a new live client (expect true)	true
+RESULT	H9 indexed_at taken from the author's record (expect false)	false
+RESULT	N2 page 2 fails, one live record, healthy restart: held (expect 252)	252
+RESULT	N3 listRecords answers an error: unrecovered counter (expect 1)	1
+RESULT	N3b healthy restart, no live record in between: held (expect 4)	4
+RESULT	N4 did:web host localhost: refused by the name check / address from :inet.getaddr	{true, nil}
+RESULT	N4 did:web host 127.0.0.1: refused by the name check / address from :inet.getaddr	{true, "127.0.0.1"}
+RESULT	N4 did:web host foo.localhost: refused by the name check / address from :inet.getaddr	{true, nil}
+RESULT	N4 did:web host 127.1: refused by the name check / address from :inet.getaddr	{true, "127.0.0.1"}
+RESULT	N4 did:web host 0x7f.1: refused by the name check / address from :inet.getaddr	{false, nil}
+RESULT	N4 did:web host 0x7f.0.0.1: refused by the name check / address from :inet.getaddr	{false, nil}
+RESULT	N4 did:web host example.test: refused by the name check / address from :inet.getaddr	{false, nil}
+DONE
+--- validation supplement, run 2
+RESULT	V1 live mark after a failed backfill / held after healthy restart / mark after success (expect 0 / 1 / 3700)	{0, 1, 3700}
+RESULT	V1b another restart: held, duplicates (expect 1, 0)	{1, 0}
+RESULT	V2 failed connect, recheck in the same process: held / mark (expect 1 / 3600)	{1, 3600}
+RESULT	V3 120 mentions, notifications page 2 fails, healthy restart: held before / mark before / held, duplicates after (expect 50 / 0 / {120, 0})	{50, 0, {120, 0}}
+RESULT	V4 300 mentions, 5-page bound: held / unrecovered / mark / held after restart (expect the cut to be counted)	{250, nil, 3600, 250}
+RESULT	V5 two accounts; B absent from one run while A succeeds: mark / B's gap held (expect 0 / 1)	{3600, 0}
+RESULT	V6 B's backfill fails twice, A healthy: mark held / A held, dup / B held after recovery / mark (expect 0 / {1,0} / 1 / 3800)	{0, {1, 0}, 1, 3800}
+RESULT	V7 PDS not found, live record, two healthy restarts: unrecovered / held, dup / held, dup (expect 1 / {5,0} / {5,0})	{1, {5, 0}, {5, 0}}
+RESULT	V8 page 2 fails on two starts, a live record after each, then healthy: held, dup (expect {253, 0})	{253, 0}
+RESULT	V9 restart during a records backfill: held, dup (expect {4, 0})	{4, 0}
+RESULT	V10 records backfill fails, PDS returns, no restart: held after the recheck (4 = retried in-process)	1
+DONE
+--- b653ead checks, run 2
+RESULT	W1 failed first backfill: own mark / held after healthy restart / own mark after (expect nil / 1 / 3700)	{nil, 1, nil}
+RESULT	W2 600 mentions, three starts: held,dup / unrecovered / mark / held,dup / held,dup, mark (expect {250,0} / >=1 / held / {500,0} / {600,0}, 3800)	{{250, 0}, nil, nil, {250, 0}, {{250, 0}, nil}}
+RESULT	W3 400 mentions, recheck every 0.6 s, no restart: held, dup / own mark (expect {400, 0} / an integer)	{{250, 0}, nil}
+RESULT	W4 B absent from one run: marks (A, B) after it / B held / marks after B returns (expect {3600, 0 or nil} / 1 / {3700, 3700})	{{nil, nil}, 0, {nil, nil}}
+RESULT	W5 PDS down for about 4 rechecks, then back, no restart: unrecovered while down / held, dup after (observed / expect {4, 0})	{1, {1, 0}}
+RESULT	W6 B tracked while connected: B held / B mark in that run / B held after a restart (expect 0 or 1 / not past an uncovered gap / 0 or 1, no loss across both)	{0, nil, 0}
+RESULT	W7 failed connect, recheck in the same process: own mark before / held / own mark after (expect nil / 1 / 3600)	{nil, 1, nil}
+RESULT	W8 two healthy accounts, two starts: A held,dup / B held,dup / marks (expect {1,0} / {1,0} / {3700, 3700})	{{1, 0}, {1, 0}, {nil, nil}}
+DONE
+--- real at_mcp-stdio, fake services, run 2
+RESULT	E1a stream connected before any client request	True
+RESULT	E1b process alive 4 s after a save, no request sent yet	True
+RESULT	E1c update readable afterwards (expect 1)	1
+RESULT	E2a initialized, not subscribed: told / alive (expect 0 / True)	(0, True)
+RESULT	E2b subscribed: told at least once (expect True)	True
+RESULT	E2c after unsubscribe: new announcements (expect 0)	0
+RESULT	E2d all three updates still readable (expect 3)	3
+RESULT	B1 120 live updates: stored / rows / unread after ack (expect 120 / 120 / 0)	(120, 120, 0)
+RESULT	B2 stop between commit and ack: rows, unread / re-read adds / rows, unread (expect (10,10) / 0 / (10,0))	((10, 10), 0, (10, 0))
+RESULT	B3 kill -9 of at_mcp between commit and ack: rows / unread after restart / re-read adds / final rows, unread (expect 10 / 10 / 0 / (10,0))	(10, 10, 0, (10, 0))
+RESULT	B4 post reads failing, then back: rows, unread during / rows, unread after (expect (0,3) / (3,0))	((0, 3), (3, 0))
+RESULT	B5 duplicate live event + one deleted post: unread before / rows / unread (expect 2 / 2 / 0)	(2, 2, 0)
+RESULT	B6 SIGKILL of the consumer between commit and ack: exit / rows / unread after / re-read adds / final rows, unread (expect -9 / 10 / 10 / 0 / (10,0))	(-9, 10, 10, 0, (10, 0))
+RESULT	H6 ack of A only, unacknowledged B indexed earlier: seenAt is before B (expect True)	True
+RESULT	H6b seenAt moved / exactly 1 ms before B	(True, True)
+DONE
+--- store checks
+RESULT	1a unread after kill (expect 3)	3
+RESULT	1b ack with no read after restart keeps unread (expect 3)	3
+RESULT	2a ack past shown stops at shown (expect [3])	[3]
+RESULT	3 read, crash, no ack: redelivered (expect 1)	1
+RESULT	4a same uri again adds (expect 0)	0
+RESULT	4b same uri after ack adds (expect 0)	0
+RESULT	5 one post, two listeners: updates for the same uri	{2, 1}
+RESULT	6a 8 unread, bound 5: kept / dropped count	{5, %{"references" => 3}}
+RESULT	6b oldest kept uri	"at://did:plc:sender/town.delve.feed.post/4"
+RESULT	6c dropped unread re-offered by backfill: re-added (0 = lost)	0
+RESULT	6d dropped counter after ack	%{}
+RESULT	7a unread past 7 days, before next commit	1
+RESULT	7b after next commit: uris kept / dropped	{1, %{"references" => 1}}
+RESULT	8 acked record re-offered after 1000 newer: re-added (1 = duplicate)	1
+RESULT	9a ack 3 with item 1 still undecided: unread left (0 = item 1 no longer tracked)	0
+RESULT	9b keep item 1: items 2,3 also stay unread	[1, 2, 3]
+RESULT	10 one commit with 200 held (ms)	2
+DONE
+--- 25 hard kills during writes
+RESULT	kill-9: journaled=2888 held=2888 missing=0 duplicates=0
+
+=== candidate  build 0.3.3-hum.10-b653ead-overlay
+--- backfill scenarios, run 1
+RESULT	A control: mention in a 1 h gap recovered (expect 1)	1
+RESULT	B backfill failed once, next start healthy: recovered (1 = ok, 0 = lost)	1
+RESULT	C restart during backfill: recovered (1 = ok, 0 = lost)	1
+RESULT	D 120 replies in a gap: recovered (expect 120 if fully paged)	120
+RESULT	D notification calls / any call with a cursor	{3, true}
+DONE
+--- features, run 1
+RESULT	build has records listeners	true
+RESULT	S1 same sender, 10 replies: kept / wakes (expect 10 / 6)	{10, 6}
+RESULT	S1 capped counter	4
+RESULT	S1 an event still goes out when all of a batch is capped (subscribers are told)	{1, 0}
+RESULT	S2 another sender still wakes (expect 1)	1
+RESULT	S3 same sender after one hour wakes again (expect 1)	1
+RESULT	S4 cap already spent, process restarted: wakes in the same hour (0 = persisted, 6 = reset)	6
+RESULT	L1 last_saved before anything is caught (expect nil)	nil
+RESULT	L2 last_saved after a match	"2027-01-15T08:00:05Z"
+RESULT	L3 duplicate leaves last_saved unchanged	true
+RESULT	L4 last_saved survives a restart	true
+RESULT	L5 stream_live_at, connected and quiet for 2 h: age in s	7150
+RESULT	L6 stream_live_at, stream dead at the same time: age in s	7150
+RESULT	L7 can the two be told apart from stream_live_at? (false = no)	false
+RESULT	P1 from: only the named sender (expect 1)	1
+RESULT	P2 paused, agent re-listens, restart: nothing added (expect 1)	1
+RESULT	R1 control, 40 h gap, 3 records, PDS healthy: held (expect 4)	4
+RESULT	R1b restart again: no duplicate (expect 4)	4
+RESULT	R2 1 h gap: PDS reads (expect 0, Jetstream replays it)	0
+RESULT	R2b replayed records saved (expect 4)	4
+RESULT	R3 250 in gap, page 2 fails once, then healthy restart: held after fail / after restart (expect 251)	{101, 251}
+RESULT	R3b unrecovered counter	nil
+RESULT	R4 PDS down on start, one live record, healthy restart: held (expect 5)	5
+RESULT	R4b unrecovered counter	nil
+RESULT	R5 a live record is saved while the PDS read runs: held (expect 5)	5
+RESULT	R5c control, same slow PDS read, no live record meanwhile: held (expect 4)	4
+RESULT	R6 650 in gap, 5-page bound: held / unrecovered counter	{501, 1}
+RESULT	R6b after a restart: held / unrecovered counter (the 150 past the bound stay lost)	{501, nil}
+DONE
+--- review defects, run 1
+RESULT	build has the notifications poll	true
+RESULT	H1 live record saved while the DID is resolved: held (expect 4)	4
+RESULT	H2 logout and login while another account holds the stream: gap record held (expect 1)	1
+RESULT	H3 old record behind 1,000 receipts, coverage mark present: delivered again (expect 0)	0
+RESULT	N1 same, state from an older build, no coverage mark yet: delivered again (expect 0)	1
+RESULT	H4a real Repos.records on a non-string uri (expect {:error, _})	{:error, :unreadable_answer}
+RESULT	H4b one author's reader raises: other author's record held / unrecovered (expect 1 / 1)	{1, 1}
+RESULT	H5 a poll task exits (store busy past 5 s): polls in the next second (expect > 0)	10
+RESULT	H7 notification during a 10 min poll outage: held (expect 1)	1
+RESULT	H8 records client killed: a new live client (expect true)	true
+RESULT	H9 indexed_at taken from the author's record (expect false)	false
+RESULT	N2 page 2 fails, one live record, healthy restart: held (expect 252)	252
+RESULT	N3 listRecords answers an error: unrecovered counter (expect 1)	1
+RESULT	N3b healthy restart, no live record in between: held (expect 4)	4
+RESULT	N4 did:web host localhost: refused by the name check / address from :inet.getaddr	{true, nil}
+RESULT	N4 did:web host 127.0.0.1: refused by the name check / address from :inet.getaddr	{true, "127.0.0.1"}
+RESULT	N4 did:web host foo.localhost: refused by the name check / address from :inet.getaddr	{true, nil}
+RESULT	N4 did:web host 127.1: refused by the name check / address from :inet.getaddr	{true, "127.0.0.1"}
+RESULT	N4 did:web host 0x7f.1: refused by the name check / address from :inet.getaddr	{false, nil}
+RESULT	N4 did:web host 0x7f.0.0.1: refused by the name check / address from :inet.getaddr	{false, nil}
+RESULT	N4 did:web host example.test: refused by the name check / address from :inet.getaddr	{false, nil}
+DONE
+--- validation supplement, run 1
+RESULT	V1 live mark after a failed backfill / held after healthy restart / mark after success (expect 0 / 1 / 3700)	{3600, 1, 3700}
+RESULT	V1b another restart: held, duplicates (expect 1, 0)	{1, 0}
+RESULT	V2 failed connect, recheck in the same process: held / mark (expect 1 / 3600)	{1, 3600}
+RESULT	V3 120 mentions, notifications page 2 fails, healthy restart: held before / mark before / held, duplicates after (expect 50 / 0 / {120, 0})	{50, 3600, {120, 0}}
+RESULT	V4 300 mentions, 5-page bound: held / unrecovered / mark / held after restart (expect the cut to be counted)	{250, 1, 3600, 300}
+RESULT	V5 two accounts; B absent from one run while A succeeds: mark / B's gap held (expect 0 / 1)	{3600, 1}
+RESULT	V6 B's backfill fails twice, A healthy: mark held / A held, dup / B held after recovery / mark (expect 0 / {1,0} / 1 / 3800)	{3600, {1, 0}, 1, 3800}
+RESULT	V7 PDS not found, live record, two healthy restarts: unrecovered / held, dup / held, dup (expect 1 / {5,0} / {5,0})	{1, {5, 0}, {5, 0}}
+RESULT	V8 page 2 fails on two starts, a live record after each, then healthy: held, dup (expect {253, 0})	{253, 0}
+RESULT	V9 restart during a records backfill: held, dup (expect {4, 0})	{4, 0}
+RESULT	V10 records backfill fails, PDS returns, no restart: held after the recheck (4 = retried in-process)	4
+DONE
+--- b653ead checks, run 1
+RESULT	W1 failed first backfill: own mark / held after healthy restart / own mark after (expect nil / 1 / 3700)	{0, 1, 3700}
+RESULT	W2 600 mentions, three starts: held,dup / unrecovered / mark / held,dup / held,dup, mark (expect {250,0} / >=1 / held / {500,0} / {600,0}, 3800)	{{250, 0}, 1, 0, {500, 0}, {{600, 0}, 3800}}
+RESULT	W3 400 mentions, recheck every 0.6 s, no restart: held, dup / own mark (expect {400, 0} / an integer)	{{400, 0}, 3600}
+RESULT	W4 B absent from one run: marks (A, B) after it / B held / marks after B returns (expect {3600, 0 or nil} / 1 / {3700, 3700})	{{3600, 0}, 1, {3700, 3700}}
+RESULT	W5 PDS down for about 4 rechecks, then back, no restart: unrecovered while down / held, dup after (observed / expect {4, 0})	{6, {4, 0}}
+RESULT	W6 B tracked while connected: B held / B mark in that run / B held after a restart (expect 0 or 1 / not past an uncovered gap / 0 or 1, no loss across both)	{0, 3600, 0}
+RESULT	W7 failed connect, recheck in the same process: own mark before / held / own mark after (expect nil / 1 / 3600)	{0, 1, 3600}
+RESULT	W8 two healthy accounts, two starts: A held,dup / B held,dup / marks (expect {1,0} / {1,0} / {3700, 3700})	{{1, 0}, {1, 0}, {3700, 3700}}
+DONE
+--- real at_mcp-stdio, fake services, run 1
+RESULT	E1a stream connected before any client request	True
+RESULT	E1b process alive 4 s after a save, no request sent yet	True
+RESULT	E1c update readable afterwards (expect 1)	1
+RESULT	E2a initialized, not subscribed: told / alive (expect 0 / True)	(0, True)
+RESULT	E2b subscribed: told at least once (expect True)	True
+RESULT	E2c after unsubscribe: new announcements (expect 0)	0
+RESULT	E2d all three updates still readable (expect 3)	3
+RESULT	B1 120 live updates: stored / rows / unread after ack (expect 120 / 120 / 0)	(120, 120, 0)
+RESULT	B2 stop between commit and ack: rows, unread / re-read adds / rows, unread (expect (10,10) / 0 / (10,0))	((10, 10), 0, (10, 0))
+RESULT	B3 kill -9 of at_mcp between commit and ack: rows / unread after restart / re-read adds / final rows, unread (expect 10 / 10 / 0 / (10,0))	(10, 10, 0, (10, 0))
+RESULT	B4 post reads failing, then back: rows, unread during / rows, unread after (expect (0,3) / (3,0))	((0, 3), (3, 0))
+RESULT	B5 duplicate live event + one deleted post: unread before / rows / unread (expect 2 / 2 / 0)	(2, 2, 0)
+RESULT	B6 SIGKILL of the consumer between commit and ack: exit / rows / unread after / re-read adds / final rows, unread (expect -9 / 10 / 10 / 0 / (10,0))	(-9, 10, 10, 0, (10, 0))
+RESULT	H6 ack of A only, unacknowledged B indexed earlier: seenAt is before B (expect True)	True
+RESULT	H6b seenAt moved / exactly 1 ms before B	(True, True)
+DONE
+--- backfill scenarios, run 2
+RESULT	A control: mention in a 1 h gap recovered (expect 1)	1
+RESULT	B backfill failed once, next start healthy: recovered (1 = ok, 0 = lost)	1
+RESULT	C restart during backfill: recovered (1 = ok, 0 = lost)	1
+RESULT	D 120 replies in a gap: recovered (expect 120 if fully paged)	120
+RESULT	D notification calls / any call with a cursor	{3, true}
+DONE
+--- features, run 2
+RESULT	build has records listeners	true
+RESULT	S1 same sender, 10 replies: kept / wakes (expect 10 / 6)	{10, 6}
+RESULT	S1 capped counter	4
+RESULT	S1 an event still goes out when all of a batch is capped (subscribers are told)	{1, 0}
+RESULT	S2 another sender still wakes (expect 1)	1
+RESULT	S3 same sender after one hour wakes again (expect 1)	1
+RESULT	S4 cap already spent, process restarted: wakes in the same hour (0 = persisted, 6 = reset)	6
+RESULT	L1 last_saved before anything is caught (expect nil)	nil
+RESULT	L2 last_saved after a match	"2027-01-15T08:00:05Z"
+RESULT	L3 duplicate leaves last_saved unchanged	true
+RESULT	L4 last_saved survives a restart	true
+RESULT	L5 stream_live_at, connected and quiet for 2 h: age in s	7150
+RESULT	L6 stream_live_at, stream dead at the same time: age in s	7150
+RESULT	L7 can the two be told apart from stream_live_at? (false = no)	false
+RESULT	P1 from: only the named sender (expect 1)	1
+RESULT	P2 paused, agent re-listens, restart: nothing added (expect 1)	1
+RESULT	R1 control, 40 h gap, 3 records, PDS healthy: held (expect 4)	4
+RESULT	R1b restart again: no duplicate (expect 4)	4
+RESULT	R2 1 h gap: PDS reads (expect 0, Jetstream replays it)	0
+RESULT	R2b replayed records saved (expect 4)	4
+RESULT	R3 250 in gap, page 2 fails once, then healthy restart: held after fail / after restart (expect 251)	{101, 251}
+RESULT	R3b unrecovered counter	nil
+RESULT	R4 PDS down on start, one live record, healthy restart: held (expect 5)	5
+RESULT	R4b unrecovered counter	nil
+RESULT	R5 a live record is saved while the PDS read runs: held (expect 5)	5
+RESULT	R5c control, same slow PDS read, no live record meanwhile: held (expect 4)	4
+RESULT	R6 650 in gap, 5-page bound: held / unrecovered counter	{501, 1}
+RESULT	R6b after a restart: held / unrecovered counter (the 150 past the bound stay lost)	{501, nil}
+DONE
+--- review defects, run 2
+RESULT	build has the notifications poll	true
+RESULT	H1 live record saved while the DID is resolved: held (expect 4)	4
+RESULT	H2 logout and login while another account holds the stream: gap record held (expect 1)	1
+RESULT	H3 old record behind 1,000 receipts, coverage mark present: delivered again (expect 0)	0
+RESULT	N1 same, state from an older build, no coverage mark yet: delivered again (expect 0)	1
+RESULT	H4a real Repos.records on a non-string uri (expect {:error, _})	{:error, :unreadable_answer}
+RESULT	H4b one author's reader raises: other author's record held / unrecovered (expect 1 / 1)	{1, 1}
+RESULT	H5 a poll task exits (store busy past 5 s): polls in the next second (expect > 0)	10
+RESULT	H7 notification during a 10 min poll outage: held (expect 1)	1
+RESULT	H8 records client killed: a new live client (expect true)	true
+RESULT	H9 indexed_at taken from the author's record (expect false)	false
+RESULT	N2 page 2 fails, one live record, healthy restart: held (expect 252)	252
+RESULT	N3 listRecords answers an error: unrecovered counter (expect 1)	1
+RESULT	N3b healthy restart, no live record in between: held (expect 4)	4
+RESULT	N4 did:web host localhost: refused by the name check / address from :inet.getaddr	{true, nil}
+RESULT	N4 did:web host 127.0.0.1: refused by the name check / address from :inet.getaddr	{true, "127.0.0.1"}
+RESULT	N4 did:web host foo.localhost: refused by the name check / address from :inet.getaddr	{true, nil}
+RESULT	N4 did:web host 127.1: refused by the name check / address from :inet.getaddr	{true, "127.0.0.1"}
+RESULT	N4 did:web host 0x7f.1: refused by the name check / address from :inet.getaddr	{false, nil}
+RESULT	N4 did:web host 0x7f.0.0.1: refused by the name check / address from :inet.getaddr	{false, nil}
+RESULT	N4 did:web host example.test: refused by the name check / address from :inet.getaddr	{false, nil}
+DONE
+--- validation supplement, run 2
+RESULT	V1 live mark after a failed backfill / held after healthy restart / mark after success (expect 0 / 1 / 3700)	{3600, 1, 3700}
+RESULT	V1b another restart: held, duplicates (expect 1, 0)	{1, 0}
+RESULT	V2 failed connect, recheck in the same process: held / mark (expect 1 / 3600)	{1, 3600}
+RESULT	V3 120 mentions, notifications page 2 fails, healthy restart: held before / mark before / held, duplicates after (expect 50 / 0 / {120, 0})	{50, 3600, {120, 0}}
+RESULT	V4 300 mentions, 5-page bound: held / unrecovered / mark / held after restart (expect the cut to be counted)	{250, 1, 3600, 300}
+RESULT	V5 two accounts; B absent from one run while A succeeds: mark / B's gap held (expect 0 / 1)	{3600, 1}
+RESULT	V6 B's backfill fails twice, A healthy: mark held / A held, dup / B held after recovery / mark (expect 0 / {1,0} / 1 / 3800)	{3600, {1, 0}, 1, 3800}
+RESULT	V7 PDS not found, live record, two healthy restarts: unrecovered / held, dup / held, dup (expect 1 / {5,0} / {5,0})	{1, {5, 0}, {5, 0}}
+RESULT	V8 page 2 fails on two starts, a live record after each, then healthy: held, dup (expect {253, 0})	{253, 0}
+RESULT	V9 restart during a records backfill: held, dup (expect {4, 0})	{4, 0}
+RESULT	V10 records backfill fails, PDS returns, no restart: held after the recheck (4 = retried in-process)	4
+DONE
+--- b653ead checks, run 2
+RESULT	W1 failed first backfill: own mark / held after healthy restart / own mark after (expect nil / 1 / 3700)	{0, 1, 3700}
+RESULT	W2 600 mentions, three starts: held,dup / unrecovered / mark / held,dup / held,dup, mark (expect {250,0} / >=1 / held / {500,0} / {600,0}, 3800)	{{250, 0}, 1, 0, {500, 0}, {{600, 0}, 3800}}
+RESULT	W3 400 mentions, recheck every 0.6 s, no restart: held, dup / own mark (expect {400, 0} / an integer)	{{400, 0}, 3600}
+RESULT	W4 B absent from one run: marks (A, B) after it / B held / marks after B returns (expect {3600, 0 or nil} / 1 / {3700, 3700})	{{3600, 0}, 1, {3700, 3700}}
+RESULT	W5 PDS down for about 4 rechecks, then back, no restart: unrecovered while down / held, dup after (observed / expect {4, 0})	{6, {4, 0}}
+RESULT	W6 B tracked while connected: B held / B mark in that run / B held after a restart (expect 0 or 1 / not past an uncovered gap / 0 or 1, no loss across both)	{0, 3600, 0}
+RESULT	W7 failed connect, recheck in the same process: own mark before / held / own mark after (expect nil / 1 / 3600)	{0, 1, 3600}
+RESULT	W8 two healthy accounts, two starts: A held,dup / B held,dup / marks (expect {1,0} / {1,0} / {3700, 3700})	{{1, 0}, {1, 0}, {3700, 3700}}
+DONE
+--- real at_mcp-stdio, fake services, run 2
+RESULT	E1a stream connected before any client request	True
+RESULT	E1b process alive 4 s after a save, no request sent yet	True
+RESULT	E1c update readable afterwards (expect 1)	1
+RESULT	E2a initialized, not subscribed: told / alive (expect 0 / True)	(0, True)
+RESULT	E2b subscribed: told at least once (expect True)	True
+RESULT	E2c after unsubscribe: new announcements (expect 0)	0
+RESULT	E2d all three updates still readable (expect 3)	3
+RESULT	B1 120 live updates: stored / rows / unread after ack (expect 120 / 120 / 0)	(120, 120, 0)
+RESULT	B2 stop between commit and ack: rows, unread / re-read adds / rows, unread (expect (10,10) / 0 / (10,0))	((10, 10), 0, (10, 0))
+RESULT	B3 kill -9 of at_mcp between commit and ack: rows / unread after restart / re-read adds / final rows, unread (expect 10 / 10 / 0 / (10,0))	(10, 10, 0, (10, 0))
+RESULT	B4 post reads failing, then back: rows, unread during / rows, unread after (expect (0,3) / (3,0))	((0, 3), (3, 0))
+RESULT	B5 duplicate live event + one deleted post: unread before / rows / unread (expect 2 / 2 / 0)	(2, 2, 0)
+RESULT	B6 SIGKILL of the consumer between commit and ack: exit / rows / unread after / re-read adds / final rows, unread (expect -9 / 10 / 10 / 0 / (10,0))	(-9, 10, 10, 0, (10, 0))
+RESULT	H6 ack of A only, unacknowledged B indexed earlier: seenAt is before B (expect True)	True
+RESULT	H6b seenAt moved / exactly 1 ms before B	(True, True)
+DONE
+--- store checks
+RESULT	1a unread after kill (expect 3)	3
+RESULT	1b ack with no read after restart keeps unread (expect 3)	3
+RESULT	2a ack past shown stops at shown (expect [3])	[3]
+RESULT	3 read, crash, no ack: redelivered (expect 1)	1
+RESULT	4a same uri again adds (expect 0)	0
+RESULT	4b same uri after ack adds (expect 0)	0
+RESULT	5 one post, two listeners: updates for the same uri	{2, 1}
+RESULT	6a 8 unread, bound 5: kept / dropped count	{5, %{"references" => 3}}
+RESULT	6b oldest kept uri	"at://did:plc:sender/town.delve.feed.post/4"
+RESULT	6c dropped unread re-offered by backfill: re-added (0 = lost)	0
+RESULT	6d dropped counter after ack	%{}
+RESULT	7a unread past 7 days, before next commit	1
+RESULT	7b after next commit: uris kept / dropped	{1, %{"references" => 1}}
+RESULT	8 acked record re-offered after 1000 newer: re-added (1 = duplicate)	1
+RESULT	9a ack 3 with item 1 still undecided: unread left (0 = item 1 no longer tracked)	0
+RESULT	9b keep item 1: items 2,3 also stay unread	[1, 2, 3]
+RESULT	10 one commit with 200 held (ms)	1
+DONE
+--- 25 hard kills during writes
+RESULT	kill-9: journaled=2885 held=2886 missing=0 duplicates=0
+
+=== upgrade: state written by one build, then started by another (same work directory)
+--- upgrade previous -> previous, run 1
+RESULT	U1 state written: unread / global mark / own mark	{0, 2600, nil}
+DONE
+RESULT	U2 after upgrade start: unread / of which already acknowledged before / new gap mention held (expect 1 / 0 / true)	{1, 0, true}
+DONE
+--- upgrade previous -> previous, run 2
+RESULT	U1 state written: unread / global mark / own mark	{0, 2600, nil}
+DONE
+RESULT	U2 after upgrade start: unread / of which already acknowledged before / new gap mention held (expect 1 / 0 / true)	{1, 0, true}
+DONE
+--- upgrade official -> official, run 1
+RESULT	U1 state written: unread / global mark / own mark	{0, 2600, nil}
+DONE
+RESULT	U2 after upgrade start: unread / of which already acknowledged before / new gap mention held (expect 1 / 0 / true)	{1, 0, true}
+DONE
+--- upgrade official -> official, run 2
+RESULT	U1 state written: unread / global mark / own mark	{0, 2600, nil}
+DONE
+RESULT	U2 after upgrade start: unread / of which already acknowledged before / new gap mention held (expect 1 / 0 / true)	{1, 0, true}
+DONE
+--- upgrade official -> candidate, run 1
+RESULT	U1 state written: unread / global mark / own mark	{0, 2600, nil}
+DONE
+RESULT	U2 after upgrade start: unread / of which already acknowledged before / new gap mention held (expect 1 / 0 / true)	{200, 199, true}
+DONE
+--- upgrade official -> candidate, run 2
+RESULT	U1 state written: unread / global mark / own mark	{0, 2600, nil}
+DONE
+RESULT	U2 after upgrade start: unread / of which already acknowledged before / new gap mention held (expect 1 / 0 / true)	{200, 199, true}
+DONE
+--- upgrade previous -> candidate, run 1
+RESULT	U1 state written: unread / global mark / own mark	{0, 2600, nil}
+DONE
+RESULT	U2 after upgrade start: unread / of which already acknowledged before / new gap mention held (expect 1 / 0 / true)	{200, 199, true}
+DONE
+--- upgrade previous -> candidate, run 2
+RESULT	U1 state written: unread / global mark / own mark	{0, 2600, nil}
+DONE
+RESULT	U2 after upgrade start: unread / of which already acknowledged before / new gap mention held (expect 1 / 0 / true)	{200, 199, true}
+DONE
+--- upgrade candidate -> candidate, run 1
+RESULT	U1 state written: unread / global mark / own mark	{0, 2600, nil}
+DONE
+RESULT	U2 after upgrade start: unread / of which already acknowledged before / new gap mention held (expect 1 / 0 / true)	{200, 199, true}
+DONE
+--- upgrade candidate -> candidate, run 2
+RESULT	U1 state written: unread / global mark / own mark	{0, 2600, nil}
+DONE
+RESULT	U2 after upgrade start: unread / of which already acknowledged before / new gap mention held (expect 1 / 0 / true)	{200, 199, true}
+DONE
+kit files changed: 0
+
+FINISHED
