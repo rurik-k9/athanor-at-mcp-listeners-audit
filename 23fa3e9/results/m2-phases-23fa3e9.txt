@@ -1,0 +1,1501 @@
+--- sat previous K=0 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+RESULT	S2 after 0 live saves: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {1000, 991, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat previous K=999 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+RESULT	S2 after 999 live saves: receipts / at the stamp / settling / floor	{1000, 1, nil, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {1000, 0, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat previous K=1000 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+RESULT	S2 after 1000 live saves: receipts / at the stamp / settling / floor	{1000, 0, nil, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {1000, 0, nil, 3600}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat previous K=1001 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+RESULT	S2 after 1001 live saves: receipts / at the stamp / settling / floor	{1000, 0, nil, 3600}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {1000, 0, nil, 3600}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat previous K=1045 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+RESULT	S2 after 1045 live saves: receipts / at the stamp / settling / floor	{1000, 0, nil, 3604}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {1000, 0, nil, 3604}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat previous K=1100 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+RESULT	S2 after 1100 live saves: receipts / at the stamp / settling / floor	{1000, 0, nil, 3610}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {1000, 0, nil, 3610}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat previous K=2100 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+RESULT	S2 after 2100 live saves: receipts / at the stamp / settling / floor	{1000, 0, nil, 3710}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {1000, 0, nil, 3710}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- restart previous run 1
+RESULT	T1 earlier state written	:ok
+DONE
+RESULT	T2 start 1, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+RESULT	T2 after 300 more live saves	{1000, 700, nil, 2650}
+DONE
+RESULT	T3 start 2, backfill failing: receipts / at the stamp / settling / floor	{1000, 700, nil, 2650}
+RESULT	T3 after 300 more live saves	{1000, 400, nil, 2650}
+DONE
+RESULT	T4 start 3, backfill failing: receipts / at the stamp / settling / floor	{1000, 400, nil, 2650}
+RESULT	T4 after 300 more live saves	{1000, 100, nil, 2650}
+DONE
+RESULT	T5 backfill succeeds: late mentions held / old delivered again / receipts, stamp, settling, floor	{[2700], 0, {1000, 99, nil, 2650}}
+DONE
+RESULT	T6 next start, then 1,000 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3700}
+RESULT	T6 restart: held, duplicates / old or swept delivered twice	{{200, 0}, 0}
+DONE
+--- cutrel previous run 1
+RESULT	C1 earlier state written	:ok
+DONE
+RESULT	C2 start 1 at 3700, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1000, 991, nil, 2650}, 3700}
+DONE
+RESULT	C3 start 2 at 3800, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1000, 991, nil, 2650}, 3800}
+DONE
+RESULT	C4 start 3 at 3900, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1000, 991, nil, 2650}, 3900}
+DONE
+RESULT	C5 start 4 at 4000, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1000, 991, nil, 2650}, 4000}
+DONE
+--- records previous K=0 run 1
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, nil, nil}}
+RESULT	L2 after 0 live records saved on f: f	{1000, 1000, nil, nil}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1000, 980, nil, 2650}, 20, nil}
+DONE
+--- records previous K=500 run 1
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, nil, nil}}
+RESULT	L2 after 500 live records saved on f: f	{1000, 500, nil, 2650}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1000, 500, nil, 2650}, 0, 1}
+DONE
+--- pause previous run 1
+RESULT	P1 earlier state: n paused, 1,000 receipts	{1000, 0, nil, :absent}
+DONE
+RESULT	P2 first start, n paused, backfill ok: references settling / n (receipts, stamp, settling, floor)	{nil, {1000, 1000, nil, nil}}
+RESULT	P2 n resumed (same process): n	{1000, 1000, nil, nil}
+DONE
+RESULT	P3 next start, n not paused, backfill ok: n	{1000, 1000, nil, nil}
+DONE
+--- unlisten previous run 1
+RESULT	U1 earlier state	{1000, 0, nil, :absent}
+DONE
+RESULT	U2 first start, backfill failing: n	{1000, 1000, nil, nil}
+RESULT	U2 n removed: result / settling keys left in the file	{:ok, []}
+RESULT	U2 n added again, 1,100 saves: n (receipts, stamp, settling, floor)	{1000, 0, nil, 3610}
+DONE
+--- bounds previous run 1
+RESULT	B1 earlier state: n count 500	{2000, 0, nil, :absent}
+DONE
+RESULT	B2 first start, backfill failing: n	{2000, 2000, nil, nil}
+RESULT	B2 count lowered to 250, one save: n	{1000, 999, nil, 2650}
+RESULT	B2 50 more saves: n	{1000, 949, nil, 2650}
+DONE
+--- sat previous K=0 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+RESULT	S2 after 0 live saves: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {1000, 991, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat previous K=999 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+RESULT	S2 after 999 live saves: receipts / at the stamp / settling / floor	{1000, 1, nil, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {1000, 0, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat previous K=1000 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+RESULT	S2 after 1000 live saves: receipts / at the stamp / settling / floor	{1000, 0, nil, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {1000, 0, nil, 3600}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat previous K=1001 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+RESULT	S2 after 1001 live saves: receipts / at the stamp / settling / floor	{1000, 0, nil, 3600}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {1000, 0, nil, 3600}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat previous K=1045 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+RESULT	S2 after 1045 live saves: receipts / at the stamp / settling / floor	{1000, 0, nil, 3604}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {1000, 0, nil, 3604}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat previous K=1100 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+RESULT	S2 after 1100 live saves: receipts / at the stamp / settling / floor	{1000, 0, nil, 3610}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {1000, 0, nil, 3610}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat previous K=2100 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+RESULT	S2 after 2100 live saves: receipts / at the stamp / settling / floor	{1000, 0, nil, 3710}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {1000, 0, nil, 3710}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- restart previous run 2
+RESULT	T1 earlier state written	:ok
+DONE
+RESULT	T2 start 1, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, nil, nil}
+RESULT	T2 after 300 more live saves	{1000, 700, nil, 2650}
+DONE
+RESULT	T3 start 2, backfill failing: receipts / at the stamp / settling / floor	{1000, 700, nil, 2650}
+RESULT	T3 after 300 more live saves	{1000, 400, nil, 2650}
+DONE
+RESULT	T4 start 3, backfill failing: receipts / at the stamp / settling / floor	{1000, 400, nil, 2650}
+RESULT	T4 after 300 more live saves	{1000, 100, nil, 2650}
+DONE
+RESULT	T5 backfill succeeds: late mentions held / old delivered again / receipts, stamp, settling, floor	{[2700], 0, {1000, 99, nil, 2650}}
+DONE
+RESULT	T6 next start, then 1,000 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3700}
+RESULT	T6 restart: held, duplicates / old or swept delivered twice	{{200, 0}, 0}
+DONE
+--- cutrel previous run 2
+RESULT	C1 earlier state written	:ok
+DONE
+RESULT	C2 start 1 at 3700, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1000, 991, nil, 2650}, 3700}
+DONE
+RESULT	C3 start 2 at 3800, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1000, 991, nil, 2650}, 3800}
+DONE
+RESULT	C4 start 3 at 3900, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1000, 991, nil, 2650}, 3900}
+DONE
+RESULT	C5 start 4 at 4000, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1000, 991, nil, 2650}, 4000}
+DONE
+--- records previous K=0 run 2
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, nil, nil}}
+RESULT	L2 after 0 live records saved on f: f	{1000, 1000, nil, nil}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1000, 980, nil, 2650}, 20, nil}
+DONE
+--- records previous K=500 run 2
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, nil, nil}}
+RESULT	L2 after 500 live records saved on f: f	{1000, 500, nil, 2650}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1000, 500, nil, 2650}, 0, 1}
+DONE
+--- pause previous run 2
+RESULT	P1 earlier state: n paused, 1,000 receipts	{1000, 0, nil, :absent}
+DONE
+RESULT	P2 first start, n paused, backfill ok: references settling / n (receipts, stamp, settling, floor)	{nil, {1000, 1000, nil, nil}}
+RESULT	P2 n resumed (same process): n	{1000, 1000, nil, nil}
+DONE
+RESULT	P3 next start, n not paused, backfill ok: n	{1000, 1000, nil, nil}
+DONE
+--- unlisten previous run 2
+RESULT	U1 earlier state	{1000, 0, nil, :absent}
+DONE
+RESULT	U2 first start, backfill failing: n	{1000, 1000, nil, nil}
+RESULT	U2 n removed: result / settling keys left in the file	{:ok, []}
+RESULT	U2 n added again, 1,100 saves: n (receipts, stamp, settling, floor)	{1000, 0, nil, 3610}
+DONE
+--- bounds previous run 2
+RESULT	B1 earlier state: n count 500	{2000, 0, nil, :absent}
+DONE
+RESULT	B2 first start, backfill failing: n	{2000, 2000, nil, nil}
+RESULT	B2 count lowered to 250, one save: n	{1000, 999, nil, 2650}
+RESULT	B2 50 more saves: n	{1000, 949, nil, 2650}
+DONE
+--- sat m2first K=0 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 0 live saves: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {1009, 1000, {:stamp, 2650}, nil}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, {:stamp, 2650}, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat m2first K=999 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 999 live saves: receipts / at the stamp / settling / floor	{1999, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {1972, 964, {:stamp, 2650}, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, {:stamp, 2650}, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat m2first K=1000 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 1000 live saves: receipts / at the stamp / settling / floor	{2000, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {1964, 955, {:stamp, 2650}, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, {:stamp, 2650}, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat m2first K=1001 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 1001 live saves: receipts / at the stamp / settling / floor	{2000, 999, {:stamp, 2650}, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {1999, 997, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat m2first K=1045 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 1045 live saves: receipts / at the stamp / settling / floor	{1010, 0, {:stamp, 2650}, 3603}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {1010, 0, nil, 3603}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat m2first K=1100 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 1100 live saves: receipts / at the stamp / settling / floor	{1000, 0, {:stamp, 2650}, 3610}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {1000, 0, nil, 3610}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat m2first K=2100 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 2100 live saves: receipts / at the stamp / settling / floor	{1000, 0, {:stamp, 2650}, 3710}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {1000, 0, nil, 3710}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- restart m2first run 1
+RESULT	T1 earlier state written	:ok
+DONE
+RESULT	T2 start 1, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	T2 after 300 more live saves	{1300, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	T3 start 2, backfill failing: receipts / at the stamp / settling / floor	{1300, 1000, {:stamp, 2650}, nil}
+RESULT	T3 after 300 more live saves	{1600, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	T4 start 3, backfill failing: receipts / at the stamp / settling / floor	{1600, 1000, {:stamp, 2650}, nil}
+RESULT	T4 after 300 more live saves	{1900, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	T5 backfill succeeds: late mentions held / old delivered again / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, {1909, 1000, {:stamp, 2650}, nil}}
+DONE
+RESULT	T6 next start, then 1,000 live saves: receipts, stamp, settling, floor	{1000, 0, {:stamp, 2650}, 3800}
+RESULT	T6 restart: held, duplicates / old or swept delivered twice	{{200, 0}, 0}
+DONE
+--- cutrel m2first run 1
+RESULT	C1 earlier state written	:ok
+DONE
+RESULT	C2 start 1 at 3700, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1009, 1000, {:stamp, 2650}, nil}, 3700}
+DONE
+RESULT	C3 start 2 at 3800, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1014, 1000, {:stamp, 2650}, nil}, 3800}
+DONE
+RESULT	C4 start 3 at 3900, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1015, 1000, nil, nil}, 3900}
+DONE
+RESULT	C5 start 4 at 4000, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1015, 1000, nil, nil}, 4000}
+DONE
+--- records m2first K=0 run 1
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, nil, nil}}
+RESULT	L2 after 0 live records saved on f: f	{1000, 1000, nil, nil}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1000, 980, nil, 2650}, 20, nil}
+DONE
+--- records m2first K=500 run 1
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, nil, nil}}
+RESULT	L2 after 500 live records saved on f: f	{1000, 500, nil, 2650}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1000, 500, nil, 2650}, 0, 1}
+DONE
+--- pause m2first run 1
+RESULT	P1 earlier state: n paused, 1,000 receipts	{1000, 0, nil, :absent}
+DONE
+RESULT	P2 first start, n paused, backfill ok: references settling / n (receipts, stamp, settling, floor)	{nil, {1000, 1000, nil, nil}}
+RESULT	P2 n resumed (same process): n	{1000, 1000, nil, nil}
+DONE
+RESULT	P3 next start, n not paused, backfill ok: n	{1000, 1000, nil, nil}
+DONE
+--- unlisten m2first run 1
+RESULT	U1 earlier state	{1000, 0, nil, :absent}
+DONE
+RESULT	U2 first start, backfill failing: n	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	U2 n removed: result / settling keys left in the file	{:ok, ["n", "references"]}
+RESULT	U2 n added again, 1,100 saves: n (receipts, stamp, settling, floor)	{1000, 0, {:stamp, 2650}, 3610}
+DONE
+--- bounds m2first run 1
+RESULT	B1 earlier state: n count 500	{2000, 0, nil, :absent}
+DONE
+RESULT	B2 first start, backfill failing: n	{2000, 2000, {:stamp, 2650}, nil}
+RESULT	B2 count lowered to 250, one save: n	{2000, 1999, {:stamp, 2650}, 2650}
+RESULT	B2 50 more saves: n	{2000, 1949, {:stamp, 2650}, 2650}
+DONE
+--- sat m2first K=0 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 0 live saves: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {1009, 1000, {:stamp, 2650}, nil}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, {:stamp, 2650}, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat m2first K=999 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 999 live saves: receipts / at the stamp / settling / floor	{1999, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {1972, 964, {:stamp, 2650}, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, {:stamp, 2650}, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat m2first K=1000 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 1000 live saves: receipts / at the stamp / settling / floor	{2000, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {1964, 955, {:stamp, 2650}, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, {:stamp, 2650}, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat m2first K=1001 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 1001 live saves: receipts / at the stamp / settling / floor	{2000, 999, {:stamp, 2650}, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {1999, 997, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat m2first K=1045 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 1045 live saves: receipts / at the stamp / settling / floor	{1010, 0, {:stamp, 2650}, 3603}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {1010, 0, nil, 3603}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat m2first K=1100 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 1100 live saves: receipts / at the stamp / settling / floor	{1000, 0, {:stamp, 2650}, 3610}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {1000, 0, nil, 3610}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat m2first K=2100 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 2100 live saves: receipts / at the stamp / settling / floor	{1000, 0, {:stamp, 2650}, 3710}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {1000, 0, nil, 3710}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- restart m2first run 2
+RESULT	T1 earlier state written	:ok
+DONE
+RESULT	T2 start 1, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	T2 after 300 more live saves	{1300, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	T3 start 2, backfill failing: receipts / at the stamp / settling / floor	{1300, 1000, {:stamp, 2650}, nil}
+RESULT	T3 after 300 more live saves	{1600, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	T4 start 3, backfill failing: receipts / at the stamp / settling / floor	{1600, 1000, {:stamp, 2650}, nil}
+RESULT	T4 after 300 more live saves	{1900, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	T5 backfill succeeds: late mentions held / old delivered again / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, {1909, 1000, {:stamp, 2650}, nil}}
+DONE
+RESULT	T6 next start, then 1,000 live saves: receipts, stamp, settling, floor	{1000, 0, {:stamp, 2650}, 3800}
+RESULT	T6 restart: held, duplicates / old or swept delivered twice	{{200, 0}, 0}
+DONE
+--- cutrel m2first run 2
+RESULT	C1 earlier state written	:ok
+DONE
+RESULT	C2 start 1 at 3700, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1009, 1000, {:stamp, 2650}, nil}, 3700}
+DONE
+RESULT	C3 start 2 at 3800, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1014, 1000, {:stamp, 2650}, nil}, 3800}
+DONE
+RESULT	C4 start 3 at 3900, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1015, 1000, nil, nil}, 3900}
+DONE
+RESULT	C5 start 4 at 4000, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1015, 1000, nil, nil}, 4000}
+DONE
+--- records m2first K=0 run 2
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, nil, nil}}
+RESULT	L2 after 0 live records saved on f: f	{1000, 1000, nil, nil}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1000, 980, nil, 2650}, 20, nil}
+DONE
+--- records m2first K=500 run 2
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, nil, nil}}
+RESULT	L2 after 500 live records saved on f: f	{1000, 500, nil, 2650}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1000, 500, nil, 2650}, 0, 1}
+DONE
+--- pause m2first run 2
+RESULT	P1 earlier state: n paused, 1,000 receipts	{1000, 0, nil, :absent}
+DONE
+RESULT	P2 first start, n paused, backfill ok: references settling / n (receipts, stamp, settling, floor)	{nil, {1000, 1000, nil, nil}}
+RESULT	P2 n resumed (same process): n	{1000, 1000, nil, nil}
+DONE
+RESULT	P3 next start, n not paused, backfill ok: n	{1000, 1000, nil, nil}
+DONE
+--- unlisten m2first run 2
+RESULT	U1 earlier state	{1000, 0, nil, :absent}
+DONE
+RESULT	U2 first start, backfill failing: n	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	U2 n removed: result / settling keys left in the file	{:ok, ["n", "references"]}
+RESULT	U2 n added again, 1,100 saves: n (receipts, stamp, settling, floor)	{1000, 0, {:stamp, 2650}, 3610}
+DONE
+--- bounds m2first run 2
+RESULT	B1 earlier state: n count 500	{2000, 0, nil, :absent}
+DONE
+RESULT	B2 first start, backfill failing: n	{2000, 2000, {:stamp, 2650}, nil}
+RESULT	B2 count lowered to 250, one save: n	{2000, 1999, {:stamp, 2650}, 2650}
+RESULT	B2 50 more saves: n	{2000, 1949, {:stamp, 2650}, 2650}
+DONE
+--- sat candidate K=0 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 0 live saves: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {1009, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 891, %{"at" => 2650, "extra" => 1000}, 2650}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 2650}
+DONE
+--- sat candidate K=999 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 999 live saves: receipts / at the stamp / settling / floor	{1999, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {2000, 992, %{"at" => 2650, "extra" => 1000}, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 0, %{"at" => 2650, "extra" => 1000}, 3610}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3610}
+DONE
+--- sat candidate K=1000 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 1000 live saves: receipts / at the stamp / settling / floor	{2000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {2000, 991, %{"at" => 2650, "extra" => 1000}, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 0, %{"at" => 2650, "extra" => 1000}, 3610}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3610}
+DONE
+--- sat candidate K=1001 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 1001 live saves: receipts / at the stamp / settling / floor	{2000, 999, %{"at" => 2650, "extra" => 1000}, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {2000, 998, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat candidate K=1045 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 1045 live saves: receipts / at the stamp / settling / floor	{2000, 955, %{"at" => 2650, "extra" => 1000}, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {2000, 954, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat candidate K=1100 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 1100 live saves: receipts / at the stamp / settling / floor	{2000, 900, %{"at" => 2650, "extra" => 1000}, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {2000, 899, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat candidate K=2100 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 2100 live saves: receipts / at the stamp / settling / floor	{2000, 0, %{"at" => 2650, "extra" => 1000}, 3610}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {2000, 0, nil, 3610}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- restart candidate run 1
+RESULT	T1 earlier state written	:ok
+DONE
+RESULT	T2 start 1, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	T2 after 300 more live saves	{1300, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	T3 start 2, backfill failing: receipts / at the stamp / settling / floor	{1300, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	T3 after 300 more live saves	{1600, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	T4 start 3, backfill failing: receipts / at the stamp / settling / floor	{1600, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	T4 after 300 more live saves	{1900, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	T5 backfill succeeds: late mentions held / old delivered again / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, {1909, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+DONE
+RESULT	T6 next start, then 1,000 live saves: receipts, stamp, settling, floor	{2000, 86, %{"at" => 2650, "extra" => 1000}, 2650}
+RESULT	T6 restart: held, duplicates / old or swept delivered twice	{{200, 0}, 0}
+DONE
+--- cutrel candidate run 1
+RESULT	C1 earlier state written	:ok
+DONE
+RESULT	C2 start 1 at 3700, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1009, 1000, %{"at" => 2650, "extra" => 1000}, nil}, 3700}
+DONE
+RESULT	C3 start 2 at 3800, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1014, 1000, %{"at" => 2650, "extra" => 1000}, nil}, 3800}
+DONE
+RESULT	C4 start 3 at 3900, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1015, 1000, nil, nil}, 3900}
+DONE
+RESULT	C5 start 4 at 4000, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1015, 1000, nil, nil}, 4000}
+DONE
+--- records candidate K=0 run 1
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+RESULT	L2 after 0 live records saved on f: f	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1020, 1000, nil, nil}, 20, nil}
+DONE
+--- records candidate K=500 run 1
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+RESULT	L2 after 500 live records saved on f: f	{1500, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1520, 1000, nil, nil}, 20, nil}
+DONE
+--- pause candidate run 1
+RESULT	P1 earlier state: n paused, 1,000 receipts	{1000, 0, nil, :absent}
+DONE
+RESULT	P2 first start, n paused, backfill ok: references settling / n (receipts, stamp, settling, floor)	{nil, {1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+RESULT	P2 n resumed (same process): n	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	P3 next start, n not paused, backfill ok: n	{1000, 1000, nil, nil}
+DONE
+--- unlisten candidate run 1
+RESULT	U1 earlier state	{1000, 0, nil, :absent}
+DONE
+RESULT	U2 first start, backfill failing: n	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	U2 n removed: result / settling keys left in the file	{:ok, ["n", "references"]}
+RESULT	U2 n added again, 1,100 saves: n (receipts, stamp, settling, floor)	{1100, 0, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+--- bounds candidate run 1
+RESULT	B1 earlier state: n count 500	{2000, 0, nil, :absent}
+DONE
+RESULT	B2 first start, backfill failing: n	{2000, 2000, %{"at" => 2650, "extra" => 2000}, nil}
+RESULT	B2 count lowered to 250, one save: n	{2000, 1999, %{"at" => 2650, "extra" => 2000}, 2650}
+RESULT	B2 50 more saves: n	{2000, 1949, %{"at" => 2650, "extra" => 2000}, 2650}
+DONE
+--- sat candidate K=0 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 0 live saves: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {1009, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 891, %{"at" => 2650, "extra" => 1000}, 2650}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 2650}
+DONE
+--- sat candidate K=999 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 999 live saves: receipts / at the stamp / settling / floor	{1999, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {2000, 992, %{"at" => 2650, "extra" => 1000}, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 0, %{"at" => 2650, "extra" => 1000}, 3610}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3610}
+DONE
+--- sat candidate K=1000 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 1000 live saves: receipts / at the stamp / settling / floor	{2000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {2000, 991, %{"at" => 2650, "extra" => 1000}, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 0, %{"at" => 2650, "extra" => 1000}, 3610}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3610}
+DONE
+--- sat candidate K=1001 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 1001 live saves: receipts / at the stamp / settling / floor	{2000, 999, %{"at" => 2650, "extra" => 1000}, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {2000, 998, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat candidate K=1045 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 1045 live saves: receipts / at the stamp / settling / floor	{2000, 955, %{"at" => 2650, "extra" => 1000}, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {2000, 954, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat candidate K=1100 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 1100 live saves: receipts / at the stamp / settling / floor	{2000, 900, %{"at" => 2650, "extra" => 1000}, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {2000, 899, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat candidate K=2100 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 2100 live saves: receipts / at the stamp / settling / floor	{2000, 0, %{"at" => 2650, "extra" => 1000}, 3610}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {2000, 0, nil, 3610}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- restart candidate run 2
+RESULT	T1 earlier state written	:ok
+DONE
+RESULT	T2 start 1, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	T2 after 300 more live saves	{1300, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	T3 start 2, backfill failing: receipts / at the stamp / settling / floor	{1300, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	T3 after 300 more live saves	{1600, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	T4 start 3, backfill failing: receipts / at the stamp / settling / floor	{1600, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	T4 after 300 more live saves	{1900, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	T5 backfill succeeds: late mentions held / old delivered again / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, {1909, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+DONE
+RESULT	T6 next start, then 1,000 live saves: receipts, stamp, settling, floor	{2000, 86, %{"at" => 2650, "extra" => 1000}, 2650}
+RESULT	T6 restart: held, duplicates / old or swept delivered twice	{{200, 0}, 0}
+DONE
+--- cutrel candidate run 2
+RESULT	C1 earlier state written	:ok
+DONE
+RESULT	C2 start 1 at 3700, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1009, 1000, %{"at" => 2650, "extra" => 1000}, nil}, 3700}
+DONE
+RESULT	C3 start 2 at 3800, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1014, 1000, %{"at" => 2650, "extra" => 1000}, nil}, 3800}
+DONE
+RESULT	C4 start 3 at 3900, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1015, 1000, nil, nil}, 3900}
+DONE
+RESULT	C5 start 4 at 4000, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1015, 1000, nil, nil}, 4000}
+DONE
+--- records candidate K=0 run 2
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+RESULT	L2 after 0 live records saved on f: f	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1020, 1000, nil, nil}, 20, nil}
+DONE
+--- records candidate K=500 run 2
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+RESULT	L2 after 500 live records saved on f: f	{1500, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1520, 1000, nil, nil}, 20, nil}
+DONE
+--- pause candidate run 2
+RESULT	P1 earlier state: n paused, 1,000 receipts	{1000, 0, nil, :absent}
+DONE
+RESULT	P2 first start, n paused, backfill ok: references settling / n (receipts, stamp, settling, floor)	{nil, {1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+RESULT	P2 n resumed (same process): n	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	P3 next start, n not paused, backfill ok: n	{1000, 1000, nil, nil}
+DONE
+--- unlisten candidate run 2
+RESULT	U1 earlier state	{1000, 0, nil, :absent}
+DONE
+RESULT	U2 first start, backfill failing: n	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	U2 n removed: result / settling keys left in the file	{:ok, ["n", "references"]}
+RESULT	U2 n added again, 1,100 saves: n (receipts, stamp, settling, floor)	{1100, 0, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+--- bounds candidate run 2
+RESULT	B1 earlier state: n count 500	{2000, 0, nil, :absent}
+DONE
+RESULT	B2 first start, backfill failing: n	{2000, 2000, %{"at" => 2650, "extra" => 2000}, nil}
+RESULT	B2 count lowered to 250, one save: n	{2000, 1999, %{"at" => 2650, "extra" => 2000}, 2650}
+RESULT	B2 50 more saves: n	{2000, 1949, %{"at" => 2650, "extra" => 2000}, 2650}
+DONE
+--- sat proposal K=0 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 0 live saves: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {1009, 1000, {:stamp, 2650}, nil}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 1000, {:stamp, 2650}, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal K=999 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 999 live saves: receipts / at the stamp / settling / floor	{1999, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {2000, 1000, {:stamp, 2650}, 3600}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 1000, {:stamp, 2650}, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal K=1000 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 1000 live saves: receipts / at the stamp / settling / floor	{2000, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {2000, 1000, {:stamp, 2650}, 3600}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 1000, {:stamp, 2650}, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal K=1001 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 1001 live saves: receipts / at the stamp / settling / floor	{2000, 1000, {:stamp, 2650}, 3600}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {2000, 1000, nil, 3600}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal K=1045 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 1045 live saves: receipts / at the stamp / settling / floor	{2000, 1000, {:stamp, 2650}, 3604}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {2000, 1000, nil, 3604}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal K=1100 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 1100 live saves: receipts / at the stamp / settling / floor	{2000, 1000, {:stamp, 2650}, 3610}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {2000, 1000, nil, 3610}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal K=2100 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 2100 live saves: receipts / at the stamp / settling / floor	{2000, 1000, {:stamp, 2650}, 3710}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {2000, 1000, nil, 3710}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- restart proposal run 1
+RESULT	T1 earlier state written	:ok
+DONE
+RESULT	T2 start 1, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	T2 after 300 more live saves	{1300, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	T3 start 2, backfill failing: receipts / at the stamp / settling / floor	{1300, 1000, {:stamp, 2650}, nil}
+RESULT	T3 after 300 more live saves	{1600, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	T4 start 3, backfill failing: receipts / at the stamp / settling / floor	{1600, 1000, {:stamp, 2650}, nil}
+RESULT	T4 after 300 more live saves	{1900, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	T5 backfill succeeds: late mentions held / old delivered again / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, {1909, 1000, {:stamp, 2650}, nil}}
+DONE
+RESULT	T6 next start, then 1,000 live saves: receipts, stamp, settling, floor	{2000, 1000, {:stamp, 2650}, 3800}
+RESULT	T6 restart: held, duplicates / old or swept delivered twice	{{200, 0}, 0}
+DONE
+--- cutrel proposal run 1
+RESULT	C1 earlier state written	:ok
+DONE
+RESULT	C2 start 1 at 3700, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1009, 1000, {:stamp, 2650}, nil}, 3700}
+DONE
+RESULT	C3 start 2 at 3800, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1014, 1000, {:stamp, 2650}, nil}, 3800}
+DONE
+RESULT	C4 start 3 at 3900, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1015, 1000, nil, nil}, 3900}
+DONE
+RESULT	C5 start 4 at 4000, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1015, 1000, nil, nil}, 4000}
+DONE
+--- records proposal K=0 run 1
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, nil, nil}}
+RESULT	L2 after 0 live records saved on f: f	{1000, 1000, nil, nil}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1000, 980, nil, 2650}, 20, nil}
+DONE
+--- records proposal K=500 run 1
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, nil, nil}}
+RESULT	L2 after 500 live records saved on f: f	{1000, 500, nil, 2650}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1000, 500, nil, 2650}, 0, 1}
+DONE
+--- pause proposal run 1
+RESULT	P1 earlier state: n paused, 1,000 receipts	{1000, 0, nil, :absent}
+DONE
+RESULT	P2 first start, n paused, backfill ok: references settling / n (receipts, stamp, settling, floor)	{nil, {1000, 1000, nil, nil}}
+RESULT	P2 n resumed (same process): n	{1000, 1000, nil, nil}
+DONE
+RESULT	P3 next start, n not paused, backfill ok: n	{1000, 1000, nil, nil}
+DONE
+--- unlisten proposal run 1
+RESULT	U1 earlier state	{1000, 0, nil, :absent}
+DONE
+RESULT	U2 first start, backfill failing: n	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	U2 n removed: result / settling keys left in the file	{:ok, ["n", "references"]}
+RESULT	U2 n added again, 1,100 saves: n (receipts, stamp, settling, floor)	{1000, 0, {:stamp, 2650}, 3610}
+DONE
+--- bounds proposal run 1
+RESULT	B1 earlier state: n count 500	{2000, 0, nil, :absent}
+DONE
+RESULT	B2 first start, backfill failing: n	{2000, 2000, {:stamp, 2650}, nil}
+RESULT	B2 count lowered to 250, one save: n	{1000, 999, {:stamp, 2650}, 2650}
+RESULT	B2 50 more saves: n	{1050, 999, {:stamp, 2650}, 2650}
+DONE
+--- sat proposal K=0 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 0 live saves: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {1009, 1000, {:stamp, 2650}, nil}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 1000, {:stamp, 2650}, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal K=999 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 999 live saves: receipts / at the stamp / settling / floor	{1999, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {2000, 1000, {:stamp, 2650}, 3600}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 1000, {:stamp, 2650}, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal K=1000 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 1000 live saves: receipts / at the stamp / settling / floor	{2000, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {2000, 1000, {:stamp, 2650}, 3600}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 1000, {:stamp, 2650}, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal K=1001 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 1001 live saves: receipts / at the stamp / settling / floor	{2000, 1000, {:stamp, 2650}, 3600}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {2000, 1000, nil, 3600}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal K=1045 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 1045 live saves: receipts / at the stamp / settling / floor	{2000, 1000, {:stamp, 2650}, 3604}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {2000, 1000, nil, 3604}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal K=1100 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 1100 live saves: receipts / at the stamp / settling / floor	{2000, 1000, {:stamp, 2650}, 3610}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {2000, 1000, nil, 3610}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal K=2100 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	S2 after 2100 live saves: receipts / at the stamp / settling / floor	{2000, 1000, {:stamp, 2650}, 3710}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {2000, 1000, nil, 3710}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- restart proposal run 2
+RESULT	T1 earlier state written	:ok
+DONE
+RESULT	T2 start 1, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	T2 after 300 more live saves	{1300, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	T3 start 2, backfill failing: receipts / at the stamp / settling / floor	{1300, 1000, {:stamp, 2650}, nil}
+RESULT	T3 after 300 more live saves	{1600, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	T4 start 3, backfill failing: receipts / at the stamp / settling / floor	{1600, 1000, {:stamp, 2650}, nil}
+RESULT	T4 after 300 more live saves	{1900, 1000, {:stamp, 2650}, nil}
+DONE
+RESULT	T5 backfill succeeds: late mentions held / old delivered again / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, {1909, 1000, {:stamp, 2650}, nil}}
+DONE
+RESULT	T6 next start, then 1,000 live saves: receipts, stamp, settling, floor	{2000, 1000, {:stamp, 2650}, 3800}
+RESULT	T6 restart: held, duplicates / old or swept delivered twice	{{200, 0}, 0}
+DONE
+--- cutrel proposal run 2
+RESULT	C1 earlier state written	:ok
+DONE
+RESULT	C2 start 1 at 3700, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1009, 1000, {:stamp, 2650}, nil}, 3700}
+DONE
+RESULT	C3 start 2 at 3800, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1014, 1000, {:stamp, 2650}, nil}, 3800}
+DONE
+RESULT	C4 start 3 at 3900, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1015, 1000, nil, nil}, 3900}
+DONE
+RESULT	C5 start 4 at 4000, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1015, 1000, nil, nil}, 4000}
+DONE
+--- records proposal K=0 run 2
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, nil, nil}}
+RESULT	L2 after 0 live records saved on f: f	{1000, 1000, nil, nil}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1000, 980, nil, 2650}, 20, nil}
+DONE
+--- records proposal K=500 run 2
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, nil, nil}}
+RESULT	L2 after 500 live records saved on f: f	{1000, 500, nil, 2650}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1000, 500, nil, 2650}, 0, 1}
+DONE
+--- pause proposal run 2
+RESULT	P1 earlier state: n paused, 1,000 receipts	{1000, 0, nil, :absent}
+DONE
+RESULT	P2 first start, n paused, backfill ok: references settling / n (receipts, stamp, settling, floor)	{nil, {1000, 1000, nil, nil}}
+RESULT	P2 n resumed (same process): n	{1000, 1000, nil, nil}
+DONE
+RESULT	P3 next start, n not paused, backfill ok: n	{1000, 1000, nil, nil}
+DONE
+--- unlisten proposal run 2
+RESULT	U1 earlier state	{1000, 0, nil, :absent}
+DONE
+RESULT	U2 first start, backfill failing: n	{1000, 1000, {:stamp, 2650}, nil}
+RESULT	U2 n removed: result / settling keys left in the file	{:ok, ["n", "references"]}
+RESULT	U2 n added again, 1,100 saves: n (receipts, stamp, settling, floor)	{1000, 0, {:stamp, 2650}, 3610}
+DONE
+--- bounds proposal run 2
+RESULT	B1 earlier state: n count 500	{2000, 0, nil, :absent}
+DONE
+RESULT	B2 first start, backfill failing: n	{2000, 2000, {:stamp, 2650}, nil}
+RESULT	B2 count lowered to 250, one save: n	{1000, 999, {:stamp, 2650}, 2650}
+RESULT	B2 50 more saves: n	{1050, 999, {:stamp, 2650}, 2650}
+DONE
+--- sat proposal23 K=0 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 0 live saves: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {1009, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 891, %{"at" => 2650, "extra" => 1000}, 2650}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 2650}
+DONE
+--- sat proposal23 K=999 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 999 live saves: receipts / at the stamp / settling / floor	{1999, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {2000, 992, %{"at" => 2650, "extra" => 1000}, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 0, %{"at" => 2650, "extra" => 1000}, 3610}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3610}
+DONE
+--- sat proposal23 K=1000 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 1000 live saves: receipts / at the stamp / settling / floor	{2000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {2000, 991, %{"at" => 2650, "extra" => 1000}, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 0, %{"at" => 2650, "extra" => 1000}, 3610}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3610}
+DONE
+--- sat proposal23 K=1001 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 1001 live saves: receipts / at the stamp / settling / floor	{2000, 999, %{"at" => 2650, "extra" => 1000}, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {2000, 998, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal23 K=1045 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 1045 live saves: receipts / at the stamp / settling / floor	{2000, 955, %{"at" => 2650, "extra" => 1000}, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {2000, 954, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal23 K=1100 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 1100 live saves: receipts / at the stamp / settling / floor	{2000, 900, %{"at" => 2650, "extra" => 1000}, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {2000, 899, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal23 K=2100 run 1
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 2100 live saves: receipts / at the stamp / settling / floor	{2000, 0, %{"at" => 2650, "extra" => 1000}, 3610}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {2000, 0, nil, 3610}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- restart proposal23 run 1
+RESULT	T1 earlier state written	:ok
+DONE
+RESULT	T2 start 1, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	T2 after 300 more live saves	{1300, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	T3 start 2, backfill failing: receipts / at the stamp / settling / floor	{1300, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	T3 after 300 more live saves	{1600, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	T4 start 3, backfill failing: receipts / at the stamp / settling / floor	{1600, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	T4 after 300 more live saves	{1900, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	T5 backfill succeeds: late mentions held / old delivered again / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, {1909, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+DONE
+RESULT	T6 next start, then 1,000 live saves: receipts, stamp, settling, floor	{2000, 86, %{"at" => 2650, "extra" => 1000}, 2650}
+RESULT	T6 restart: held, duplicates / old or swept delivered twice	{{200, 0}, 0}
+DONE
+--- cutrel proposal23 run 1
+RESULT	C1 earlier state written	:ok
+DONE
+RESULT	C2 start 1 at 3700, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1009, 1000, %{"at" => 2650, "extra" => 1000}, nil}, 3700}
+DONE
+RESULT	C3 start 2 at 3800, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1014, 1000, %{"at" => 2650, "extra" => 1000}, nil}, 3800}
+DONE
+RESULT	C4 start 3 at 3900, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1015, 1000, nil, nil}, 3900}
+DONE
+RESULT	C5 start 4 at 4000, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1015, 1000, nil, nil}, 4000}
+DONE
+--- records proposal23 K=0 run 1
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+RESULT	L2 after 0 live records saved on f: f	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1020, 1000, nil, nil}, 20, nil}
+DONE
+--- records proposal23 K=500 run 1
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+RESULT	L2 after 500 live records saved on f: f	{1500, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1520, 1000, nil, nil}, 20, nil}
+DONE
+--- pause proposal23 run 1
+RESULT	P1 earlier state: n paused, 1,000 receipts	{1000, 0, nil, :absent}
+DONE
+RESULT	P2 first start, n paused, backfill ok: references settling / n (receipts, stamp, settling, floor)	{nil, {1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+RESULT	P2 n resumed (same process): n	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	P3 next start, n not paused, backfill ok: n	{1000, 1000, nil, nil}
+DONE
+--- unlisten proposal23 run 1
+RESULT	U1 earlier state	{1000, 0, nil, :absent}
+DONE
+RESULT	U2 first start, backfill failing: n	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	U2 n removed: result / settling keys left in the file	{:ok, ["references"]}
+RESULT	U2 n added again, 1,100 saves: n (receipts, stamp, settling, floor)	{1000, 0, nil, 3610}
+DONE
+--- bounds proposal23 run 1
+RESULT	B1 earlier state: n count 500	{2000, 0, nil, :absent}
+DONE
+RESULT	B2 first start, backfill failing: n	{2000, 2000, %{"at" => 2650, "extra" => 2000}, nil}
+RESULT	B2 count lowered to 250, one save: n	{2000, 1999, %{"at" => 2650, "extra" => 2000}, 2650}
+RESULT	B2 50 more saves: n	{2000, 1949, %{"at" => 2650, "extra" => 2000}, 2650}
+DONE
+--- sat proposal23 K=0 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 0 live saves: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {1009, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 891, %{"at" => 2650, "extra" => 1000}, 2650}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 2650}
+DONE
+--- sat proposal23 K=999 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 999 live saves: receipts / at the stamp / settling / floor	{1999, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {2000, 992, %{"at" => 2650, "extra" => 1000}, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 0, %{"at" => 2650, "extra" => 1000}, 3610}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3610}
+DONE
+--- sat proposal23 K=1000 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 1000 live saves: receipts / at the stamp / settling / floor	{2000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, 1, {2000, 991, %{"at" => 2650, "extra" => 1000}, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{2000, 0, %{"at" => 2650, "extra" => 1000}, 3610}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3610}
+DONE
+--- sat proposal23 K=1001 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 1001 live saves: receipts / at the stamp / settling / floor	{2000, 999, %{"at" => 2650, "extra" => 1000}, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {2000, 998, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal23 K=1045 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 1045 live saves: receipts / at the stamp / settling / floor	{2000, 955, %{"at" => 2650, "extra" => 1000}, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {2000, 954, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal23 K=1100 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 1100 live saves: receipts / at the stamp / settling / floor	{2000, 900, %{"at" => 2650, "extra" => 1000}, 2650}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[2700], 0, 1, {2000, 899, nil, 2650}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- sat proposal23 K=2100 run 2
+RESULT	S1 earlier state written	{1000, 0, nil, :absent}
+DONE
+RESULT	S2 first start, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	S2 after 2100 live saves: receipts / at the stamp / settling / floor	{2000, 0, %{"at" => 2650, "extra" => 1000}, 3610}
+DONE
+RESULT	S3 old delivered again: earliest / latest date / count	{nil, nil, 0}
+RESULT	S3 backfill succeeds: late mentions held (dated 1950..2700; hum.11 last wrote at 2650, its shared mark 2600, margin from 2000) / old delivered again / unrecovered / receipts, stamp, settling, floor	{[], 0, 1, {2000, 0, nil, 3610}}
+RESULT	S3 then 1,100 live saves: receipts, stamp, settling, floor	{1000, 0, nil, 3810}
+DONE
+RESULT	S4 next start: held, duplicates / old delivered again / floor	{{200, 0}, 0, 3810}
+DONE
+--- restart proposal23 run 2
+RESULT	T1 earlier state written	:ok
+DONE
+RESULT	T2 start 1, backfill failing: receipts / at the stamp / settling / floor	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	T2 after 300 more live saves	{1300, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	T3 start 2, backfill failing: receipts / at the stamp / settling / floor	{1300, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	T3 after 300 more live saves	{1600, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	T4 start 3, backfill failing: receipts / at the stamp / settling / floor	{1600, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	T4 after 300 more live saves	{1900, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	T5 backfill succeeds: late mentions held / old delivered again / receipts, stamp, settling, floor	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 0, {1909, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+DONE
+RESULT	T6 next start, then 1,000 live saves: receipts, stamp, settling, floor	{2000, 86, %{"at" => 2650, "extra" => 1000}, 2650}
+RESULT	T6 restart: held, duplicates / old or swept delivered twice	{{200, 0}, 0}
+DONE
+--- cutrel proposal23 run 2
+RESULT	C1 earlier state written	:ok
+DONE
+RESULT	C2 start 1 at 3700, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1009, 1000, %{"at" => 2650, "extra" => 1000}, nil}, 3700}
+DONE
+RESULT	C3 start 2 at 3800, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], 1, {1014, 1000, %{"at" => 2650, "extra" => 1000}, nil}, 3800}
+DONE
+RESULT	C4 start 3 at 3900, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1015, 1000, nil, nil}, 3900}
+DONE
+RESULT	C5 start 4 at 4000, service up: late mentions held so far / unrecovered / receipts, stamp, settling, floor / live mark	{[2000, 2050, 2100, 2150, 2200, 2250, 2300, 2350, 2400, 2450, 2500, 2550, 2600, 2650, 2700], nil, {1015, 1000, nil, nil}, 4000}
+DONE
+--- records proposal23 K=0 run 2
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+RESULT	L2 after 0 live records saved on f: f	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1020, 1000, nil, nil}, 20, nil}
+DONE
+--- records proposal23 K=500 run 2
+RESULT	L1 earlier state: references and records listener f, 1,000 receipts each	{{1000, 0, nil, :absent}, {1000, 0, nil, :absent}}
+DONE
+RESULT	L2 first start, live backfill ok, records PDS down: references / f (receipts, stamp, settling, floor)	{{1000, 1000, nil, nil}, {1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+RESULT	L2 after 500 live records saved on f: f	{1500, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	L3 records PDS back: f (receipts, stamp, settling, floor) / records dated 2301..2320 held (of 20) / unrecovered	{{1520, 1000, nil, nil}, 20, nil}
+DONE
+--- pause proposal23 run 2
+RESULT	P1 earlier state: n paused, 1,000 receipts	{1000, 0, nil, :absent}
+DONE
+RESULT	P2 first start, n paused, backfill ok: references settling / n (receipts, stamp, settling, floor)	{nil, {1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}}
+RESULT	P2 n resumed (same process): n	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+DONE
+RESULT	P3 next start, n not paused, backfill ok: n	{1000, 1000, nil, nil}
+DONE
+--- unlisten proposal23 run 2
+RESULT	U1 earlier state	{1000, 0, nil, :absent}
+DONE
+RESULT	U2 first start, backfill failing: n	{1000, 1000, %{"at" => 2650, "extra" => 1000}, nil}
+RESULT	U2 n removed: result / settling keys left in the file	{:ok, ["references"]}
+RESULT	U2 n added again, 1,100 saves: n (receipts, stamp, settling, floor)	{1000, 0, nil, 3610}
+DONE
+--- bounds proposal23 run 2
+RESULT	B1 earlier state: n count 500	{2000, 0, nil, :absent}
+DONE
+RESULT	B2 first start, backfill failing: n	{2000, 2000, %{"at" => 2650, "extra" => 2000}, nil}
+RESULT	B2 count lowered to 250, one save: n	{2000, 1999, %{"at" => 2650, "extra" => 2000}, 2650}
+RESULT	B2 50 more saves: n	{2000, 1949, %{"at" => 2650, "extra" => 2000}, 2650}
+DONE
+FINISHED

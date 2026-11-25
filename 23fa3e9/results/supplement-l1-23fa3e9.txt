@@ -1,0 +1,172 @@
+=== previous
+--- cases, run 1
+RESULT	W1 one notification to the microsecond (.000400), strict service: end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W2 the same, a service that keeps seenAt to the millisecond (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W3 one notification to the second (05Z), a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W4 one notification with offset +00:00, a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W5 three at one time across a page of 2, cursor = oldest time, next page strictly before it: end / reads / shown (distinct of n) / first failure	{:done, 1, 4, 5, {:safe, "2026-11-20T10:00:05.003Z marks unshown [\"n0\"] at read 0"}}
+RESULT	W6 the same, next page at or before it: end / reads / shown (distinct of n) / first failure	{:too_long, 0, 0, 5, nil}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the read falls in the 1 ms between n0 and n1 settling, then a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:loop, 51, 51, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the same, a read every 0.1 ms: end / reads / reads acknowledging nothing / first failure	{:loop, 59, 59, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; n1 still well within settle_ms, a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:loop, 54, 51, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 3"}}
+--- cases, run 2
+RESULT	W1 one notification to the microsecond (.000400), strict service: end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W2 the same, a service that keeps seenAt to the millisecond (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W3 one notification to the second (05Z), a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W4 one notification with offset +00:00, a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W5 three at one time across a page of 2, cursor = oldest time, next page strictly before it: end / reads / shown (distinct of n) / first failure	{:done, 1, 4, 5, {:safe, "2026-11-20T10:00:05.003Z marks unshown [\"n0\"] at read 0"}}
+RESULT	W6 the same, next page at or before it: end / reads / shown (distinct of n) / first failure	{:too_long, 0, 0, 5, nil}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the read falls in the 1 ms between n0 and n1 settling, then a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:loop, 51, 51, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the same, a read every 0.1 ms: end / reads / reads acknowledging nothing / first failure	{:loop, 59, 59, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; n1 still well within settle_ms, a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:loop, 54, 51, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 3"}}
+--- l1_text_test, run 1
+RESULT	L1 text: walks / ended / failures by kind	{300, %{loop: 217, done: 83}, %{progress: 217}}
+RESULT	L1 text: reads / over_bound pages / json re-reads / over_bound with one item / over_bound text not naming json / reads acknowledging nothing	{11666, 1244, 1244, 0, 0, 10850}
+RESULT	L1 text: notifications / shown again / most shows of one	{5370, 14618, 51}
+RESULT	L1 text: example seed 2	{:progress, "2026-11-20T10:00:04.021001Z", ["at://did:plc:bbbbbbbbbbbbbbbbbbbbbbbb/town.delve.feed.post/n19"]}
+RESULT	L1 text: example seed 3	{:progress, "2026-11-20T10:00:01.006Z", ["at://did:plc:bbbbbbbbbbbbbbbbbbbbbbbb/town.delve.feed.post/n6"]}
+RESULT	L1 text: example seed 6	{:progress, "2026-11-20T10:00:00.002Z", ["at://did:plc:bbbbbbbbbbbbbbbbbbbbbbbb/town.delve.feed.post/n0"]}
+RESULT	L1 text: example seed 7	{:progress, "2026-11-20T10:00:03.012001Z", ["at://did:plc:bbbbbbbbbbbbbbbbbbbbbbbb/town.delve.feed.post/n13"]}
+DONE
+--- l1_text_test, run 2
+RESULT	L1 text: walks / ended / failures by kind	{300, %{loop: 217, done: 83}, %{progress: 217}}
+RESULT	L1 text: reads / over_bound pages / json re-reads / over_bound with one item / over_bound text not naming json / reads acknowledging nothing	{11666, 1244, 1244, 0, 0, 10850}
+RESULT	L1 text: notifications / shown again / most shows of one	{5370, 14618, 51}
+RESULT	L1 text: example seed 2	{:progress, "2026-11-20T10:00:04.021001Z", ["at://did:plc:bbbbbbbbbbbbbbbbbbbbbbbb/town.delve.feed.post/n19"]}
+RESULT	L1 text: example seed 3	{:progress, "2026-11-20T10:00:01.006Z", ["at://did:plc:bbbbbbbbbbbbbbbbbbbbbbbb/town.delve.feed.post/n6"]}
+RESULT	L1 text: example seed 6	{:progress, "2026-11-20T10:00:00.002Z", ["at://did:plc:bbbbbbbbbbbbbbbbbbbbbbbb/town.delve.feed.post/n0"]}
+RESULT	L1 text: example seed 7	{:progress, "2026-11-20T10:00:03.012001Z", ["at://did:plc:bbbbbbbbbbbbbbbbbbbbbbbb/town.delve.feed.post/n13"]}
+DONE
+=== l1only
+--- cases, run 1
+RESULT	W1 one notification to the microsecond (.000400), strict service: end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W2 the same, a service that keeps seenAt to the millisecond (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W3 one notification to the second (05Z), a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W4 one notification with offset +00:00, a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W5 three at one time across a page of 2, cursor = oldest time, next page strictly before it: end / reads / shown (distinct of n) / first failure	{:done, 1, 4, 5, {:safe, "2026-11-20T10:00:05.003Z marks unshown [\"n0\"] at read 0"}}
+RESULT	W6 the same, next page at or before it: end / reads / shown (distinct of n) / first failure	{:too_long, 0, 0, 5, nil}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the read falls in the 1 ms between n0 and n1 settling, then a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:done, 2, 1, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the same, a read every 0.1 ms: end / reads / reads acknowledging nothing / first failure	{:done, 10, 9, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; n1 still well within settle_ms, a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:done, 5, 1, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 3"}}
+--- cases, run 2
+RESULT	W1 one notification to the microsecond (.000400), strict service: end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W2 the same, a service that keeps seenAt to the millisecond (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W3 one notification to the second (05Z), a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W4 one notification with offset +00:00, a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W5 three at one time across a page of 2, cursor = oldest time, next page strictly before it: end / reads / shown (distinct of n) / first failure	{:done, 1, 4, 5, {:safe, "2026-11-20T10:00:05.003Z marks unshown [\"n0\"] at read 0"}}
+RESULT	W6 the same, next page at or before it: end / reads / shown (distinct of n) / first failure	{:too_long, 0, 0, 5, nil}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the read falls in the 1 ms between n0 and n1 settling, then a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:done, 2, 1, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the same, a read every 0.1 ms: end / reads / reads acknowledging nothing / first failure	{:done, 10, 9, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; n1 still well within settle_ms, a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:done, 5, 1, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 3"}}
+--- l1_text_test, run 1
+RESULT	L1 text: walks / ended / failures by kind	{300, %{done: 300}, %{}}
+RESULT	L1 text: reads / over_bound pages / json re-reads / over_bound with one item / over_bound text not naming json / reads acknowledging nothing	{1978, 570, 570, 0, 0, 0}
+RESULT	L1 text: notifications / shown again / most shows of one	{5370, 251, 2}
+DONE
+--- l1_text_test, run 2
+RESULT	L1 text: walks / ended / failures by kind	{300, %{done: 300}, %{}}
+RESULT	L1 text: reads / over_bound pages / json re-reads / over_bound with one item / over_bound text not naming json / reads acknowledging nothing	{1978, 570, 570, 0, 0, 0}
+RESULT	L1 text: notifications / shown again / most shows of one	{5370, 251, 2}
+DONE
+=== candidate
+--- cases, run 1
+RESULT	W1 one notification to the microsecond (.000400), strict service: end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W2 the same, a service that keeps seenAt to the millisecond (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W3 one notification to the second (05Z), a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W4 one notification with offset +00:00, a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W5 three at one time across a page of 2, cursor = oldest time, next page strictly before it: end / reads / shown (distinct of n) / first failure	{:done, 1, 4, 5, {:safe, "2026-11-20T10:00:05.003Z marks unshown [\"n0\"] at read 0"}}
+RESULT	W6 the same, next page at or before it: end / reads / shown (distinct of n) / first failure	{:too_long, 0, 0, 5, nil}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the read falls in the 1 ms between n0 and n1 settling, then a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:done, 2, 1, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the same, a read every 0.1 ms: end / reads / reads acknowledging nothing / first failure	{:done, 10, 9, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; n1 still well within settle_ms, a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:done, 5, 1, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 3"}}
+--- cases, run 2
+RESULT	W1 one notification to the microsecond (.000400), strict service: end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W2 the same, a service that keeps seenAt to the millisecond (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W3 one notification to the second (05Z), a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W4 one notification with offset +00:00, a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W5 three at one time across a page of 2, cursor = oldest time, next page strictly before it: end / reads / shown (distinct of n) / first failure	{:done, 1, 4, 5, {:safe, "2026-11-20T10:00:05.003Z marks unshown [\"n0\"] at read 0"}}
+RESULT	W6 the same, next page at or before it: end / reads / shown (distinct of n) / first failure	{:too_long, 0, 0, 5, nil}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the read falls in the 1 ms between n0 and n1 settling, then a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:done, 2, 1, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the same, a read every 0.1 ms: end / reads / reads acknowledging nothing / first failure	{:done, 10, 9, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; n1 still well within settle_ms, a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:done, 5, 1, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 3"}}
+--- l1_text_test, run 1
+RESULT	L1 text: walks / ended / failures by kind	{300, %{done: 300}, %{}}
+RESULT	L1 text: reads / over_bound pages / json re-reads / over_bound with one item / over_bound text not naming json / reads acknowledging nothing	{1978, 570, 570, 0, 0, 0}
+RESULT	L1 text: notifications / shown again / most shows of one	{5370, 251, 2}
+DONE
+--- l1_text_test, run 2
+RESULT	L1 text: walks / ended / failures by kind	{300, %{done: 300}, %{}}
+RESULT	L1 text: reads / over_bound pages / json re-reads / over_bound with one item / over_bound text not naming json / reads acknowledging nothing	{1978, 570, 570, 0, 0, 0}
+RESULT	L1 text: notifications / shown again / most shows of one	{5370, 251, 2}
+DONE
+=== proposal
+--- cases, run 1
+RESULT	W1 one notification to the microsecond (.000400), strict service: end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W2 the same, a service that keeps seenAt to the millisecond (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W3 one notification to the second (05Z), a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W4 one notification with offset +00:00, a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W5 three at one time across a page of 2, cursor = oldest time, next page strictly before it: end / reads / shown (distinct of n) / first failure	{:done, 1, 4, 5, {:safe, "2026-11-20T10:00:05.003Z marks unshown [\"n0\"] at read 0"}}
+RESULT	W6 the same, next page at or before it: end / reads / shown (distinct of n) / first failure	{:too_long, 0, 0, 5, nil}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the read falls in the 1 ms between n0 and n1 settling, then a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:done, 2, 1, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the same, a read every 0.1 ms: end / reads / reads acknowledging nothing / first failure	{:done, 10, 9, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; n1 still well within settle_ms, a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:done, 5, 1, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 3"}}
+--- cases, run 2
+RESULT	W1 one notification to the microsecond (.000400), strict service: end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W2 the same, a service that keeps seenAt to the millisecond (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W3 one notification to the second (05Z), a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W4 one notification with offset +00:00, a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W5 three at one time across a page of 2, cursor = oldest time, next page strictly before it: end / reads / shown (distinct of n) / first failure	{:done, 1, 4, 5, {:safe, "2026-11-20T10:00:05.003Z marks unshown [\"n0\"] at read 0"}}
+RESULT	W6 the same, next page at or before it: end / reads / shown (distinct of n) / first failure	{:too_long, 0, 0, 5, nil}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the read falls in the 1 ms between n0 and n1 settling, then a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:done, 2, 1, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the same, a read every 0.1 ms: end / reads / reads acknowledging nothing / first failure	{:done, 10, 9, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; n1 still well within settle_ms, a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:done, 5, 1, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 3"}}
+--- l1_text_test, run 1
+RESULT	L1 text: walks / ended / failures by kind	{300, %{loop: 189, done: 111}, %{progress: 189}}
+RESULT	L1 text: reads / over_bound pages / json re-reads / over_bound with one item / over_bound text not naming json / reads acknowledging nothing	{10508, 192, 192, 0, 0, 9450}
+RESULT	L1 text: notifications / shown again / most shows of one	{5370, 11027, 51}
+RESULT	L1 text: example seed 2	{:progress, "2026-11-20T10:00:04.021001Z", ["at://did:plc:bbbbbbbbbbbbbbbbbbbbbbbb/town.delve.feed.post/n19"]}
+RESULT	L1 text: example seed 3	{:progress, "2026-11-20T10:00:01.006Z", ["at://did:plc:bbbbbbbbbbbbbbbbbbbbbbbb/town.delve.feed.post/n6"]}
+RESULT	L1 text: example seed 6	{:progress, "2026-11-20T10:00:00.002Z", ["at://did:plc:bbbbbbbbbbbbbbbbbbbbbbbb/town.delve.feed.post/n0"]}
+RESULT	L1 text: example seed 7	{:progress, "2026-11-20T10:00:03.012001Z", ["at://did:plc:bbbbbbbbbbbbbbbbbbbbbbbb/town.delve.feed.post/n13"]}
+DONE
+--- l1_text_test, run 2
+RESULT	L1 text: walks / ended / failures by kind	{300, %{loop: 189, done: 111}, %{progress: 189}}
+RESULT	L1 text: reads / over_bound pages / json re-reads / over_bound with one item / over_bound text not naming json / reads acknowledging nothing	{10508, 192, 192, 0, 0, 9450}
+RESULT	L1 text: notifications / shown again / most shows of one	{5370, 11027, 51}
+RESULT	L1 text: example seed 2	{:progress, "2026-11-20T10:00:04.021001Z", ["at://did:plc:bbbbbbbbbbbbbbbbbbbbbbbb/town.delve.feed.post/n19"]}
+RESULT	L1 text: example seed 3	{:progress, "2026-11-20T10:00:01.006Z", ["at://did:plc:bbbbbbbbbbbbbbbbbbbbbbbb/town.delve.feed.post/n6"]}
+RESULT	L1 text: example seed 6	{:progress, "2026-11-20T10:00:00.002Z", ["at://did:plc:bbbbbbbbbbbbbbbbbbbbbbbb/town.delve.feed.post/n0"]}
+RESULT	L1 text: example seed 7	{:progress, "2026-11-20T10:00:03.012001Z", ["at://did:plc:bbbbbbbbbbbbbbbbbbbbbbbb/town.delve.feed.post/n13"]}
+DONE
+=== proposal23
+--- cases, run 1
+RESULT	W1 one notification to the microsecond (.000400), strict service: end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W2 the same, a service that keeps seenAt to the millisecond (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W3 one notification to the second (05Z), a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W4 one notification with offset +00:00, a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W5 three at one time across a page of 2, cursor = oldest time, next page strictly before it: end / reads / shown (distinct of n) / first failure	{:done, 1, 4, 5, {:safe, "2026-11-20T10:00:05.003Z marks unshown [\"n0\"] at read 0"}}
+RESULT	W6 the same, next page at or before it: end / reads / shown (distinct of n) / first failure	{:too_long, 0, 0, 5, nil}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the read falls in the 1 ms between n0 and n1 settling, then a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:done, 2, 1, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the same, a read every 0.1 ms: end / reads / reads acknowledging nothing / first failure	{:done, 10, 9, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; n1 still well within settle_ms, a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:done, 5, 1, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 3"}}
+--- cases, run 2
+RESULT	W1 one notification to the microsecond (.000400), strict service: end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W2 the same, a service that keeps seenAt to the millisecond (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W3 one notification to the second (05Z), a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:loop, 50, 1, 1, {:ends, "loop: 1 unread, 50 reads in a row read nothing, at read 50"}}
+RESULT	W4 one notification with offset +00:00, a service comparing strings (hypothesis): end / reads / shown (distinct of n) / first failure	{:done, 1, 1, 1, nil}
+RESULT	W5 three at one time across a page of 2, cursor = oldest time, next page strictly before it: end / reads / shown (distinct of n) / first failure	{:done, 1, 4, 5, {:safe, "2026-11-20T10:00:05.003Z marks unshown [\"n0\"] at read 0"}}
+RESULT	W6 the same, next page at or before it: end / reads / shown (distinct of n) / first failure	{:too_long, 0, 0, 5, nil}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the read falls in the 1 ms between n0 and n1 settling, then a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:done, 2, 1, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; the same, a read every 0.1 ms: end / reads / reads acknowledging nothing / first failure	{:done, 10, 9, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 0"}}
+RESULT	W7 n0 at .001, n1 at .002, settle 60 s; n1 still well within settle_ms, a read every 10 s: end / reads / reads acknowledging nothing / first failure	{:done, 5, 1, {:progress_held, "page [\"n0\"] st 2026-11-20T10:00:05.001Z reads nothing, held 1, read 3"}}
+--- l1_text_test, run 1
+RESULT	L1 text: walks / ended / failures by kind	{300, %{done: 300}, %{}}
+RESULT	L1 text: reads / over_bound pages / json re-reads / over_bound with one item / over_bound text not naming json / reads acknowledging nothing	{1978, 570, 570, 0, 0, 0}
+RESULT	L1 text: notifications / shown again / most shows of one	{5370, 251, 2}
+DONE
+--- l1_text_test, run 2
+RESULT	L1 text: walks / ended / failures by kind	{300, %{done: 300}, %{}}
+RESULT	L1 text: reads / over_bound pages / json re-reads / over_bound with one item / over_bound text not naming json / reads acknowledging nothing	{1978, 570, 570, 0, 0, 0}
+RESULT	L1 text: notifications / shown again / most shows of one	{5370, 251, 2}
+DONE
+FINISHED

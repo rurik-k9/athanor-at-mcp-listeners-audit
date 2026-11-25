@@ -1,0 +1,321 @@
+=== previous, 1000 seeds per family
+RESULT	L1 fuzz build	"0.3.3-hum.11-61fd227-overlay"
+RESULT	hum: walks / notifications / failures by property	{1000, 30028, %{progress: 459, progress_held: 64}}
+RESULT	hum: how walks ended	%{loop: 521, done: 479}
+RESULT	hum: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{32881, 79, 28703, 52, 26135, 42, 1163, 0}
+RESULT	hum: example progress, seed 1	{31, 2, 2, ["reply", "like"], :offset, 100, "page [\"n10\", \"n9\"] st 2026-11-20T10:00:00.007Z reads nothing, held 0, read 5"}
+RESULT	hum: example progress, seed 2	{37, 1, nil, ["mention"], :offset, 100, "page [] st 2026-11-20T10:00:00.008003Z reads nothing, held 0, read 8"}
+RESULT	hum: example progress_held, seed 13	{11, 3, 1, ["reply", "like"], :offset, 100, "page [\"n3\", \"n1\"] st 2026-11-20T10:00:00.002Z reads nothing, held 3, read 1"}
+RESULT	hum: example progress_held, seed 37	{3, 5, nil, ["mention"], :offset, 100, "page [] st 2026-11-20T10:00:00.001Z reads nothing, held 2, read 1"}
+RESULT	hum: ms	6423
+RESULT	edges: walks / notifications / failures by property	{1000, 20370, %{progress: 579, progress_held: 140}}
+RESULT	edges: how walks ended	%{loop: 716, done: 284}
+RESULT	edges: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{39732, 69, 36832, 52, 35989, 45, 0, 0}
+RESULT	edges: example progress, seed 1	{34, 1, nil, nil, :offset, 100, "page [\"n2\", \"n1\"] st 2026-11-20T10:00:00.000Z reads nothing, held 0, read 1"}
+RESULT	edges: example progress, seed 4	{26, 3, nil, nil, :offset, 100, "page [\"n8\", \"n7\"] st 2026-11-20T10:00:01.005001Z reads nothing, held 0, read 3"}
+RESULT	edges: example progress_held, seed 3	{12, 1, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.000000Z reads nothing, held 3, read 0"}
+RESULT	edges: example progress_held, seed 6	{39, 1, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.000001Z reads nothing, held 4, read 0"}
+RESULT	edges: ms	5717
+RESULT	groups: walks / notifications / failures by property	{1000, 45222, %{progress: 626, progress_held: 171}}
+RESULT	groups: how walks ended	%{loop: 797, done: 203}
+RESULT	groups: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{42444, 65, 113238, 52, 40079, 20, 8416, 0}
+RESULT	groups: example progress, seed 1	{49, 10, 4, nil, :offset, 100, "page [\"n33\"] st 2026-11-20T10:00:04.003001Z reads nothing, held 0, read 6"}
+RESULT	groups: example progress, seed 4	{69, 5, 8, nil, :offset, 100, "page [\"n7\", \"n6\"] st 2026-11-20T10:00:01.001001Z reads nothing, held 0, read 2"}
+RESULT	groups: example progress_held, seed 2	{30, 1, 8, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.000000Z reads nothing, held 1, read 0"}
+RESULT	groups: example progress_held, seed 3	{51, 5, 2, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.000000Z reads nothing, held 3, read 0"}
+RESULT	groups: ms	12980
+RESULT	pages: walks / notifications / failures by property	{1000, 307000, %{progress: 144, progress_held: 15}}
+RESULT	pages: how walks ended	%{loop: 159, done: 418, too_long: 423}
+RESULT	pages: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{19595, 127, 12897, 52, 7972, 0, 0, 0}
+RESULT	pages: example progress, seed 5	{184, 1, nil, nil, :offset, 25, "page [\"n6\"] st 2026-11-20T10:00:01.004501Z reads nothing, held 0, read 5"}
+RESULT	pages: example progress, seed 24	{58, 1, nil, nil, :keyset, 7, "page [\"n3\"] st 2026-11-20T10:00:00.005000Z reads nothing, held 0, read 3"}
+RESULT	pages: example progress_held, seed 111	{49, 1, nil, nil, :offset, 7, "page [\"n1\"] st 2026-11-20T10:00:00.002500Z reads nothing, held 3, read 1"}
+RESULT	pages: example progress_held, seed 155	{256, 1, nil, nil, :offset, 25, "page [\"n0\"] st 2026-11-20T10:00:00.001001Z reads nothing, held 3, read 0"}
+RESULT	pages: ms	32011
+RESULT	time_lt: walks / notifications / failures by property	{1000, 171032, %{safe: 233, progress: 291, progress_held: 52}}
+RESULT	time_lt: how walks ended	%{loop: 414, done: 239, too_long: 347}
+RESULT	time_lt: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{25730, 107, 38943, 52, 20774, 0, 0, 0}
+RESULT	time_lt: example safe, seed 5	{181, 20, nil, nil, :time_lt, 25, "2026-11-20T10:00:00.110025Z marks unshown [\"n155\"] at read 8"}
+RESULT	time_lt: example safe, seed 8	{53, 3, nil, nil, :time_lt, 3, "2026-11-20T10:00:00.012002Z marks unshown [\"n10\"] at read 3"}
+RESULT	time_lt: example progress, seed 3	{101, 1, nil, nil, :time_lt, 25, "page [\"n6\"] st 2026-11-20T10:00:00.006001Z reads nothing, held 0, read 4"}
+RESULT	time_lt: example progress, seed 4	{307, 1, nil, nil, :time_lt, 25, "page [\"n12\"] st 2026-11-20T10:00:00.011002Z reads nothing, held 0, read 7"}
+RESULT	time_lt: example progress_held, seed 26	{264, 1, nil, nil, :time_lt, 25, "page [\"n3\", \"n2\", \"n1\"] st 2026-11-20T10:00:00.001001Z reads nothing, held 3, read 1"}
+RESULT	time_lt: example progress_held, seed 27	{106, 1, nil, nil, :time_lt, 7, "page [\"n3\", \"n2\"] st 2026-11-20T10:00:00.002001Z reads nothing, held 1, read 1"}
+RESULT	time_lt: ms	23595
+RESULT	time_le: walks / notifications / failures by property	{1000, 171199, %{progress: 326, progress_held: 47}}
+RESULT	time_le: how walks ended	%{loop: 373, done: 219, too_long: 408}
+RESULT	time_le: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{23072, 95, 39628, 102, 18718, 0, 0, 2982}
+RESULT	time_le: example progress, seed 2	{252, 1, nil, nil, :time_le, 25, "page [\"n0\"] st 2026-11-20T10:00:00.000999Z reads nothing, held 0, read 0"}
+RESULT	time_le: example progress, seed 5	{140, 1, nil, nil, :time_le, 25, "page [\"n0\"] st 2026-11-20T10:00:00.000Z reads nothing, held 0, read 0"}
+RESULT	time_le: example progress_held, seed 18	{309, 1, nil, nil, :time_le, 100, "page [\"n0\"] st 2026-11-20T10:00:00.000000Z reads nothing, held 4, read 0"}
+RESULT	time_le: example progress_held, seed 40	{106, 1, nil, nil, :time_le, 7, "page [\"n3\", \"n2\", \"n1\"] st 2026-11-20T10:00:00.002001Z reads nothing, held 1, read 1"}
+RESULT	time_le: ms	22963
+RESULT	live: walks / notifications / failures by property	{1000, 45357, %{progress: 96, progress_held: 375}}
+RESULT	live: how walks ended	%{loop: 461, done: 539}
+RESULT	live: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{42059, 98, 28720, 90, 28102, 5459, 0, 0}
+RESULT	live: example progress, seed 2	{50, 2, nil, nil, :offset, 100, "page [\"n36\"] st 2026-11-20T10:10:11.010005Z reads nothing, held 0, read 25"}
+RESULT	live: example progress, seed 47	{19, 1, nil, nil, :offset, 100, "page [\"n8\"] st 2026-11-20T10:03:48.002000Z reads nothing, held 0, read 14"}
+RESULT	live: example progress_held, seed 1	{44, 2, nil, nil, :offset, 100, "page [\"n5\"] st 2026-11-20T10:01:05.001Z reads nothing, held 3, read 5"}
+RESULT	live: example progress_held, seed 7	{56, 2, nil, nil, :offset, 100, "page [\"n23\"] st 2026-11-20T10:05:24.006007Z reads nothing, held 7, read 17"}
+RESULT	live: ms	8327
+RESULT	service-strict-noisread: walks / notifications / failures by property	{1000, 25417, %{progress: 505, progress_held: 107}}
+RESULT	service-strict-noisread: how walks ended	%{loop: 612, done: 388}
+RESULT	service-strict-noisread: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{36169, 86, 32682, 52, 30754, 41, 546, 0}
+RESULT	service-strict-noisread: example progress, seed 1	{58, 2, 2, ["reply", "like"], :offset, 100, "page [\"n7\"] st 2026-11-20T10:00:00.008Z reads nothing, held 0, read 4"}
+RESULT	service-strict-noisread: example progress, seed 2	{38, 1, nil, ["mention"], :offset, 100, "page [] st 2026-11-20T10:00:00.000003Z reads nothing, held 0, read 1"}
+RESULT	service-strict-noisread: example progress_held, seed 7	{21, 1, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.000000Z reads nothing, held 4, read 0"}
+RESULT	service-strict-noisread: example progress_held, seed 13	{42, 1, 2, nil, :offset, 100, "page [\"n1\", \"n0\"] st 2026-11-20T10:00:00.000000Z reads nothing, held 1, read 0"}
+RESULT	service-strict-noisread: ms	5858
+RESULT	service-nonstrict: walks / notifications / failures by property	{1000, 25413, %{ends: 51}}
+RESULT	service-nonstrict: how walks ended	%{loop: 51, done: 949}
+RESULT	service-nonstrict: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{17223, 80, 2721, 52, 2565, 35, 376, 0}
+RESULT	service-nonstrict: example ends, seed 17	{35, 1, nil, ["mention"], :offset, 100, "loop: 31 unread, 50 reads in a row read nothing, at read 53"}
+RESULT	service-nonstrict: example ends, seed 32	{32, 3, nil, nil, :offset, 100, "loop: 30 unread, 50 reads in a row read nothing, at read 51"}
+RESULT	service-nonstrict: ms	3177
+RESULT	service-lex: walks / notifications / failures by property	{1000, 25163, %{safe: 69, ends: 591, stall: 9}}
+RESULT	service-lex: how walks ended	%{loop: 633, done: 358, no_end: 9}
+RESULT	service-lex: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{39936, 901, 32537, 52, 31810, 3546, 321, 0}
+RESULT	service-lex: example safe, seed 2	{39, 1, nil, nil, :offset, 100, "2026-11-20T10:00:01.001Z marks unshown [\"n3\", \"n4\"] at read 1"}
+RESULT	service-lex: example safe, seed 38	{37, 1, nil, ["mention"], :offset, 100, "2026-11-20T10:00:00.002Z marks unshown [\"n2\"] at read 0"}
+RESULT	service-lex: example ends, seed 1	{31, 2, nil, nil, :offset, 100, "loop: 21 unread, 50 reads in a row read nothing, at read 55"}
+RESULT	service-lex: example ends, seed 3	{19, 3, 1, nil, :offset, 100, "loop: 7 unread, 50 reads in a row read nothing, at read 58"}
+RESULT	service-lex: example stall, seed 226	{35, 10, nil, ["mention"], :offset, 100, "no seen_through, nothing held, 1 unread, read 4"}
+RESULT	service-lex: example stall, seed 382	{3, 3, nil, nil, :offset, 100, "no seen_through, nothing held, 1 unread, read 1"}
+RESULT	service-lex: ms	3379
+RESULT	service-trunc_ms: walks / notifications / failures by property	{1000, 26019, %{ends: 964}}
+RESULT	service-trunc_ms: how walks ended	%{loop: 964, done: 36}
+RESULT	service-trunc_ms: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{50074, 68, 56583, 52, 48642, 30, 769, 0}
+RESULT	service-trunc_ms: example ends, seed 1	{12, 3, nil, nil, :offset, 100, "loop: 12 unread, 50 reads in a row read nothing, at read 50"}
+RESULT	service-trunc_ms: example ends, seed 2	{40, 5, nil, ["mention"], :offset, 100, "loop: 17 unread, 50 reads in a row read nothing, at read 57"}
+RESULT	service-trunc_ms: ms	8164
+RESULT	service-hidden_us: walks / notifications / failures by property	{1000, 25508, %{ends: 870}}
+RESULT	service-hidden_us: how walks ended	%{loop: 870, done: 130}
+RESULT	service-hidden_us: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{45212, 67, 60641, 52, 43909, 38, 1744, 0}
+RESULT	service-hidden_us: example ends, seed 1	{35, 2, nil, nil, :offset, 100, "loop: 35 unread, 50 reads in a row read nothing, at read 50"}
+RESULT	service-hidden_us: example ends, seed 2	{31, 10, 1, ["reply", "like"], :offset, 100, "loop: 26 unread, 50 reads in a row read nothing, at read 53"}
+RESULT	service-hidden_us: ms	7718
+DONE
+=== l1only, 1000 seeds per family
+RESULT	L1 fuzz build	"0.3.3-hum.11-754a231-overlay"
+RESULT	hum: walks / notifications / failures by property	{1000, 30028, %{progress_held: 2}}
+RESULT	hum: how walks ended	%{done: 1000}
+RESULT	hum: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{14750, 47, 609, 2, 2, 42, 917, 0}
+RESULT	hum: example progress_held, seed 37	{3, 5, nil, ["mention"], :offset, 100, "page [] st 2026-11-20T10:00:00.001Z reads nothing, held 2, read 1"}
+RESULT	hum: example progress_held, seed 336	{2, 5, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:01.000Z reads nothing, held 1, read 1"}
+RESULT	hum: ms	2990
+RESULT	edges: walks / notifications / failures by property	{1000, 20370, %{progress_held: 6}}
+RESULT	edges: how walks ended	%{done: 1000}
+RESULT	edges: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{11781, 31, 1147, 2, 6, 45, 0, 0}
+RESULT	edges: example progress_held, seed 29	{4, 1, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.001Z reads nothing, held 3, read 1"}
+RESULT	edges: example progress_held, seed 102	{6, 2, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.001001Z reads nothing, held 5, read 1"}
+RESULT	edges: ms	2026
+RESULT	groups: walks / notifications / failures by property	{1000, 45222, %{progress_held: 2}}
+RESULT	groups: how walks ended	%{done: 1000}
+RESULT	groups: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{10283, 31, 4332, 2, 2, 21, 3740, 0}
+RESULT	groups: example progress_held, seed 363	{14, 2, 1, nil, :offset, 100, "page [\"n5\", \"n4\"] st 2026-11-20T10:00:01.000Z reads nothing, held 8, read 1"}
+RESULT	groups: example progress_held, seed 442	{9, 10, 4, nil, :offset, 100, "page [\"n1\", \"n0\"] st 2026-11-20T10:00:00.001Z reads nothing, held 7, read 0"}
+RESULT	groups: ms	3560
+RESULT	pages: walks / notifications / failures by property	{1000, 307000, %{}}
+RESULT	pages: how walks ended	%{done: 577, too_long: 423}
+RESULT	pages: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{39358, 444, 2058, 2, 0, 0, 0, 0}
+RESULT	pages: ms	60929
+RESULT	time_lt: walks / notifications / failures by property	{1000, 171032, %{safe: 475}}
+RESULT	time_lt: how walks ended	%{done: 653, too_long: 347}
+RESULT	time_lt: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{32289, 200, 4254, 2, 0, 0, 0, 0}
+RESULT	time_lt: example safe, seed 3	{101, 1, nil, nil, :time_lt, 25, "2026-11-20T10:00:00.019008Z marks unshown [\"n25\"] at read 17"}
+RESULT	time_lt: example safe, seed 4	{307, 1, nil, nil, :time_lt, 25, "2026-11-20T10:00:00.023006Z marks unshown [\"n28\"] at read 19"}
+RESULT	time_lt: ms	28473
+RESULT	time_le: walks / notifications / failures by property	{1000, 171199, %{}}
+RESULT	time_le: how walks ended	%{done: 592, too_long: 408}
+RESULT	time_le: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{30988, 200, 9056, 4, 0, 0, 0, 3303}
+RESULT	time_le: ms	28364
+RESULT	live: walks / notifications / failures by property	{1000, 45357, %{progress_held: 18}}
+RESULT	live: how walks ended	%{done: 1000}
+RESULT	live: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{25545, 73, 1209, 2, 18, 5627, 0, 0}
+RESULT	live: example progress_held, seed 87	{83, 20, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:30.000Z reads nothing, held 1, read 1"}
+RESULT	live: example progress_held, seed 143	{81, 20, nil, nil, :offset, 100, "page [\"n1\", \"n0\"] st 2026-11-20T10:00:30.000000Z reads nothing, held 3, read 1"}
+RESULT	live: ms	4362
+RESULT	service-strict-noisread: walks / notifications / failures by property	{1000, 25417, %{progress_held: 4}}
+RESULT	service-strict-noisread: how walks ended	%{done: 1000}
+RESULT	service-strict-noisread: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{13503, 49, 889, 2, 4, 41, 468, 0}
+RESULT	service-strict-noisread: example progress_held, seed 44	{3, 1, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.001Z reads nothing, held 2, read 1"}
+RESULT	service-strict-noisread: example progress_held, seed 437	{2, 1, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.000Z reads nothing, held 1, read 0"}
+RESULT	service-strict-noisread: ms	2225
+RESULT	service-nonstrict: walks / notifications / failures by property	{1000, 25413, %{}}
+RESULT	service-nonstrict: how walks ended	%{done: 1000}
+RESULT	service-nonstrict: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{13672, 48, 7, 2, 0, 35, 536, 0}
+RESULT	service-nonstrict: ms	2664
+RESULT	service-lex: walks / notifications / failures by property	{1000, 25163, %{safe: 89, ends: 177, stall: 15}}
+RESULT	service-lex: how walks ended	%{loop: 182, done: 802, no_end: 16}
+RESULT	service-lex: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{26589, 901, 9830, 52, 9155, 7087, 514, 0}
+RESULT	service-lex: example safe, seed 2	{39, 1, nil, nil, :offset, 100, "2026-11-20T10:00:01.001Z marks unshown [\"n3\", \"n4\"] at read 1"}
+RESULT	service-lex: example safe, seed 38	{37, 1, nil, ["mention"], :offset, 100, "2026-11-20T10:00:00.002Z marks unshown [\"n2\"] at read 0"}
+RESULT	service-lex: example ends, seed 4	{10, 1, nil, nil, :offset, 100, "loop: 8 unread, 50 reads in a row read nothing, at read 52"}
+RESULT	service-lex: example ends, seed 6	{44, 1, 2, ["reply", "like"], :offset, 100, "loop: 40 unread, 50 reads in a row read nothing, at read 54"}
+RESULT	service-lex: example stall, seed 86	{2, 1, nil, nil, :offset, 100, "no seen_through, nothing held, 1 unread, read 2"}
+RESULT	service-lex: example stall, seed 145	{3, 1, 2, nil, :offset, 100, "no seen_through, nothing held, 2 unread, read 3"}
+RESULT	service-lex: ms	2098
+RESULT	service-trunc_ms: walks / notifications / failures by property	{1000, 26019, %{ends: 961}}
+RESULT	service-trunc_ms: how walks ended	%{loop: 961, done: 39}
+RESULT	service-trunc_ms: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{50038, 69, 65130, 52, 48454, 30, 1059, 0}
+RESULT	service-trunc_ms: example ends, seed 1	{12, 3, nil, nil, :offset, 100, "loop: 12 unread, 50 reads in a row read nothing, at read 50"}
+RESULT	service-trunc_ms: example ends, seed 2	{40, 5, nil, ["mention"], :offset, 100, "loop: 17 unread, 50 reads in a row read nothing, at read 57"}
+RESULT	service-trunc_ms: ms	9074
+RESULT	service-hidden_us: walks / notifications / failures by property	{1000, 25508, %{}}
+RESULT	service-hidden_us: how walks ended	%{done: 1000}
+RESULT	service-hidden_us: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{10421, 34, 7627, 2, 21, 39, 1362, 0}
+RESULT	service-hidden_us: ms	2416
+DONE
+=== candidate, 1000 seeds per family
+RESULT	L1 fuzz build	"0.3.3-hum.11-23fa3e9-overlay"
+RESULT	hum: walks / notifications / failures by property	{1000, 30028, %{progress_held: 2}}
+RESULT	hum: how walks ended	%{done: 1000}
+RESULT	hum: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{14750, 47, 609, 2, 2, 42, 917, 0}
+RESULT	hum: example progress_held, seed 37	{3, 5, nil, ["mention"], :offset, 100, "page [] st 2026-11-20T10:00:00.001Z reads nothing, held 2, read 1"}
+RESULT	hum: example progress_held, seed 336	{2, 5, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:01.000Z reads nothing, held 1, read 1"}
+RESULT	hum: ms	3552
+RESULT	edges: walks / notifications / failures by property	{1000, 20370, %{progress_held: 6}}
+RESULT	edges: how walks ended	%{done: 1000}
+RESULT	edges: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{11781, 31, 1147, 2, 6, 45, 0, 0}
+RESULT	edges: example progress_held, seed 29	{4, 1, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.001Z reads nothing, held 3, read 1"}
+RESULT	edges: example progress_held, seed 102	{6, 2, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.001001Z reads nothing, held 5, read 1"}
+RESULT	edges: ms	2097
+RESULT	groups: walks / notifications / failures by property	{1000, 45222, %{progress_held: 2}}
+RESULT	groups: how walks ended	%{done: 1000}
+RESULT	groups: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{10283, 31, 4332, 2, 2, 21, 3740, 0}
+RESULT	groups: example progress_held, seed 363	{14, 2, 1, nil, :offset, 100, "page [\"n5\", \"n4\"] st 2026-11-20T10:00:01.000Z reads nothing, held 8, read 1"}
+RESULT	groups: example progress_held, seed 442	{9, 10, 4, nil, :offset, 100, "page [\"n1\", \"n0\"] st 2026-11-20T10:00:00.001Z reads nothing, held 7, read 0"}
+RESULT	groups: ms	3651
+RESULT	pages: walks / notifications / failures by property	{1000, 307000, %{}}
+RESULT	pages: how walks ended	%{done: 577, too_long: 423}
+RESULT	pages: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{39358, 444, 2058, 2, 0, 0, 0, 0}
+RESULT	pages: ms	60904
+RESULT	time_lt: walks / notifications / failures by property	{1000, 171032, %{safe: 475}}
+RESULT	time_lt: how walks ended	%{done: 653, too_long: 347}
+RESULT	time_lt: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{32289, 200, 4254, 2, 0, 0, 0, 0}
+RESULT	time_lt: example safe, seed 3	{101, 1, nil, nil, :time_lt, 25, "2026-11-20T10:00:00.019008Z marks unshown [\"n25\"] at read 17"}
+RESULT	time_lt: example safe, seed 4	{307, 1, nil, nil, :time_lt, 25, "2026-11-20T10:00:00.023006Z marks unshown [\"n28\"] at read 19"}
+RESULT	time_lt: ms	29908
+RESULT	time_le: walks / notifications / failures by property	{1000, 171199, %{}}
+RESULT	time_le: how walks ended	%{done: 592, too_long: 408}
+RESULT	time_le: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{30988, 200, 9056, 4, 0, 0, 0, 3303}
+RESULT	time_le: ms	29724
+RESULT	live: walks / notifications / failures by property	{1000, 45357, %{progress_held: 18}}
+RESULT	live: how walks ended	%{done: 1000}
+RESULT	live: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{25545, 73, 1209, 2, 18, 5627, 0, 0}
+RESULT	live: example progress_held, seed 87	{83, 20, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:30.000Z reads nothing, held 1, read 1"}
+RESULT	live: example progress_held, seed 143	{81, 20, nil, nil, :offset, 100, "page [\"n1\", \"n0\"] st 2026-11-20T10:00:30.000000Z reads nothing, held 3, read 1"}
+RESULT	live: ms	4447
+RESULT	service-strict-noisread: walks / notifications / failures by property	{1000, 25417, %{progress_held: 4}}
+RESULT	service-strict-noisread: how walks ended	%{done: 1000}
+RESULT	service-strict-noisread: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{13503, 49, 889, 2, 4, 41, 468, 0}
+RESULT	service-strict-noisread: example progress_held, seed 44	{3, 1, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.001Z reads nothing, held 2, read 1"}
+RESULT	service-strict-noisread: example progress_held, seed 437	{2, 1, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.000Z reads nothing, held 1, read 0"}
+RESULT	service-strict-noisread: ms	2429
+RESULT	service-nonstrict: walks / notifications / failures by property	{1000, 25413, %{}}
+RESULT	service-nonstrict: how walks ended	%{done: 1000}
+RESULT	service-nonstrict: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{13672, 48, 7, 2, 0, 35, 536, 0}
+RESULT	service-nonstrict: ms	2720
+RESULT	service-lex: walks / notifications / failures by property	{1000, 25163, %{safe: 89, ends: 177, stall: 15}}
+RESULT	service-lex: how walks ended	%{loop: 182, done: 802, no_end: 16}
+RESULT	service-lex: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{26589, 901, 9830, 52, 9155, 7087, 514, 0}
+RESULT	service-lex: example safe, seed 2	{39, 1, nil, nil, :offset, 100, "2026-11-20T10:00:01.001Z marks unshown [\"n3\", \"n4\"] at read 1"}
+RESULT	service-lex: example safe, seed 38	{37, 1, nil, ["mention"], :offset, 100, "2026-11-20T10:00:00.002Z marks unshown [\"n2\"] at read 0"}
+RESULT	service-lex: example ends, seed 4	{10, 1, nil, nil, :offset, 100, "loop: 8 unread, 50 reads in a row read nothing, at read 52"}
+RESULT	service-lex: example ends, seed 6	{44, 1, 2, ["reply", "like"], :offset, 100, "loop: 40 unread, 50 reads in a row read nothing, at read 54"}
+RESULT	service-lex: example stall, seed 86	{2, 1, nil, nil, :offset, 100, "no seen_through, nothing held, 1 unread, read 2"}
+RESULT	service-lex: example stall, seed 145	{3, 1, 2, nil, :offset, 100, "no seen_through, nothing held, 2 unread, read 3"}
+RESULT	service-lex: ms	2096
+RESULT	service-trunc_ms: walks / notifications / failures by property	{1000, 26019, %{ends: 961}}
+RESULT	service-trunc_ms: how walks ended	%{loop: 961, done: 39}
+RESULT	service-trunc_ms: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{50038, 69, 65130, 52, 48454, 30, 1059, 0}
+RESULT	service-trunc_ms: example ends, seed 1	{12, 3, nil, nil, :offset, 100, "loop: 12 unread, 50 reads in a row read nothing, at read 50"}
+RESULT	service-trunc_ms: example ends, seed 2	{40, 5, nil, ["mention"], :offset, 100, "loop: 17 unread, 50 reads in a row read nothing, at read 57"}
+RESULT	service-trunc_ms: ms	8818
+RESULT	service-hidden_us: walks / notifications / failures by property	{1000, 25508, %{}}
+RESULT	service-hidden_us: how walks ended	%{done: 1000}
+RESULT	service-hidden_us: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{10421, 34, 7627, 2, 21, 39, 1362, 0}
+RESULT	service-hidden_us: ms	2517
+DONE
+=== proposal, 1000 seeds per family
+RESULT	L1 fuzz build	"0.3.3-hum.11-61fd227-proposal-overlay"
+RESULT	hum: walks / notifications / failures by property	{1000, 30028, %{progress: 187, progress_held: 20}}
+RESULT	hum: how walks ended	%{loop: 205, done: 795}
+RESULT	hum: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{22185, 76, 13714, 52, 10276, 42, 207, 0}
+RESULT	hum: example progress, seed 1	{31, 2, 2, ["reply", "like"], :offset, 100, "page [\"n10\", \"n9\"] st 2026-11-20T10:00:00.007Z reads nothing, held 0, read 5"}
+RESULT	hum: example progress, seed 10	{40, 3, 1, ["reply", "like"], :offset, 100, "page [\"n14\"] st 2026-11-20T10:00:01.008501Z reads nothing, held 0, read 6"}
+RESULT	hum: example progress_held, seed 37	{3, 5, nil, ["mention"], :offset, 100, "page [] st 2026-11-20T10:00:00.001Z reads nothing, held 2, read 1"}
+RESULT	hum: example progress_held, seed 62	{55, 10, 1, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.000Z reads nothing, held 1, read 0"}
+RESULT	hum: ms	4959
+RESULT	edges: walks / notifications / failures by property	{1000, 20370, %{progress_held: 6}}
+RESULT	edges: how walks ended	%{done: 1000}
+RESULT	edges: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{11709, 31, 1198, 2, 6, 45, 0, 0}
+RESULT	edges: example progress_held, seed 29	{4, 1, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.001Z reads nothing, held 3, read 1"}
+RESULT	edges: example progress_held, seed 102	{6, 2, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.001001Z reads nothing, held 5, read 1"}
+RESULT	edges: ms	1974
+RESULT	groups: walks / notifications / failures by property	{1000, 45222, %{progress: 458, progress_held: 81}}
+RESULT	groups: how walks ended	%{loop: 538, done: 462}
+RESULT	groups: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{32541, 73, 57521, 52, 27008, 21, 1056, 0}
+RESULT	groups: example progress, seed 1	{49, 10, 4, nil, :offset, 100, "page [\"n33\"] st 2026-11-20T10:00:04.003001Z reads nothing, held 0, read 6"}
+RESULT	groups: example progress, seed 4	{69, 5, 8, nil, :offset, 100, "page [\"n7\", \"n6\"] st 2026-11-20T10:00:01.001001Z reads nothing, held 0, read 2"}
+RESULT	groups: example progress_held, seed 3	{51, 5, 2, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.000000Z reads nothing, held 3, read 0"}
+RESULT	groups: example progress_held, seed 42	{25, 20, 1, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.000000Z reads nothing, held 7, read 0"}
+RESULT	groups: ms	10377
+RESULT	pages: walks / notifications / failures by property	{1000, 307000, %{}}
+RESULT	pages: how walks ended	%{done: 577, too_long: 423}
+RESULT	pages: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{39283, 443, 2116, 2, 0, 0, 0, 0}
+RESULT	pages: ms	59660
+RESULT	time_lt: walks / notifications / failures by property	{1000, 171032, %{safe: 475}}
+RESULT	time_lt: how walks ended	%{done: 653, too_long: 347}
+RESULT	time_lt: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{32150, 200, 4333, 2, 0, 0, 0, 0}
+RESULT	time_lt: example safe, seed 3	{101, 1, nil, nil, :time_lt, 25, "2026-11-20T10:00:00.019008Z marks unshown [\"n25\"] at read 17"}
+RESULT	time_lt: example safe, seed 4	{307, 1, nil, nil, :time_lt, 25, "2026-11-20T10:00:00.023006Z marks unshown [\"n28\"] at read 19"}
+RESULT	time_lt: ms	28692
+RESULT	time_le: walks / notifications / failures by property	{1000, 171199, %{}}
+RESULT	time_le: how walks ended	%{done: 592, too_long: 408}
+RESULT	time_le: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{30859, 200, 9137, 4, 0, 0, 0, 3307}
+RESULT	time_le: ms	28788
+RESULT	live: walks / notifications / failures by property	{1000, 45357, %{progress_held: 18}}
+RESULT	live: how walks ended	%{done: 1000}
+RESULT	live: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{25493, 73, 1263, 2, 18, 5639, 0, 0}
+RESULT	live: example progress_held, seed 87	{83, 20, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:30.000Z reads nothing, held 1, read 1"}
+RESULT	live: example progress_held, seed 143	{81, 20, nil, nil, :offset, 100, "page [\"n1\", \"n0\"] st 2026-11-20T10:00:30.000000Z reads nothing, held 3, read 1"}
+RESULT	live: ms	4156
+RESULT	service-strict-noisread: walks / notifications / failures by property	{1000, 25417, %{progress: 103, progress_held: 13}}
+RESULT	service-strict-noisread: how walks ended	%{loop: 112, done: 888}
+RESULT	service-strict-noisread: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{17600, 77, 7897, 52, 5619, 41, 125, 0}
+RESULT	service-strict-noisread: example progress, seed 10	{58, 5, 3, nil, :offset, 100, "page [\"n29\"] st 2026-11-20T10:00:07.018004Z reads nothing, held 0, read 11"}
+RESULT	service-strict-noisread: example progress, seed 19	{36, 1, 3, nil, :offset, 100, "page [\"n3\"] st 2026-11-20T10:00:00.001500Z reads nothing, held 0, read 2"}
+RESULT	service-strict-noisread: example progress_held, seed 13	{42, 1, 2, nil, :offset, 100, "page [\"n1\", \"n0\"] st 2026-11-20T10:00:00.000000Z reads nothing, held 1, read 0"}
+RESULT	service-strict-noisread: example progress_held, seed 44	{3, 1, nil, nil, :offset, 100, "page [\"n0\"] st 2026-11-20T10:00:00.001Z reads nothing, held 2, read 1"}
+RESULT	service-strict-noisread: ms	2882
+RESULT	service-nonstrict: walks / notifications / failures by property	{1000, 25413, %{ends: 10}}
+RESULT	service-nonstrict: how walks ended	%{loop: 10, done: 990}
+RESULT	service-nonstrict: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{14204, 79, 549, 52, 502, 35, 322, 0}
+RESULT	service-nonstrict: example ends, seed 161	{57, 2, 1, nil, :offset, 100, "loop: 24 unread, 50 reads in a row read nothing, at read 79"}
+RESULT	service-nonstrict: example ends, seed 389	{36, 2, 1, nil, :offset, 100, "loop: 24 unread, 50 reads in a row read nothing, at read 61"}
+RESULT	service-nonstrict: ms	2703
+RESULT	service-lex: walks / notifications / failures by property	{1000, 25163, %{safe: 85, ends: 248, stall: 14}}
+RESULT	service-lex: how walks ended	%{loop: 261, done: 724, no_end: 15}
+RESULT	service-lex: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{29321, 901, 14832, 52, 13124, 6829, 183, 0}
+RESULT	service-lex: example safe, seed 2	{39, 1, nil, nil, :offset, 100, "2026-11-20T10:00:01.001Z marks unshown [\"n3\", \"n4\"] at read 1"}
+RESULT	service-lex: example safe, seed 38	{37, 1, nil, ["mention"], :offset, 100, "2026-11-20T10:00:00.002Z marks unshown [\"n2\"] at read 0"}
+RESULT	service-lex: example ends, seed 3	{19, 3, 1, nil, :offset, 100, "loop: 7 unread, 50 reads in a row read nothing, at read 58"}
+RESULT	service-lex: example ends, seed 4	{10, 1, nil, nil, :offset, 100, "loop: 8 unread, 50 reads in a row read nothing, at read 52"}
+RESULT	service-lex: example stall, seed 86	{2, 1, nil, nil, :offset, 100, "no seen_through, nothing held, 1 unread, read 2"}
+RESULT	service-lex: example stall, seed 162	{29, 1, nil, ["mention"], :offset, 100, "no seen_through, nothing held, 1 unread, read 24"}
+RESULT	service-lex: ms	2296
+RESULT	service-trunc_ms: walks / notifications / failures by property	{1000, 26019, %{ends: 959}}
+RESULT	service-trunc_ms: how walks ended	%{loop: 959, done: 41}
+RESULT	service-trunc_ms: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{49949, 68, 64372, 52, 48342, 30, 770, 0}
+RESULT	service-trunc_ms: example ends, seed 1	{12, 3, nil, nil, :offset, 100, "loop: 12 unread, 50 reads in a row read nothing, at read 50"}
+RESULT	service-trunc_ms: example ends, seed 2	{40, 5, nil, ["mention"], :offset, 100, "loop: 17 unread, 50 reads in a row read nothing, at read 57"}
+RESULT	service-trunc_ms: ms	8041
+RESULT	service-hidden_us: walks / notifications / failures by property	{1000, 25508, %{ends: 208}}
+RESULT	service-hidden_us: how walks ended	%{loop: 208, done: 792}
+RESULT	service-hidden_us: reads total, max / shown again total, most shows of one / reads acknowledging nothing / pages without seen_through / over_bound->json / pages with a duplicate	{18524, 67, 19602, 52, 10474, 38, 113, 0}
+RESULT	service-hidden_us: example ends, seed 2	{31, 10, 1, ["reply", "like"], :offset, 100, "loop: 26 unread, 50 reads in a row read nothing, at read 53"}
+RESULT	service-hidden_us: example ends, seed 4	{35, 1, 1, nil, :offset, 100, "loop: 33 unread, 50 reads in a row read nothing, at read 51"}
+RESULT	service-hidden_us: ms	3915
+DONE
+FINISHED

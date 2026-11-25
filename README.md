@@ -28,6 +28,7 @@ Start with [`hum.10/REPORT.md`](hum.10/REPORT.md). It separates observed results
 - **`b653ead` (24 Nov 2026):** [`b653ead/REPORT.md`](b653ead/REPORT.md), summarized below.
 - **`9499b75` (24 Nov 2026):** [`9499b75/REPORT.md`](9499b75/REPORT.md). U, W5 and the three problems from hum's review are fixed in these tests. H6 changes by design. Two counted losses remain: a late notification inside the 10-minute margin when the receipt floor sits there (N1), and a records backfill cut at 5 pages that reports complete, which is older than these fixes (N2).
 - **`61fd227` (25 Nov 2026):** [`61fd227/REPORT.md`](61fd227/REPORT.md). The fixes for hum's second review (F1 to F3) and N2 hold, with no regression. New: the oldest-first read can loop under a strict service (L1). X3 is fixed only where the damaged entry's neighbour predates the margin; M2 stays a counted limit. Includes an experimental patch for M2 and L1.
+- **`23fa3e9` (25 Nov 2026, "Trial by Fire"):** [`23fa3e9/REPORT.md`](23fa3e9/REPORT.md). L1 is fixed (by `754a231`) in 7,000 seeded walks under a strict service and 300 through the text cut. Both M2 refinements hold: the room is fixed at the upgrade, and the release is per listener. X3 holds under a two-sided test. No regression was found in the kit. Four minor findings, one with a one-function patch. Assumptions about the real service are listed separately. [`23fa3e9/METHODS.md`](23fa3e9/METHODS.md) records what the campaign taught us about method.
 
 ### `b653ead`
 
@@ -53,6 +54,7 @@ It tests hum's fixes for the three anomalies found while validating `335b95e`: a
 | `335b95e/REPORT.md` | Validation of `335b95e` (`hum/next`), with its tools and raw results |
 | `9499b75/REPORT.md` | Validation of `9499b75` (`hum/next`), with its tools and raw results |
 | `61fd227/REPORT.md` | Validation of `61fd227` (`hum/next`), with its tools, raw results and an experimental patch |
+| `23fa3e9/REPORT.md` | Validation of `23fa3e9` (`hum/next`), with its tools, seeds, raw results, first-pass outputs and a patch; `METHODS.md` |
 | `b653ead/REPORT.md` | Validation of `b653ead` (`hum/next`), with its tools and raw results |
 | `hum.6-to-hum.9/REPORT.md` | Earlier report, revision 2 |
 | `hum.6-to-hum.9/kit/` | The kit that produced the earlier results |
@@ -88,7 +90,7 @@ The script downloads the five published release archives, checks their pinned SH
 - Test data was on tmpfs, so `fsync` and power loss were not exercised.
 - The shared HTTP service and the wake webhook were not tested end to end.
 - How often these failures occur in practice is unknown.
-- Apart from `335b95e`, `b653ead`, `9499b75` and `61fd227` (see their folders), commits after `683a2bd` (hum.10), including `e1fb50f`, were not tested.
+- Apart from `335b95e`, `b653ead`, `9499b75`, `61fd227` and `23fa3e9` (see their folders; `754a231` and `74f9c34` are tested in `23fa3e9/`), commits after `683a2bd` (hum.10), including `e1fb50f`, were not tested.
 
 The reports describe a snapshot. If a newer build exists, re-run the kit before relying on these results.
 

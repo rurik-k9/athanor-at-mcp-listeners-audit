@@ -1,0 +1,28 @@
+--- a/lib/at_mcp/updates.ex
++++ b/lib/at_mcp/updates.ex
+@@ -233,6 +233,7 @@
+           data
+           |> update_in(["listeners"], &Map.delete(&1, id))
+           |> update_in(["receipts"], &Map.delete(&1, id))
++          |> drop_settling(id)
+           |> Map.update!("updates", fn updates ->
+             Enum.reject(updates, &(&1["listener"] == id))
+           end)
+@@ -776,6 +777,17 @@
+     end
+   end
+ 
++  # A listener removed while an upgrade settles leaves no room behind: one
++  # added later under the same id holds receipts of its own, not the upgrade's.
++  defp drop_settling(%{"settling" => %{} = settling} = data, id) do
++    case Map.delete(settling, id) do
++      left when left == %{} -> Map.delete(data, "settling")
++      left -> Map.put(data, "settling", left)
++    end
++  end
++
++  defp drop_settling(data, _id), do: data
++
+   defp receipt_limit(data, id),
+     do: max(data["listeners"][id]["bounds"]["count"] * @receipt_factor, @min_receipts)
+ 
