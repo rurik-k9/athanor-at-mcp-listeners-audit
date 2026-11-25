@@ -1,0 +1,121 @@
+--- a/lib/at_mcp/listeners.ex
++++ b/lib/at_mcp/listeners.ex
+@@ -957,6 +957,9 @@
+   # These accounts' backfills succeeded with what they found saved: the live
+   # mark may move once no account is held.
+   defp release_live(state, dids) do
++    # Proposal (M2): this account's backfill since the upgrade is saved; its upgrade-timed receipts may go.
++    for did <- dids, do: Updates.end_settling(did, state.updates)
++
+     state = %{
+       state
+       | live_hold: MapSet.difference(state.live_hold, MapSet.new(dids)),
+--- a/lib/at_mcp/notifications_oldest.ex
++++ b/lib/at_mcp/notifications_oldest.ex
+@@ -179,6 +179,8 @@
+ 
+       sorted = Enum.sort_by(settled, &elem(&1, 0), DateTime)
+       stretch = edge(sorted, limit)
++      stretch =
++        advance(stretch, Enum.drop(sorted, length(stretch)), fresh |> Enum.map(&elem(&1, 0)) |> Enum.min(DateTime, fn -> nil end))
+ 
+       # The oldest unread this page does not cover: seen_through never
+       # passes it, whatever the stamps' precision.
+@@ -264,6 +266,24 @@
+     end
+   end
+ 
++  # Proposal (rurik-k9's validation of 61fd227, Y5h and Z1-Z6): seen_through stops one unit before the oldest
++  # unshown notification. When the oldest shown is not strictly before that (the shown and the unshown are one unit
++  # apart, or the shown are one group of equal times), a strict read leaves every shown notification unread, and the
++  # next read shows them again, for ever. Then show the next group of equal times too, and look again. Fresh
++  # notifications are never shown, so a cap from them ends the extension.
++  defp advance([{oldest, _} | _] = stretch, [{next_at, _} | _] = rest, fresh_min) do
++    cap = Enum.min([next_at | List.wrap(fresh_min)], DateTime)
++
++    if DateTime.compare(oldest, just_before(cap)) == :lt or DateTime.compare(cap, next_at) == :lt do
++      stretch
++    else
++      {group, more} = Enum.split_while(rest, fn {at, _} -> DateTime.compare(at, next_at) == :eq end)
++      advance(stretch ++ group, more, fresh_min)
++    end
++  end
++
++  defp advance(stretch, _rest, _fresh_min), do: stretch
++
+   @doc """
+   A shown page cut to its oldest `fit` items for the text reading, never
+   splitting a group of equal times. `seen_through` then follows what is
+--- a/lib/at_mcp/updates.ex
++++ b/lib/at_mcp/updates.ex
+@@ -180,6 +180,15 @@
+   def settle_upgrade(shared, prefix, marker, server \\ __MODULE__),
+     do: GenServer.call(server, {:settle_upgrade, shared, prefix, marker}, 60_000)
+ 
++  @doc """
++  The account's first backfill since an upgrade succeeded with what it found saved: receipts an
++  earlier build left, timed at the upgrade, may now be let go like any other (proposal, rurik-k9's
++  validation of 61fd227, M2). Until then they are kept past the bound, up to twice it, so a save
++  before that backfill doesn't raise the floor into the lag margin.
++  """
++  def end_settling(did, server \\ __MODULE__),
++    do: GenServer.call(server, {:end_settling, did})
++
+   @impl true
+   def init(opts) do
+     dir = Keyword.get_lazy(opts, :state_dir, &AtMcp.Inbound.Store.default_dir/0)
+@@ -413,6 +422,22 @@
+     {:reply, reply, state}
+   end
+ 
++  def handle_call({:end_settling, did}, _from, state) do
++    reply =
++      case load(state, did) do
++        {:ok, %{"settling" => _}} ->
++          case change(state, did, fn data -> {:ok, Map.delete(data, "settling"), :ok} end) do
++            {:ok, :ok} -> :ok
++            error -> error
++          end
++
++        _ ->
++          :ok
++      end
++
++    {:reply, reply, state}
++  end
++
+   def handle_call({:settle_upgrade, shared, prefix, marker}, _from, state) do
+     reply =
+       with {:ok, streams} <- read_streams(state) do
+@@ -535,7 +560,19 @@
+     {held, corrupt, _oldest} =
+       data["receipts"] |> Map.get(id, []) |> timed_receipts(now)
+ 
+-    {kept, gone} = Enum.split(["#{receipt}:#{now}" | held], receipt_limit(data, id))
++    limit = receipt_limit(data, id)
++    {kept, gone} = Enum.split(["#{receipt}:#{now}" | held], limit)
++
++    # Proposal (M2): receipts timed at an upgrade are kept until the account's first backfill since.
++    {kept, gone} =
++      case get_in(data, ["settling", id]) do
++        stamp when is_integer(stamp) ->
++          {protected, loose} = Enum.split_with(gone, &(saved_at(&1) == stamp))
++          if length(kept) + length(protected) <= 2 * limit, do: {kept ++ protected, loose}, else: {kept, gone}
++
++        _ ->
++          {kept, gone}
++      end
+ 
+     data
+     |> put_in(["receipts", id], kept)
+@@ -669,7 +706,9 @@
+             |> put_in(["receipts", id], timed)
+             |> forget(id, Enum.max(corrupt, fn -> nil end))
+ 
+-          if before?, do: forget(data, id, oldest), else: data
++          if before?,
++            do: forget(data, id, oldest),
++            else: Map.update(data, "settling", %{id => mtime}, &Map.put(&1, id, mtime))
+         end)
+ 
+       {:ok, data, :ok}

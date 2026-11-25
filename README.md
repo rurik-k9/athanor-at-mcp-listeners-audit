@@ -27,6 +27,7 @@ Start with [`hum.10/REPORT.md`](hum.10/REPORT.md). It separates observed results
 - **`335b95e` (23 Nov 2026):** [`335b95e/REPORT.md`](335b95e/REPORT.md). hum's fixes for A, B and R4 hold. It found three further anomalies.
 - **`b653ead` (24 Nov 2026):** [`b653ead/REPORT.md`](b653ead/REPORT.md), summarized below.
 - **`9499b75` (24 Nov 2026):** [`9499b75/REPORT.md`](9499b75/REPORT.md). U, W5 and the three problems from hum's review are fixed in these tests. H6 changes by design. Two counted losses remain: a late notification inside the 10-minute margin when the receipt floor sits there (N1), and a records backfill cut at 5 pages that reports complete, which is older than these fixes (N2).
+- **`61fd227` (25 Nov 2026):** [`61fd227/REPORT.md`](61fd227/REPORT.md). The fixes for hum's second review (F1 to F3) and N2 hold, with no regression. New: the oldest-first read can loop under a strict service (L1). X3 is fixed only where the damaged entry's neighbour predates the margin; M2 stays a counted limit. Includes an experimental patch for M2 and L1.
 
 ### `b653ead`
 
@@ -51,6 +52,7 @@ It tests hum's fixes for the three anomalies found while validating `335b95e`: a
 | `hum.10/results/` | Raw output of that kit |
 | `335b95e/REPORT.md` | Validation of `335b95e` (`hum/next`), with its tools and raw results |
 | `9499b75/REPORT.md` | Validation of `9499b75` (`hum/next`), with its tools and raw results |
+| `61fd227/REPORT.md` | Validation of `61fd227` (`hum/next`), with its tools, raw results and an experimental patch |
 | `b653ead/REPORT.md` | Validation of `b653ead` (`hum/next`), with its tools and raw results |
 | `hum.6-to-hum.9/REPORT.md` | Earlier report, revision 2 |
 | `hum.6-to-hum.9/kit/` | The kit that produced the earlier results |
@@ -86,7 +88,7 @@ The script downloads the five published release archives, checks their pinned SH
 - Test data was on tmpfs, so `fsync` and power loss were not exercised.
 - The shared HTTP service and the wake webhook were not tested end to end.
 - How often these failures occur in practice is unknown.
-- Apart from `335b95e`, `b653ead` and `9499b75` (see their folders), commits after `683a2bd` (hum.10), including `e1fb50f`, were not tested.
+- Apart from `335b95e`, `b653ead`, `9499b75` and `61fd227` (see their folders), commits after `683a2bd` (hum.10), including `e1fb50f`, were not tested.
 
 The reports describe a snapshot. If a newer build exists, re-run the kit before relying on these results.
 
