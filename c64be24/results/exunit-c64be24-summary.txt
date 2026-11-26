@@ -1,0 +1,27 @@
+ExUnit run of hum's suite at c64be24bc06b7fb44e91369cb8007b2065b8f962 (git archive of that commit)
+OTP: https://builds.hex.pm/builds/otp/amd64/ubuntu-24.04/OTP-28.4.3.tar.gz sha256 5c81918766976859ee668e10b13291fe42934b9a607dc8d7873a069203876d91 (release runs erts 16.4.0.6)
+Elixir: https://builds.hex.pm/builds/elixir/v1.19.6-otp-28.zip sha256 d69db87541e1e5f4fa3f803353c01a30d4ef0e236c6bf53128b2bbed8b0b9b7e
+mix.lock sha256 86d1c6c2f34bfb7b63bd836450e093728196355bac9cbf5ff3e66c8d95172c83 (deps fetched with mix deps.get, Hex checks each package against mix.lock)
+Command: MIX_ENV=test mix test (defaults: :goal, :e2e, :hosts excluded), in bwrap --unshare-all (no network), private /tmp, HEX_OFFLINE=1
+Result: 1703 tests, 0 failures, 22 skipped (47 excluded); Finished in 482.6 seconds (19.9s async, 462.7s sync)
+
+Skipped tests, by their own tags (grep of test/):
+test/at_mcp/updates_resource_stdio_test.exs:43:  @tag skip: is_nil(System.get_env("MCP_CLIENT_PATH"))
+test/at_mcp/updates_resource_stdio_test.exs:50:  @tag skip: is_nil(System.get_env("MCP_CLIENT_PATH")) or is_nil(System.get_env("MCP_SDK_PATH"))
+test/at_mcp/updates_resource_stdio_test.exs:58:  @tag skip: is_nil(System.get_env("MCP_CLIENT_PATH"))
+test/at_mcp/updates_resource_stdio_test.exs:67:  @tag skip: is_nil(System.get_env("MCP_CLIENT_PATH"))
+test/at_mcp/stdio_test.exs:5:  @tag skip: is_nil(System.get_env("MCP_CLIENT_PATH"))
+test/at_mcp/shared_stdio_test.exs:41:  @tag skip: is_nil(System.get_env("MCP_CLIENT_PATH")) or is_nil(System.get_env("MCP_SDK_PATH"))
+test/at_mcp/review_dbf4a1d_test.exs:194:  @tag skip: "known limit: a flood of notes can evict an honest one (a duplicate)"
+test/at_mcp/review_9b5d2dc_bench_test.exs:7:  @moduletag skip: if(System.get_env("BENCH"), do: false, else: "a benchmark: BENCH=1 to run")
+test/at_mcp/review_5270f0e_test.exs:171:  @tag skip: "known limit: bare receipts from hum.11 carry no date to note"
+test/at_mcp/review_9b5d2dc_test.exs:143:  @tag skip: "known limit: clock skew times save rate past the receipt limit gives duplicates"
+test/at_mcp/notifications_resource_stdio_test.exs:15:  @tag skip: is_nil(System.get_env("MCP_CLIENT_PATH"))
+test/at_mcp/host_pages_test.exs:31:  @tag skip: is_nil(System.find_executable("python3")) && "needs python3"
+test/at_mcp/external_account_test.exs:77:  @tag skip: is_nil(System.get_env("MCP_CLIENT_PATH"))
+test/at_mcp/account_release_test.exs:34:  @tag skip: is_nil(System.get_env("TEST_ACCOUNT_RELEASE"))
+test/at_mcp/account_release_test.exs:271:  @tag skip: is_nil(System.get_env("TEST_ACCOUNT_RELEASE"))
+test/at_mcp/notifications_resource_http_test.exs:44:  @tag skip:
+test/at_mcp/http_client_test.exs:36:  @tag skip:
+test/at_mcp/hosts_test.exs:55:  @tag skip:
+test/at_mcp/direct_service_auth_test.exs:27:  @tag skip: is_nil(System.get_env("MCP_CLIENT_PATH"))

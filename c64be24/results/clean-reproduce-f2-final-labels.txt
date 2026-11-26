@@ -1,0 +1,24 @@
+=== f2_account_file_types on official
+RESULT	F2 control (no edit)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: true}	supervisor survives
+RESULT	F2 listeners: [] (pre-existing)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 receipts: null (regression from 9499b75)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+RESULT	F2 next_seq: "x"	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+DONE
+=== f2_account_file_types on 9281970
+RESULT	F2 control (no edit)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: true}	supervisor survives
+RESULT	F2 listeners: [] (pre-existing)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 receipts: null (regression from 9499b75)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+RESULT	F2 next_seq: "x"	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+DONE
+=== f2_account_file_types on 9499b75
+RESULT	F2 control (no edit)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: true}	supervisor survives
+RESULT	F2 listeners: [] (pre-existing)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 receipts: null (regression from 9499b75)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 next_seq: "x"	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+DONE
+=== f2_account_file_types on c64be24
+RESULT	F2 control (no edit)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: true}	supervisor survives
+RESULT	F2 listeners: [] (pre-existing)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 receipts: null (regression from 9499b75)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 next_seq: "x"	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+DONE

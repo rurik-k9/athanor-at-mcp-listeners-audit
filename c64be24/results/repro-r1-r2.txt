@@ -1,0 +1,18 @@
+=== r1_damaged_streams_file on target (0.3.3-hum.11-c64be24-overlay) 
+RESULT	R1 supervisor after 9 s (streams.json missing its last byte)	:shutdown
+RESULT	R1 verdict	REPRODUCED
+DONE
+=== r1_damaged_streams_file on previous (0.3.3-hum.11-23fa3e9-overlay) 
+RESULT	R1 supervisor after 9 s (streams.json missing its last byte)	:shutdown
+RESULT	R1 verdict	REPRODUCED
+DONE
+=== r2_relisten_holds_mark on target (0.3.3-hum.11-c64be24-overlay) 
+RESULT	R2 control (no loop)	%{mark_after_10_intervals: 3600, unrecovered: 1, subject_listings: 4}
+RESULT	R2 unlisten/listen every interval	%{mark_after_10_intervals: 0, unrecovered: nil, subject_listings: 12}
+RESULT	R2 verdict	REPRODUCED
+DONE
+=== r2_relisten_holds_mark on previous (0.3.3-hum.11-23fa3e9-overlay) 
+RESULT	R2 control (no loop)	%{mark_after_10_intervals: 3600, unrecovered: nil, subject_listings: 22}
+RESULT	R2 unlisten/listen every interval	%{mark_after_10_intervals: 3600, unrecovered: nil, subject_listings: 22}
+RESULT	R2 verdict	NOT REPRODUCED
+DONE

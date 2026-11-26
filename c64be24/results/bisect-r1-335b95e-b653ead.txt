@@ -1,0 +1,8 @@
+=== r1_damaged_streams_file on pre_b653 (0.3.3-hum.11-335b95e-overlay) 
+RESULT	R1 supervisor after 9 s (streams.json missing its last byte)	:still_running
+RESULT	R1 verdict	NOT REPRODUCED
+DONE
+=== r1_damaged_streams_file on b653 (0.3.3-hum.11-b653ead-overlay) 
+RESULT	R1 supervisor after 9 s (streams.json missing its last byte)	:still_running
+RESULT	R1 verdict	NOT REPRODUCED
+DONE

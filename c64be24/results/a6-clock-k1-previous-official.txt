@@ -1,0 +1,17 @@
+=== a6_clock on previous (0.3.3-hum.11-23fa3e9-overlay) K1_ONLY=1
+RESULT	A6 K1 clock 1 h ahead, then stepped back while running	%{receipt_limit: 1000, old_held: 0, floor_minus_corrected_now: {:ok, nil}, new_after_step: 50, new_held: 0, new_lost: 50, unrecovered_counted: nil}
+RESULT	A6 K1 control: clock right throughout	%{old_held: 950, new_held: 50, new_lost: 0, unrecovered_counted: nil}
+DONE
+=== a6_clock on official (0.3.3-hum.11-335b95e) K1_ONLY=1
+NO DONE: last lines:
+** (UndefinedFunctionError) function AtMcp.Updates.forgotten_through/2 is undefined or private
+    (at_mcp 0.3.3-hum.11) AtMcp.Updates.forgotten_through("did:plc:testaccount", "references")
+    /work/t.exs:186: (file)
+    (stdlib 7.3.0.3) erl_eval.erl:924: :erl_eval.do_apply/7
+    (stdlib 7.3.0.3) erl_eval.erl:484: :erl_eval.expr/6
+    (stdlib 7.3.0.3) erl_eval.erl:668: :erl_eval.expr/6
+    (stdlib 7.3.0.3) erl_eval.erl:276: :erl_eval.exprs/6
+=== a6_clock on official (0.3.3-hum.11-335b95e) K1_ONLY=1
+RESULT	A6 K1 clock 1 h ahead, then stepped back while running	%{receipt_limit: 1000, old_held: 0, floor_minus_corrected_now: :absent_in_this_build, new_after_step: 50, new_held: 0, new_lost: 50, unrecovered_counted: nil}
+RESULT	A6 K1 control: clock right throughout	%{old_held: 950, new_held: 50, new_lost: 0, unrecovered_counted: nil}
+DONE

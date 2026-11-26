@@ -1,0 +1,28 @@
+=== a2_ahead_clock on target (0.3.3-hum.11-c64be24-overlay) 
+RESULT	A2 S1 1 hour ahead	%{held: 1, floor_minus_now: -99, exposed_to_a_dated_read: 0, date_of_key: 1800003600, saved_again_by_backfill: 0, ahead_record_in_last_updates: 0, account_mark_minus_now: 0}
+RESULT	A2 S1 1 day ahead	%{held: 1, floor_minus_now: -99, exposed_to_a_dated_read: 0, date_of_key: 1800086400, saved_again_by_backfill: 0, ahead_record_in_last_updates: 0, account_mark_minus_now: 0}
+RESULT	A2 S1 1 year ahead	%{held: 1, floor_minus_now: -99, exposed_to_a_dated_read: 0, date_of_key: 1831536000, saved_again_by_backfill: 0, ahead_record_in_last_updates: 0, account_mark_minus_now: 0}
+RESULT	A2 S1 100 years ahead	%{held: 1, floor_minus_now: -98, exposed_to_a_dated_read: 0, date_of_key: 4953600000, saved_again_by_backfill: 0, ahead_record_in_last_updates: 0, account_mark_minus_now: 0}
+RESULT	A2 S1 largest 13-char key (zzzzzzzzzzzzz)	%{held: 1, floor_minus_now: -99, exposed_to_a_dated_read: 0, date_of_key: 36028797018, saved_again_by_backfill: 0, ahead_record_in_last_updates: 0, account_mark_minus_now: 0}
+RESULT	A2 S1 top bit set (k22222222222)	%{held: 1, floor_minus_now: -98, exposed_to_a_dated_read: 0, date_of_key: 18014398509, saved_again_by_backfill: 0, ahead_record_in_last_updates: 0, account_mark_minus_now: 0}
+RESULT	A2 S2 clock 300 s behind, 1 saves/s	%{held: 1298, floor_minus_now: -998, exposed_to_a_dated_read: 0, saved_again_by_backfill: 0, predicted: :none, verdict: "HOLDS", repo_pages_read: 0}
+RESULT	A2 S2 clock 300 s behind, 2 saves/s	%{held: 1594, floor_minus_now: -497, exposed_to_a_dated_read: 0, saved_again_by_backfill: 0, predicted: :none, verdict: "HOLDS", repo_pages_read: 0}
+RESULT	A2 S2 clock 300 s behind, 3 saves/s	%{held: 1891, floor_minus_now: -331, exposed_to_a_dated_read: 0, saved_again_by_backfill: 0, predicted: :none, verdict: "HOLDS", repo_pages_read: 0}
+RESULT	A2 S2 clock 300 s behind, 4 saves/s	%{held: 2000, floor_minus_now: -249, exposed_to_a_dated_read: 196, saved_again_by_backfill: 0, predicted: :duplicates, verdict: "HOLDS", repo_pages_read: 0}
+RESULT	A2 S2 clock 300 s behind, 5 saves/s	%{held: 1995, floor_minus_now: -197, exposed_to_a_dated_read: 490, saved_again_by_backfill: 0, predicted: :duplicates, verdict: "HOLDS", repo_pages_read: 0}
+RESULT	A2 S2 clock 300 s behind, 8 saves/s	%{held: 2000, floor_minus_now: -118, exposed_to_a_dated_read: 500, saved_again_by_backfill: 0, predicted: :duplicates, verdict: "HOLDS", repo_pages_read: 0}
+DONE
+=== a2_ahead_clock on previous (0.3.3-hum.11-23fa3e9-overlay) 
+RESULT	A2 S1 1 hour ahead	%{held: 0, floor_minus_now: -99, exposed_to_a_dated_read: 1, date_of_key: 1800003600, saved_again_by_backfill: 0, ahead_record_in_last_updates: 0, account_mark_minus_now: 0}
+RESULT	A2 S1 1 day ahead	%{held: 0, floor_minus_now: -99, exposed_to_a_dated_read: 1, date_of_key: 1800086400, saved_again_by_backfill: 0, ahead_record_in_last_updates: 0, account_mark_minus_now: 0}
+RESULT	A2 S1 1 year ahead	%{held: 0, floor_minus_now: -99, exposed_to_a_dated_read: 1, date_of_key: 1831536000, saved_again_by_backfill: 0, ahead_record_in_last_updates: 0, account_mark_minus_now: 0}
+RESULT	A2 S1 100 years ahead	%{held: 0, floor_minus_now: -99, exposed_to_a_dated_read: 1, date_of_key: 4953600000, saved_again_by_backfill: 0, ahead_record_in_last_updates: 0, account_mark_minus_now: 0}
+RESULT	A2 S1 largest 13-char key (zzzzzzzzzzzzz)	%{held: 0, floor_minus_now: -99, exposed_to_a_dated_read: 1, date_of_key: 36028797018, saved_again_by_backfill: 0, ahead_record_in_last_updates: 0, account_mark_minus_now: 0}
+RESULT	A2 S1 top bit set (k22222222222)	%{held: 0, floor_minus_now: -99, exposed_to_a_dated_read: 1, date_of_key: 18014398509, saved_again_by_backfill: 0, ahead_record_in_last_updates: 0, account_mark_minus_now: 0}
+RESULT	A2 S2 clock 300 s behind, 1 saves/s	%{held: 1000, floor_minus_now: -999, exposed_to_a_dated_read: 299, saved_again_by_backfill: 0, predicted: :none, verdict: "DETERIORATED", repo_pages_read: 0}
+RESULT	A2 S2 clock 300 s behind, 2 saves/s	%{held: 1000, floor_minus_now: -499, exposed_to_a_dated_read: 598, saved_again_by_backfill: 0, predicted: :none, verdict: "DETERIORATED", repo_pages_read: 0}
+RESULT	A2 S2 clock 300 s behind, 3 saves/s	%{held: 1000, floor_minus_now: -332, exposed_to_a_dated_read: 894, saved_again_by_backfill: 0, predicted: :none, verdict: "DETERIORATED", repo_pages_read: 0}
+RESULT	A2 S2 clock 300 s behind, 4 saves/s	%{held: 1000, floor_minus_now: -249, exposed_to_a_dated_read: 1196, saved_again_by_backfill: 0, predicted: :duplicates, verdict: "HOLDS", repo_pages_read: 0}
+RESULT	A2 S2 clock 300 s behind, 5 saves/s	%{held: 1000, floor_minus_now: -198, exposed_to_a_dated_read: 1490, saved_again_by_backfill: 0, predicted: :duplicates, verdict: "HOLDS", repo_pages_read: 0}
+RESULT	A2 S2 clock 300 s behind, 8 saves/s	%{held: 1000, floor_minus_now: -123, exposed_to_a_dated_read: 1500, saved_again_by_backfill: 0, predicted: :duplicates, verdict: "HOLDS", repo_pages_read: 0}
+DONE

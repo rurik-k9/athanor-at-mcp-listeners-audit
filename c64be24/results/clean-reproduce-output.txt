@@ -1,0 +1,73 @@
+c64be24 = c64be24bc06b7fb44e91369cb8007b2065b8f962, on hum/next
+0.3.3-hum.11 release sha256 OK
+overlay b653ead = b653eade1563
+overlay 3d43966 = 3d4396616424
+overlay 9281970 = 928197099d3d
+overlay 9499b75 = 9499b7506db2
+overlay 23fa3e9 = 23fa3e93d196
+overlay c64be24 = c64be24bc06b
+=== f1_streams_json on official
+RESULT	F1 login: supervisor after 9 s	:still_running	NOT REPRODUCED
+RESULT	F1 connect: supervisor after 9 s	:still_running	NOT REPRODUCED
+RESULT	F1 live save: supervisor after 9 s	:shutdown	REPRODUCED
+DONE
+=== f1_streams_json on b653ead
+RESULT	F1 login: supervisor after 9 s	:still_running	NOT REPRODUCED
+RESULT	F1 connect: supervisor after 9 s	:still_running	NOT REPRODUCED
+RESULT	F1 live save: supervisor after 9 s	:shutdown	REPRODUCED
+DONE
+=== f1_streams_json on 3d43966
+RESULT	F1 login: supervisor after 9 s	:shutdown	REPRODUCED
+RESULT	F1 connect: supervisor after 9 s	:shutdown	REPRODUCED
+RESULT	F1 live save: supervisor after 9 s	:shutdown	REPRODUCED
+DONE
+=== f1_streams_json on c64be24
+RESULT	F1 login: supervisor after 9 s	:shutdown	REPRODUCED
+RESULT	F1 connect: supervisor after 9 s	:shutdown	REPRODUCED
+RESULT	F1 live save: supervisor after 9 s	:shutdown	REPRODUCED
+DONE
+=== f2_account_file_types on official
+RESULT	F2 control (no edit)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: true}	supervisor survives
+RESULT	F2 listeners: [] (pre-existing)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 receipts: null (regression from 9499b75)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+RESULT	F2 next_seq: "x"	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+DONE
+=== f2_account_file_types on 9281970
+RESULT	F2 control (no edit)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: true}	supervisor survives
+RESULT	F2 listeners: [] (pre-existing)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 receipts: null (regression from 9499b75)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 next_seq: "x"	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+DONE
+=== f2_account_file_types on 9499b75
+RESULT	F2 control (no edit)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: true}	supervisor survives
+RESULT	F2 listeners: [] (pre-existing)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 receipts: null (regression from 9499b75)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 next_seq: "x"	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+DONE
+=== f2_account_file_types on c64be24
+RESULT	F2 control (no edit)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: true}	supervisor survives
+RESULT	F2 listeners: [] (pre-existing)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 receipts: null (regression from 9499b75)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 next_seq: "x"	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+DONE
+=== f3_mark_never_moves on 23fa3e9
+RESULT	F3 control (no loop)	%{mark: 3600, listings: 21, unrecovered: nil}	UNEXPECTED
+RESULT	F3a unlisten+listen every interval	%{mark: 3600, listings: 22, unrecovered: nil}	NOT REPRODUCED
+RESULT	F3b logout+login every interval (reconnect sent by hand)	%{mark: 3600, listings: 65, unrecovered: nil}	NOT REPRODUCED
+DONE
+=== f3_mark_never_moves on c64be24
+RESULT	F3 control (no loop)	%{mark: 3600, listings: 4, unrecovered: 1}	given up and counted, as documented
+RESULT	F3a unlisten+listen every interval	%{mark: 0, listings: 12, unrecovered: nil}	REPRODUCED
+RESULT	F3b logout+login every interval (reconnect sent by hand)	%{mark: 0, listings: 12, unrecovered: nil}	REPRODUCED (partly simulated)
+DONE
+=== f4_poll_clock_ahead on official
+RESULT	F4 control (clock right)	%{of: 20, saved: 20, unrecovered: nil}	all saved
+RESULT	F4 clock 1 h ahead at login	%{of: 20, saved: 0, unrecovered: nil}	REPRODUCED (none saved, none counted)
+RESULT	F4 negative control: clock right at login, ahead for one poll only	%{of: 20, saved: 20, unrecovered: nil}	not affected, as expected (the cause is the start at login)
+DONE
+=== f4_poll_clock_ahead on c64be24
+RESULT	F4 control (clock right)	%{of: 20, saved: 20, unrecovered: nil}	all saved
+RESULT	F4 clock 1 h ahead at login	%{of: 20, saved: 0, unrecovered: nil}	REPRODUCED (none saved, none counted)
+RESULT	F4 negative control: clock right at login, ahead for one poll only	%{of: 20, saved: 20, unrecovered: nil}	not affected, as expected (the cause is the start at login)
+DONE
+FINISHED

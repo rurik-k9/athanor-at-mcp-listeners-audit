@@ -1,0 +1,12 @@
+=== r1_damaged_streams_file on c3d4 (0.3.3-hum.11-3d43966-overlay) 
+RESULT	R1 supervisor after 9 s (streams.json missing its last byte)	:shutdown
+RESULT	R1 verdict	REPRODUCED
+DONE
+=== r1_damaged_streams_file on c9281 (0.3.3-hum.11-9281970-overlay) 
+RESULT	R1 supervisor after 9 s (streams.json missing its last byte)	:shutdown
+RESULT	R1 verdict	REPRODUCED
+DONE
+=== r1_damaged_streams_file on c9499 (0.3.3-hum.11-9499b75-overlay) 
+RESULT	R1 supervisor after 9 s (streams.json missing its last byte)	:shutdown
+RESULT	R1 verdict	REPRODUCED
+DONE

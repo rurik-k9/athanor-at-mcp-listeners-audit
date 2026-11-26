@@ -1,0 +1,510 @@
+make: Nothing to be done for 'all'.
+Running ExUnit with seed: 236850, max_cases: 8
+Excluding tags: [:goal, :e2e, :hosts]
+
+................................................................................................................................................................................
+16:02:59.662 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:9 connection lost ({:connect_failed, {:down, {:shutdown, :econnrefused}}}), reconnecting in 1000ms
+......
+16:02:59.851 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:9 connection lost ({:connect_failed, {:down, {:shutdown, :econnrefused}}}), reconnecting in 1000ms
+
+16:02:59.869 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at wss://jetstream2.us-east.bsky.network connection lost ({:connect_failed, {:down, {:shutdown, :nxdomain}}}), reconnecting in 1000ms
+....
+16:03:00.038 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:9 connection lost ({:connect_failed, {:down, {:shutdown, :econnrefused}}}), reconnecting in 1000ms
+
+16:03:00.040 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at wss://jetstream2.us-east.bsky.network connection lost ({:connect_failed, {:down, :noproc}}), reconnecting in 1000ms
+.......
+16:03:00.194 [warning] AtMcp.Listeners: records backfill for did:plc:mock people, author did:plc:alice: :nxdomain
+...........
+16:03:00.212 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:9 connection lost ({:connect_failed, {:down, {:shutdown, :econnrefused}}}), reconnecting in 1000ms
+.
+16:03:00.223 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at wss://jetstream2.us-east.bsky.network connection lost ({:connect_failed, {:down, {:shutdown, :nxdomain}}}), reconnecting in 1000ms
+......
+16:03:00.228 [warning] AtMcp.Listeners: records backfill for did:plc:mock people, author did:plc:alice: :nxdomain
+..........
+16:03:00.675 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:9 connection lost ({:connect_failed, {:down, {:shutdown, :econnrefused}}}), reconnecting in 1000ms
+
+16:03:00.686 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at wss://jetstream2.us-east.bsky.network connection lost ({:connect_failed, {:down, :noproc}}), reconnecting in 1000ms
+
+16:03:00.734 [warning] AtMcp.Listeners: records backfill for did:plc:mock people, author did:plc:alice: :nxdomain
+
+16:03:01.680 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:9 connection lost ({:connect_failed, {:down, {:shutdown, :econnrefused}}}), reconnecting in 2000ms
+
+16:03:01.691 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at wss://jetstream2.us-east.bsky.network connection lost ({:connect_failed, {:down, {:shutdown, :nxdomain}}}), reconnecting in 2000ms
+....
+16:03:02.391 [error] GenServer :updates_14947 terminating
+** (stop) :killed_between_writes
+    test/at_mcp/updates_test.exs:52: anonymous fn/0 in AtMcp.UpdatesTest."test updates reach disk before the stream cursor: stopped between the two, nothing is lost or doubled"/1
+    (at_mcp 0.0.0-dev) lib/at_mcp/updates.ex:287: AtMcp.Updates.handle_call/3
+    (stdlib 7.3) gen_server.erl:2470: :gen_server.try_handle_call/4
+    (stdlib 7.3) gen_server.erl:2499: :gen_server.handle_msg/3
+    (stdlib 7.3) proc_lib.erl:333: :proc_lib.init_p_do_apply/3
+Last message (from #PID<0.4532.0>): {:commit, [{"did:plc:updatesme", "references", %{"from" => "did:plc:a", "source" => "links", "uri" => "at://did:plc:a/town.delve.feed.post/4"}}, {"did:plc:updatesme", "references", %{"from" => "did:plc:a", "source" => "links", "uri" => "at://did:plc:a/town.delve.feed.post/5"}}], {:spacedust, 200}, [server: :updates_14947, after_updates: #Function<15.13334562/0 in AtMcp.UpdatesTest."test updates reach disk before the stream cursor: stopped between the two, nothing is lost or doubled"/1>]}
+.................
+16:03:08.757 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:43873 connection lost (:closed), reconnecting in 1000ms
+.....
+16:03:10.562 [warning] AtMcp.Listeners: backfill for did:plc:listenersme: {:exit, {:shutdown, {GenServer, :call, [:updates_19268, {:held, "did:plc:listenersme", "references", []}, 5000]}}}
+.
+16:03:11.181 [warning] AtMcp.Listeners: backfill for did:plc:listenersme: {:exit, {:shutdown, {GenServer, :call, [:updates_17986, {:forgotten_through, "did:plc:listenersme", "thread"}, 5000]}}}
+.
+16:03:11.268 [warning] AtMcp.Listeners: moderation read failed ({:error, :appview_unavailable}); trying the batch again
+........
+16:03:16.781 [warning] AtMcp.Listeners: Constellation sources for at://did:plc:host/town.delve.feed.post/3kroot: {:http_status, 404}
+
+16:03:16.781 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+
+16:03:17.081 [warning] AtMcp.Listeners: Constellation sources for at://did:plc:host/town.delve.feed.post/3kroot: {:http_status, 404}
+
+16:03:17.081 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+
+16:03:17.333 [warning] AtMcp.Listeners: Constellation sources for at://did:plc:host/town.delve.feed.post/3kroot: {:http_status, 404}
+
+16:03:17.334 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+..
+16:03:20.252 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:03:20.851 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:03:20.852 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:03:21.053 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:38369 connection lost (:closed), reconnecting in 1000ms
+
+16:03:21.452 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:03:22.056 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:03:22.057 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:03:22.675 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:03:23.280 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:03:23.873 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+.
+16:03:25.321 [warning] AtMcp.Listeners: Constellation sources for at://did:plc:host/town.delve.feed.post/3kroottwo: {:http_status, 404}
+
+16:03:25.321 [warning] AtMcp.Listeners: Constellation sources for did:plc:latelogin: {:http_status, 404}
+..................
+16:03:30.519 [warning] AtMcp.Listeners: Constellation sources for at://did:plc:aa73other/town.delve.feed.post/3kroot: {:http_status, 404}
+
+16:03:30.520 [warning] AtMcp.Listeners: Constellation sources for did:plc:aa73other: {:http_status, 404}
+
+16:03:30.920 [warning] AtMcp.Listeners: Constellation sources for at://did:plc:aa73other/town.delve.feed.post/3kroot: {:http_status, 404}
+
+16:03:30.920 [warning] AtMcp.Listeners: Constellation sources for did:plc:aa73other: {:http_status, 404}
+.
+16:03:31.128 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:1 connection lost ({:connect_failed, {:down, {:shutdown, :econnrefused}}}), reconnecting in 1000ms
+
+16:03:31.132 [warning] AtMcp.Listeners: records backfill for did:plc:aa73me alice, author did:plc:alice: no function clause matches
+
+16:03:32.129 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:1 connection lost ({:connect_failed, {:down, {:shutdown, :econnrefused}}}), reconnecting in 2000ms
+.......
+16:03:36.108 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:1 connection lost ({:connect_failed, {:down, {:shutdown, :econnrefused}}}), reconnecting in 1000ms
+
+16:03:37.109 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:1 connection lost ({:connect_failed, {:down, {:shutdown, :econnrefused}}}), reconnecting in 2000ms
+
+16:03:39.111 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:1 connection lost ({:connect_failed, {:down, {:shutdown, :econnrefused}}}), reconnecting in 4000ms
+
+16:03:40.109 [error] GenServer :review_1253_sup_listeners_20002 terminating
+** (stop) killed
+Last message: {:EXIT, #PID<0.8666.0>, :killed}
+...
+MEASURE indexed(500) keep 2500: first 34 ms {:ok, :ok}; again 16 ms {:ok, :ok}
+...
+16:03:41.889 [warning] AtMcp.Updates: dates ahead for did:plc:review1253 not settled: no function clause matching in anonymous fn/1 in AtMcp.Updates.settle_future/2
+.
+MEASURE settle 10x10,000: nothing ahead 123 ms; all ahead 515 ms; next start 265 ms
+..
+MEASURE commit(500 held) keep 2500: 4093 ms
+.
+16:03:47.841 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+.
+16:03:50.478 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:03:50.877 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:35579 connection lost (:closed), reconnecting in 1000ms
+
+16:03:54.180 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:03:54.181 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:03:56.681 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:03:59.182 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:04:01.683 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+.
+16:04:02.039 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:04:02.491 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:04:02.491 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:04:02.893 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:04:03.295 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:04:03.696 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:04:04.097 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:04:04.499 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+
+16:04:04.901 [warning] AtMcp.Listeners: notifications: {:error, :unavailable}
+..........................
+16:04:14.416 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:9 connection lost ({:connect_failed, {:down, {:shutdown, :econnrefused}}}), reconnecting in 1000ms
+...
+16:04:17.064 [warning] AtMcp inbound delivery retained for retry: {:http_status, 500}
+.
+16:04:22.131 [warning] AtMcp inbound delivery retained for retry: %Req.TransportError{reason: :timeout}
+..
+16:04:22.525 [warning] AtMcp inbound delivery retained for retry: %Req.TransportError{reason: :econnrefused}
+.
+16:04:22.588 [warning] AtMcp inbound delivery retained for retry: %Req.TransportError{reason: :econnrefused}
+...........................*.
+16:04:27.004 [warning] AtMcp inbound delivery retained for retry: %Req.TransportError{reason: :timeout}
+........****.............................................
+16:04:40.778 [warning] AtMcp.Listeners: backfill for did:plc:auditme: {:exit, {:noproc, {GenServer, :call, [:audit_updates_24994, {:held, "did:plc:auditme", "references", []}, 5000]}}}
+
+16:04:41.311 [warning] AtMcp.Listeners: notifications: {:error, :appview_unavailable}
+.
+16:04:43.509 [warning] AtMcp.Listeners: notifications: {:error, :appview_unavailable}
+.
+16:04:44.838 [warning] AtMcp.Listeners: notifications: {:error, :appview_unavailable}
+..
+16:04:46.162 [warning] AtMcp account lifecycle-21091: login did not complete (:fixture_rejected); retrying with backoff
+
+16:04:46.163 [warning] AtMcp account lifecycle-21251: login did not complete (:not_connected); retrying with backoff
+...
+16:04:46.384 [warning] AtMcp inbound delivery retained for retry: {:http_status, 503}
+.......*.....
+16:04:52.106 [warning] AtMcp wake webhook for did:plc:wakeagent will be called again: {:http_status, 503}
+......*......*....................................................................................................................................
+16:05:50.355 [warning] AtMcp.Listeners: Constellation sources for at://did:plc:host/town.delve.feed.post/3kroot: {:http_status, 404}
+
+16:05:50.355 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+
+16:05:50.456 [warning] AtMcp.Listeners: Constellation sources for at://did:plc:host/town.delve.feed.post/3kroot: {:http_status, 404}
+
+16:05:50.456 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+
+16:05:50.557 [warning] AtMcp.Listeners: Constellation sources for at://did:plc:host/town.delve.feed.post/3kroot: {:http_status, 404}
+
+16:05:50.558 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+
+16:05:51.556 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:33385 connection lost (:closed), reconnecting in 1000ms
+
+16:05:52.563 [warning] AtMcp.Listeners: Constellation sources for at://did:plc:host/town.delve.feed.post/3kroot: {:http_status, 404}
+
+16:05:52.564 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+
+16:05:52.663 [warning] AtMcp.Listeners: Constellation sources for at://did:plc:host/town.delve.feed.post/3kroot: {:http_status, 404}
+
+16:05:52.663 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+
+16:05:52.764 [warning] AtMcp.Listeners: Constellation sources for at://did:plc:host/town.delve.feed.post/3kroot: {:http_status, 404}
+
+16:05:52.764 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+..
+16:05:55.909 [warning] AtMcp.Listeners: Constellation sources for at://did:plc:host/town.delve.feed.post/3kroot: {:http_status, 404}
+
+16:05:55.909 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+.
+16:06:00.122 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:35879 connection lost (:closed), reconnecting in 1000ms
+
+16:06:01.126 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:35879 connection lost (:closed), reconnecting in 1000ms
+
+16:06:02.131 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:35879 connection lost (:closed), reconnecting in 1000ms
+
+16:06:03.135 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:35879 connection lost (:closed), reconnecting in 1000ms
+......................................................
+16:06:22.790 [warning] AtMcp.Listeners: notifications for did:plc:notifyme failed: {:exit, {:shutdown, {GenServer, :call, [:notify_updates_16069, {:held, "did:plc:notifyme", "likes", []}, 5000]}}}
+..
+16:06:22.802 [warning] AtMcp.Listeners: backfill for did:plc:notifyme references failed: errors were found at the given arguments:
+
+  * 1st argument: the table identifier does not refer to an existing ETS table
+
+..
+16:06:25.427 [warning] AtMcp.Listeners: backfill for did:plc:catchupme: {:exit, {:noproc, {GenServer, :call, [:catch_up_updates_34978, {:held, "did:plc:catchupme", "references", []}, 5000]}}}
+..
+16:06:28.058 [warning] AtMcp.Listeners: backfill for did:plc:catchupme: {:exit, {:shutdown, {GenServer, :call, [:catch_up_updates_16357, {:forgotten_through, "did:plc:catchupme", "references"}, 5000]}}}
+..
+16:06:28.680 [warning] AtMcp.Listeners: backfill for did:plc:catchupme: {:exit, {:shutdown, {GenServer, :call, [:catch_up_updates_27108, {:held, "did:plc:catchupme", "references", []}, 5000]}}}
+.
+16:06:29.294 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:33743 connection lost (:closed), reconnecting in 1000ms
+..
+16:06:30.921 [warning] AtMcp.Listeners: backfill for did:plc:catchupme: {:exit, {:shutdown, {GenServer, :call, [:catch_up_updates_27268, {:held, "did:plc:catchupme", "references", []}, 5000]}}}
+.
+16:06:32.233 [warning] AtMcp.Listeners: backfill for did:plc:catchupme: {:exit, {:shutdown, {GenServer, :call, [:catch_up_updates_35458, {:forgotten_through, "did:plc:catchupme", "references"}, 5000]}}}
+
+16:06:32.236 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+
+16:06:32.337 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+
+16:06:32.438 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+.
+16:06:33.544 [warning] AtMcp.Listeners: backfill for did:plc:catchupme: {:exit, {:shutdown, {GenServer, :call, [:catch_up_updates_25187, {:forgotten_through, "did:plc:catchupme", "references"}, 5000]}}}
+
+16:06:33.547 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+...*...
+16:06:35.993 [warning] AtMcp.Inbound Jetstream exited (:normal); restarting
+.......................................*.........
+16:06:41.708 [warning] AtMcp inbound delivery retained for retry: :no_callback
+
+16:06:41.729 [warning] AtMcp inbound delivery retained for retry: :no_callback
+
+16:06:41.770 [warning] AtMcp.Deliver callback crashed: outage
+
+16:06:41.771 [warning] AtMcp inbound delivery retained for retry: :callback_crashed
+
+16:06:41.842 [warning] AtMcp inbound delivery retained for retry: :timeout
+..
+16:06:41.914 [warning] AtMcp inbound delivery retained for retry: {:rejected, "the post body", ~c"the post body as a charlist", %RuntimeError{message: "Bearer secret-token"}, [authorization: "Bearer secret-token"]}
+.....
+16:06:43.107 [warning] AtMcp inbound delivery retained for retry: :no_callback
+..
+16:06:43.170 [warning] AtMcp inbound delivery retained for retry: :consumer_unavailable
+.
+16:06:43.207 [warning] AtMcp inbound delivery retained for retry: :refused
+...
+16:06:43.963 [warning] AtMcp inbound delivery retained for retry: {:http_status, 422}
+
+16:06:43.984 [warning] AtMcp inbound delivery retained for retry: {:http_status, 422}
+.
+16:06:44.034 [warning] AtMcp inbound delivery retained for retry: :refused
+........................................................................................................................................................................................................................................................................................................................................................
+16:07:21.538 [error] AtMcp.Deliver.HTTPBridge refuse attach (fail-closed): {:error, {:delivery_bridge_unready, [:no_inbound_collector]}}
+......................................
+16:07:22.475 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+
+16:07:22.776 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+
+16:07:23.078 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+.
+16:07:27.219 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+
+16:07:27.371 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+
+16:07:27.522 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+
+16:07:28.726 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+
+16:07:28.877 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+
+16:07:29.028 [warning] AtMcp.Listeners: Constellation sources for did:plc:catchupme: {:http_status, 404}
+.
+16:07:30.545 [warning] AtMcp.Listeners: Constellation sources for at://did:plc:host/town.delve.feed.post/3kroot: {:http_status, 404}
+
+16:07:30.697 [warning] AtMcp.Listeners: Constellation sources for at://did:plc:host/town.delve.feed.post/3kroot: {:http_status, 404}
+
+16:07:30.848 [warning] AtMcp.Listeners: Constellation sources for at://did:plc:host/town.delve.feed.post/3kroot: {:http_status, 404}
+.................................................
+16:07:37.194 [warning] Retry exhausted after 1 attempts: {:era_probe_failed, {:transport_error, {:http_error, 409, "{\"error\":\"account_identity_mismatch\"}"}}}
+
+16:07:37.194 [error] Failed to initialize MCP client: {:era_probe_failed, {:transport_error, {:http_error, 409, "{\"error\":\"account_identity_mismatch\"}"}}}
+.
+16:07:37.198 [warning] Retry exhausted after 1 attempts: {:era_probe_failed, {:transport_error, {:http_error, 409, "{\"error\":\"account_identity_mismatch\"}"}}}
+
+16:07:37.198 [error] Failed to initialize MCP client: {:era_probe_failed, {:transport_error, {:http_error, 409, "{\"error\":\"account_identity_mismatch\"}"}}}
+...........
+16:07:40.166 [warning] AtMcp.Listeners: records backfill for did:plc:reviewme alice, author did:plc:alice: no function clause matches
+
+16:07:41.071 [warning] AtMcp.Listeners: records backfill for did:plc:reviewme alice, author did:plc:alice: no function clause matches
+..
+16:07:42.615 [warning] AtMcp.Listeners: records backfill for did:plc:reviewme people, author did:plc:carol: no function clause matches
+..
+16:07:43.944 [warning] AtMcp.Listeners: records backfill for did:plc:reviewme alice, author did:plc:alice: no function clause matches
+.
+16:07:45.275 [warning] AtMcp.Listeners: listRecords did:plc:alice town.delve.feed.post for did:plc:reviewme alice: :unreachable
+.
+16:07:46.085 [warning] AtMcp.Listeners: the Jetstream stream stopped (:killed); starting it again
+..
+16:07:46.615 [warning] AtMcp.Listeners: records backfill for did:plc:reviewme alice, author did:plc:alice: no function clause matches
+
+16:07:46.918 [warning] AtMcp.Listeners: records backfill for did:plc:reviewme alice, author did:plc:alice: no function clause matches
+
+16:07:47.220 [warning] AtMcp.Listeners: records backfill for did:plc:reviewme alice, author did:plc:alice: no function clause matches
+
+16:07:47.521 [warning] AtMcp.Listeners: records backfill for did:plc:reviewme alice, author did:plc:alice: no function clause matches
+
+16:07:47.822 [warning] AtMcp.Listeners: records backfill for did:plc:reviewme alice, author did:plc:alice: no function clause matches
+.
+16:07:49.248 [warning] AtMcp.Listeners: records backfill for did:plc:reviewme alice, author did:plc:alice: :unreachable
+..
+16:07:51.701 [warning] AtMcp.Listeners: records backfill for did:plc:reviewme alice, author did:plc:alice: :unreachable
+....
+16:07:57.516 [warning] AtMcp.Listeners: records backfill for did:plc:reviewme alice, author did:plc:alice: no function clause matches
+..........................................
+16:08:09.507 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:9 connection lost ({:connect_failed, {:down, {:shutdown, :econnrefused}}}), reconnecting in 1000ms
+
+16:08:09.507 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at wss://jetstream2.us-east.bsky.network connection lost ({:connect_failed, {:down, {:shutdown, :nxdomain}}}), reconnecting in 1000ms
+
+16:08:09.510 [warning] AtMcp.Listeners: records backfill for did:plc:mock people, author did:plc:alice: :nxdomain
+...
+16:08:09.549 [error] AtMcp account reload45698a: login refused (%AtMcp.Effects.Failure{kind: :refused, status: 401, message: nil, detail: "authentication_required"}); not retried until the account is reconnected or reloaded
+.....
+16:08:09.728 [warning] AtMcp inbound delivery retained for retry: {:http_status, 503}
+
+16:08:10.749 [warning] AtMcp inbound delivery retained for retry: :no_callback
+.....
+16:08:12.067 [warning] AtMcp inbound delivery retained for retry: :no_callback
+........
+16:08:17.863 [warning] AtMcp.Listeners: notifications: {:error, :appview_unavailable}
+
+16:08:17.961 [warning] AtMcp.Listeners: notifications: {:error, :appview_unavailable}
+
+16:08:18.062 [warning] AtMcp.Listeners: notifications: {:error, :appview_unavailable}
+
+16:08:18.163 [warning] AtMcp.Listeners: notifications: {:error, :appview_unavailable}
+.
+16:08:18.772 [warning] AtMcp.Listeners: notifications: {:error, :appview_unavailable}
+..
+16:08:21.074 [warning] AtMcp.Listeners: notifications for did:plc:reviewnotify failed: {:exit, {:shutdown, {GenServer, :call, [:review_notify_updates_49154, {:held, "did:plc:reviewnotify", "likes", ["at://did:plc:bob/app.bsky.feed.like/3n3a2nj6lc2st"]}, 5000]}}}
+..
+16:08:22.601 [warning] AtMcp.Listeners: notifications for did:plc:reviewnotify failed: {:exit, {:shutdown, {GenServer, :call, [:review_notify_updates_49218, {:held, "did:plc:reviewnotify", "references", []}, 5000]}}}
+.
+16:08:29.135 [warning] AtMcp.Listeners: notifications for did:plc:reviewnotify failed: {:exit, {:shutdown, {GenServer, :call, [:review_notify_updates_49282, {:indexed, "did:plc:reviewnotify", "likes", %{"at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz5eoiw" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4u2kj" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4irbt" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4igjd" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4xtax" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz5c5yf" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz5dqbm" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4req3" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4vs4q" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz565n2" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4ph52" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4oidn" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4w7h4" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4zurs" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz54he6" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz5cycc" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz55uiw" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz53uig" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4hmta" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4o2iu" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz56hk6" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz56che" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz5a4sd" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4psdm" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4hc2w" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4xcwe" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz5bmae" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz576b3" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4ghfm" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4hgeo" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4knr2" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz5doej" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4hdn4" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4tmle" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz54qyg" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4uf3c" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz5bqwa" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4oujr" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4g4lo" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4zcum" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4n5tt" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4jfgw" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz54zas" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4j67t" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz5dbpe" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4so3t" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4mesd" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4ob72" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4xxnc" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4l25x" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4vrjh" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4kuc3" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz56rg5" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4imez" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4xnwi" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4ynjn" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz54enn" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz5e3qa" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz53qlk" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4zalh" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4rox5" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4u5vv" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz5bsni" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4ok5b" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4icwm" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4jmd5" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4mm56" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4p3p2" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz54xw5" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4mr5m" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4l3gn" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4y2tm" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz53xr5" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz5ajnk" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4l7i4" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4gvwi" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4ti6u" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4iixu" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz5br63" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4mdwt" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4o4qb" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4ud5q" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4qq4c" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4homk" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz56yqa" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz5f3bw" => "2026-11-26T16:08:22Z", "at://did:plc:mallory/app.bsky.feed.like/3n3f3lfz4h26g" => "2026-11-26T16:08:22Z", ...}}, ...]}}}
+.....
+16:08:40.035 [warning] AtMcp.Listeners: notifications for did:plc:reviewnotify failed: {:exit, {:timeout, {GenServer, :call, [:review_notify_updates_35939, {:held, "did:plc:reviewnotify", "references", ["at://did:plc:bob/app.bsky.feed.post/3n3a2nxgefxsr"]}, 5000]}}}
+.
+16:08:43.252 [warning] AtMcp.Listeners: notifications for did:plc:reviewnotify failed: {:exit, {:shutdown, {GenServer, :call, [:review_notify_updates_36035, {:held, "did:plc:reviewnotify", "likes", ["at://did:plc:bob/app.bsky.feed.like/3n3a2o57h42hv"]}, 5000]}}}
+..
+16:08:46.338 [warning] AtMcp.Listeners: notifications for did:plc:reviewnotify failed: {:exit, {:shutdown, {GenServer, :call, [:review_notify_updates_36227, {:held, "did:plc:reviewnotify", "likes", ["at://did:plc:bob/app.bsky.feed.like/3n3a2oa2ys2s6"]}, 5000]}}}
+.....
+16:08:46.410 [warning] retry: got response with status 429, will retry in 927ms, 3 attempts left
+
+16:08:47.340 [warning] retry: got response with status 429, will retry in 1902ms, 2 attempts left
+
+16:08:49.245 [warning] retry: got response with status 429, will retry in 3981ms, 1 attempt left
+...........................
+16:08:53.631 [warning] retry: got response with status 500, will retry in 991ms, 3 attempts left
+
+16:08:54.625 [warning] retry: got response with status 500, will retry in 1852ms, 2 attempts left
+
+16:08:56.481 [warning] retry: got response with status 500, will retry in 3619ms, 1 attempt left
+..............................................
+16:09:00.640 [warning] retry: got exception, will retry in 910ms, 3 attempts left
+
+16:09:00.643 [warning] ** (Req.TransportError) connection refused
+
+16:09:01.556 [warning] retry: got exception, will retry in 1800ms, 2 attempts left
+
+16:09:01.556 [warning] ** (Req.TransportError) connection refused
+
+16:09:03.359 [warning] retry: got exception, will retry in 3680ms, 1 attempt left
+
+16:09:03.359 [warning] ** (Req.TransportError) connection refused
+...
+16:09:07.100 [warning] retry: got response with status 500, will retry in 957ms, 3 attempts left
+
+16:09:08.060 [warning] retry: got response with status 500, will retry in 1938ms, 2 attempts left
+
+16:09:10.003 [warning] retry: got response with status 500, will retry in 3807ms, 1 attempt left
+.******.................
+16:09:14.077 [warning] retry: got response with status 429, will retry in 0ms, 3 attempts left
+
+16:09:14.078 [warning] retry: got response with status 429, will retry in 0ms, 2 attempts left
+
+16:09:14.079 [warning] retry: got response with status 429, will retry in 0ms, 1 attempt left
+..
+16:09:14.096 [warning] retry: got response with status 500, will retry in 956ms, 3 attempts left
+
+16:09:15.055 [warning] retry: got response with status 500, will retry in 1925ms, 2 attempts left
+
+16:09:16.983 [warning] retry: got response with status 500, will retry in 3674ms, 1 attempt left
+...
+16:09:20.721 [warning] retry: got response with status 500, will retry in 955ms, 3 attempts left
+
+16:09:21.679 [warning] retry: got response with status 500, will retry in 1927ms, 2 attempts left
+
+16:09:23.609 [warning] retry: got response with status 500, will retry in 3751ms, 1 attempt left
+..*...........................**....*.............
+16:09:29.367 [warning] AtMcp.Listeners: backfill for did:plc:aaaame: {:exit, {:shutdown, {GenServer, :call, [:review_updates_56451, {:forgotten_through, "did:plc:aaaame", "references"}, 5000]}}}
+.
+16:09:30.325 [warning] AtMcp.Listeners: updates not saved, will retry: [{"did:plc:aaaame", {:error, :updates_unreadable}}]
+
+16:09:30.477 [warning] AtMcp.Listeners: updates not saved, will retry: [{"did:plc:aaaame", {:error, :updates_unreadable}}]
+..
+16:09:38.450 [warning] AtMcp.Listeners: moderation read failed ({:error, :session_expired}); trying the batch again
+
+16:09:38.602 [warning] AtMcp.Listeners: moderation read failed ({:error, :session_expired}); trying the batch again
+
+16:09:38.603 [warning] AtMcp.Listeners: gave up checking 1 matches
+.
+16:09:39.529 [warning] AtMcp.Listeners: backfill for did:plc:aaaame: {:exit, {:shutdown, {GenServer, :call, [:review_updates_56675, {:forgotten_through, "did:plc:aaaame", "references"}, 5000]}}}
+.
+16:09:40.743 [warning] AtMcp.Listeners: backfill for did:plc:aaaame references failed: no match of right hand side value:
+
+    {:error, :updates_unreadable}
+
+
+16:09:40.772 [warning] AtMcp.Listeners: updates not saved, will retry: [{"did:plc:aaaame", {:error, :updates_unreadable}}]
+
+16:09:40.924 [warning] AtMcp.Listeners: updates not saved, will retry: [{"did:plc:aaaame", {:error, :updates_unreadable}}]
+..
+16:09:41.598 [warning] AtMcp.Listeners: backfill for did:plc:aaaame: {:exit, {:shutdown, {GenServer, :call, [:review_updates_59874, {:held, "did:plc:aaaame", "references", []}, 5000]}}}
+...........
+16:09:44.472 [warning] AtMcp notifications retained checkpoint; next sweep will retry: :repeated_notification_cursor
+.
+16:09:44.474 [warning] AtMcp inbound delivery retained for retry: :no_callback
+.
+16:09:44.583 [warning] AtMcp inbound delivery retained for retry: :no_callback
+.
+16:09:44.791 [warning] AtMcp notifications retained checkpoint; next sweep will retry: :timeout
+
+16:09:44.792 [warning] AtMcp inbound delivery retained for retry: :no_callback
+.
+16:09:44.794 [warning] AtMcp notifications retained checkpoint; next sweep will retry: :timeout
+
+16:09:44.794 [warning] AtMcp inbound delivery retained for retry: :no_callback
+.
+16:09:44.797 [warning] AtMcp inbound delivery retained for retry: :no_callback
+
+16:09:44.797 [warning] AtMcp notifications retained checkpoint; next sweep will retry: :full
+.
+16:09:45.805 [warning] AtMcp inbound delivery retained for retry: :no_callback
+..
+16:09:45.811 [warning] AtMcp notifications retained checkpoint; next sweep will retry: :unreadable_notification_item
+...
+16:09:45.825 [warning] AtMcp inbound delivery retained for retry: :no_callback
+.....
+16:09:46.064 [warning] AtMcp notifications retained checkpoint; next sweep will retry: :full
+......................................*.....................................................................................................
+16:10:19.570 [warning] AtMcp.Listeners: backfill for did:plc:recordsme references failed: errors were found at the given arguments:
+
+  * 1st argument: the table identifier does not refer to an existing ETS table
+
+..
+16:10:19.828 [warning] AtMcp.Listeners: updates not saved, will retry: [{"did:plc:recordsme", {:error, :updates_unreadable}}]
+
+16:10:19.981 [warning] AtMcp.Listeners: updates not saved, will retry: [{"did:plc:recordsme", {:error, :updates_unreadable}}]
+
+16:10:20.133 [warning] AtMcp.Listeners: updates not saved, will retry: [{"did:plc:recordsme", {:error, :updates_unreadable}}]
+..
+16:10:21.667 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:42839 connection lost (:closed), reconnecting in 1000ms
+.
+16:10:22.677 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:38367 connection lost (:closed), reconnecting in 1000ms
+.
+16:10:23.688 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:36255 connection lost (:closed), reconnecting in 1000ms
+.
+16:10:25.000 [warning] [Elixir.ProtoRune.StreamClient] ==> jetstream at ws://127.0.0.1:35419 connection lost (:closed), reconnecting in 1000ms
+...*...............................................
+16:10:48.985 [warning] AtMcp inbound delivery retained for retry: :no_callback
+
+16:10:49.006 [warning] AtMcp inbound delivery retained for retry: :no_callback
+
+16:10:49.047 [warning] AtMcp inbound delivery retained for retry: :no_callback
+
+16:10:49.128 [warning] AtMcp inbound delivery retained for retry: :no_callback
+.........
+16:10:49.433 [warning] AtMcp inbound delivery retained for retry: :no_callback
+
+16:10:49.454 [warning] AtMcp inbound delivery retained for retry: :no_callback
+.....
+16:10:49.504 [error] AtMcp inbound outbox full; pausing Jetstream without advancing cursor
+
+16:10:49.505 [warning] AtMcp inbound delivery retained for retry: :no_callback
+
+16:10:49.515 [warning] AtMcp inbound delivery retained for retry: :no_callback
+.....................................
+Finished in 482.6 seconds (19.9s async, 462.7s sync)
+1703 tests, 0 failures, 22 skipped (47 excluded)
+exit 0

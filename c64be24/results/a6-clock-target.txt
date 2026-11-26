@@ -1,0 +1,10 @@
+=== a6_clock on target (0.3.3-hum.11-c64be24-overlay) 
+RESULT	A6 K1 clock 1 h ahead, then stepped back while running	%{receipt_limit: 1000, old_held: 0, floor_minus_corrected_now: {:ok, nil}, new_after_step: 50, new_held: 0, new_lost: 50, unrecovered_counted: nil}
+RESULT	A6 K1 control: clock right throughout	%{old_held: 1000, new_held: 50, new_lost: 0, unrecovered_counted: nil}
+RESULT	A6 K2 clock 120 s ahead of the AppView, 4 saves/s	%{probe: 200, receipt_limit: 1000, unrecovered_counted: nil, predicted: :none, probe_lost: 0, warm_held: 720, verdict: "AS PREDICTED"}
+RESULT	A6 K2 clock 120 s ahead of the AppView, 6 saves/s	%{probe: 200, receipt_limit: 1000, unrecovered_counted: nil, predicted: :none, probe_lost: 0, warm_held: 480, verdict: "AS PREDICTED"}
+RESULT	A6 K2 clock 120 s ahead of the AppView, 8 saves/s	%{probe: 200, receipt_limit: 1000, unrecovered_counted: nil, predicted: :none, probe_lost: 0, warm_held: 240, verdict: "AS PREDICTED"}
+RESULT	A6 K2 clock 120 s ahead of the AppView, 10 saves/s	%{probe: 200, receipt_limit: 1000, unrecovered_counted: nil, predicted: :losses, probe_lost: 0, warm_held: 0, verdict: "NO LOSS ABOVE IT"}
+RESULT	A6 K2 clock 120 s ahead of the AppView, 12 saves/s	%{probe: 200, receipt_limit: 1000, unrecovered_counted: nil, predicted: :losses, probe_lost: 200, warm_held: 0, verdict: "AS PREDICTED"}
+RESULT	A6 K2 clock 120 s ahead of the AppView, 16 saves/s	%{probe: 200, receipt_limit: 1000, unrecovered_counted: nil, predicted: :losses, probe_lost: 200, warm_held: 0, verdict: "AS PREDICTED"}
+DONE

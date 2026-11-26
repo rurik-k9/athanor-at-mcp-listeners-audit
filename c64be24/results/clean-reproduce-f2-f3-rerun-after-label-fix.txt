@@ -1,0 +1,46 @@
+=== f2_account_file_types on official
+RESULT	F2 control (no edit)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: true}	supervisor survives
+RESULT	F2 listeners: [] (pre-existing)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 receipts: null (regression since 9281970 in this case)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+RESULT	F2 next_seq: "x"	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+DONE
+=== f2_account_file_types on b653ead
+RESULT	F2 control (no edit)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: true}	supervisor survives
+RESULT	F2 listeners: [] (pre-existing)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 receipts: null (regression since 9281970 in this case)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+RESULT	F2 next_seq: "x"	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+DONE
+=== f2_account_file_types on 3d43966
+RESULT	F2 control (no edit)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: true}	supervisor survives
+RESULT	F2 listeners: [] (pre-existing)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 receipts: null (regression since 9281970 in this case)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+RESULT	F2 next_seq: "x"	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+DONE
+=== f2_account_file_types on 9281970
+RESULT	F2 control (no edit)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: true}	supervisor survives
+RESULT	F2 listeners: [] (pre-existing)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 receipts: null (regression since 9281970 in this case)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+RESULT	F2 next_seq: "x"	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+DONE
+=== f2_account_file_types on 9499b75
+RESULT	F2 control (no edit)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: true}	supervisor survives
+RESULT	F2 listeners: [] (pre-existing)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 receipts: null (regression since 9281970 in this case)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 next_seq: "x"	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+DONE
+=== f2_account_file_types on c64be24
+RESULT	F2 control (no edit)	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: true}	supervisor survives
+RESULT	F2 listeners: [] (pre-existing)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 receipts: null (regression since 9281970 in this case)	%{supervisor_alive_after_12s: false, healthy_account_saved_live_record: :store_down}	SUPERVISOR DOWN
+RESULT	F2 next_seq: "x"	%{supervisor_alive_after_12s: true, healthy_account_saved_live_record: false}	supervisor survives
+DONE
+=== f3_mark_never_moves on 23fa3e9
+RESULT	F3 control (no loop)	%{mark: 3600, listings: 21, unrecovered: nil}	mark moved, gap not counted (the earlier behaviour: let go silently)
+RESULT	F3a unlisten+listen every interval	%{mark: 3600, listings: 22, unrecovered: nil}	NOT REPRODUCED
+RESULT	F3b logout+login every interval (reconnect sent by hand)	%{mark: 3600, listings: 32, unrecovered: nil}	NOT REPRODUCED
+DONE
+=== f3_mark_never_moves on c64be24
+RESULT	F3 control (no loop)	%{mark: 3600, listings: 4, unrecovered: 1}	given up and counted (the c64be24 rule)
+RESULT	F3a unlisten+listen every interval	%{mark: 0, listings: 12, unrecovered: nil}	REPRODUCED
+RESULT	F3b logout+login every interval (reconnect sent by hand)	%{mark: 0, listings: 12, unrecovered: nil}	REPRODUCED (partly simulated)
+DONE

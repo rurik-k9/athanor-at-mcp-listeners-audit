@@ -29,6 +29,13 @@ Start with [`hum.10/REPORT.md`](hum.10/REPORT.md). It separates observed results
 - **`9499b75` (24 Nov 2026):** [`9499b75/REPORT.md`](9499b75/REPORT.md). U, W5 and the three problems from hum's review are fixed in these tests. H6 changes by design. Two counted losses remain: a late notification inside the 10-minute margin when the receipt floor sits there (N1), and a records backfill cut at 5 pages that reports complete, which is older than these fixes (N2).
 - **`61fd227` (25 Nov 2026):** [`61fd227/REPORT.md`](61fd227/REPORT.md). The fixes for hum's second review (F1 to F3) and N2 hold, with no regression. New: the oldest-first read can loop under a strict service (L1). X3 is fixed only where the damaged entry's neighbour predates the margin; M2 stays a counted limit. Includes an experimental patch for M2 and L1.
 - **`23fa3e9` (25 Nov 2026, "Trial by Fire"):** [`23fa3e9/REPORT.md`](23fa3e9/REPORT.md). L1 is fixed (by `754a231`) in 7,000 seeded walks under a strict service and 300 through the text cut. Both M2 refinements hold: the room is fixed at the upgrade, and the release is per listener. X3 holds under a two-sided test. No regression was found in the kit. Four minor findings, one with a one-function patch. Assumptions about the real service are listed separately. [`23fa3e9/METHODS.md`](23fa3e9/METHODS.md) records what the campaign taught us about method.
+- **`c64be24` (26 Nov 2026, "Trial by Fire", second round):** [`c64be24/REPORT.md`](c64be24/REPORT.md). Tested in hum's order: receipts, pagination ending, recheck under churn, then stress. Four failures, each with a one-file reproducer in [`c64be24/repro/`](c64be24/repro/), and `repro/reproduce.sh` rebuilds everything from an empty directory:
+  - **F1**: a damaged `streams.json` stops the whole service. This dates from hum.11; since `3d43966`, a login is enough to trigger it.
+  - **F2**: wrongly typed fields in an account file crash it on use. `listeners: []` dates from hum.11; `receipts: null` is a regression from `9499b75`.
+  - **F3**: unlisten/listen churn with a failing listing keeps the mark still and the gap uncounted. The logout/login variant is partly simulated.
+  - **F4**: a host clock ahead at login blinds the notifications poll, silently. This dates from hum.11, on the poll path.
+
+  What held: records dated ahead, the documented clock-skew threshold, the pagination give-ups, and one recheck chain. hum's ExUnit suite: 1,703 tests, 0 failures. K2 is left inconclusive. **Correction to our 23fa3e9 round:** F1's login trigger and F2's `receipts: null` were already present in `9499b75` to `23fa3e9`, which we reported without regression; we had never damaged a whole file or tested under supervision.
 
 ### `b653ead`
 
@@ -54,6 +61,7 @@ It tests hum's fixes for the three anomalies found while validating `335b95e`: a
 | `335b95e/REPORT.md` | Validation of `335b95e` (`hum/next`), with its tools and raw results |
 | `9499b75/REPORT.md` | Validation of `9499b75` (`hum/next`), with its tools and raw results |
 | `61fd227/REPORT.md` | Validation of `61fd227` (`hum/next`), with its tools, raw results and an experimental patch |
+| `c64be24/REPORT.md` | Validation of `c64be24` (`hum/next`): standalone reproducers (`repro/`), bench (`tools/`), raw results, bisections and the ExUnit run (`results/`) |
 | `23fa3e9/REPORT.md` | Validation of `23fa3e9` (`hum/next`), with its tools, seeds, raw results, first-pass outputs and a patch; `METHODS.md` |
 | `b653ead/REPORT.md` | Validation of `b653ead` (`hum/next`), with its tools and raw results |
 | `hum.6-to-hum.9/REPORT.md` | Earlier report, revision 2 |
@@ -90,7 +98,7 @@ The script downloads the five published release archives, checks their pinned SH
 - Test data was on tmpfs, so `fsync` and power loss were not exercised.
 - The shared HTTP service and the wake webhook were not tested end to end.
 - How often these failures occur in practice is unknown.
-- Apart from `335b95e`, `b653ead`, `9499b75`, `61fd227` and `23fa3e9` (see their folders; `754a231` and `74f9c34` are tested in `23fa3e9/`), commits after `683a2bd` (hum.10), including `e1fb50f`, were not tested.
+- Apart from `335b95e`, `b653ead`, `9499b75`, `61fd227`, `23fa3e9` and `c64be24` (see their folders; `754a231` and `74f9c34` are tested in `23fa3e9/`; eight more commits are bisection builds in `c64be24/`), commits after `683a2bd` (hum.10), including `e1fb50f`, were not tested.
 
 The reports describe a snapshot. If a newer build exists, re-run the kit before relying on these results.
 

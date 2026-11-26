@@ -1,0 +1,28 @@
+=== a4c_debug_c3 on target (0.3.3-hum.11-c64be24-overlay) 
+RESULT	C3d after re-login	%{connected: false, recheck: true, misses: %{}}
+RESULT	C3d t=100ms	%{mark: 0, held: true, misses: [1], gaps: [], listings: 1}
+RESULT	C3d t=200ms	%{mark: 0, held: true, misses: [1], gaps: [], listings: 1}
+RESULT	C3d t=300ms	%{mark: 0, held: true, misses: [1], gaps: [], listings: 1}
+RESULT	C3d t=400ms	%{mark: 0, held: true, misses: [1], gaps: [], listings: 1}
+RESULT	C3d t=500ms	%{mark: 0, held: true, misses: [1], gaps: [], listings: 1}
+RESULT	C3d t=600ms	%{mark: 0, held: true, misses: [1], gaps: [], listings: 1}
+RESULT	C3d t=700ms	%{mark: 0, held: true, misses: [1], gaps: [], listings: 1}
+RESULT	C3d t=800ms	%{mark: 0, held: true, misses: [1], gaps: [], listings: 1}
+RESULT	C3d t=900ms	%{mark: 0, held: true, misses: [1], gaps: [], listings: 1}
+RESULT	C3d t=1000ms	%{mark: 0, held: true, misses: [2], gaps: [], listings: 2}
+RESULT	C3d t=1100ms	%{mark: 0, held: true, misses: [2], gaps: [], listings: 2}
+RESULT	C3d t=1200ms	%{mark: 0, held: true, misses: [2], gaps: [], listings: 2}
+RESULT	C3d t=1300ms	%{mark: 0, held: true, misses: [2], gaps: [], listings: 2}
+RESULT	C3d t=1400ms	%{mark: 0, held: true, misses: [2], gaps: [], listings: 2}
+RESULT	C3d t=1500ms	%{mark: 0, held: true, misses: [2], gaps: [], listings: 2}
+RESULT	C3d t=1600ms	%{mark: 0, held: true, misses: [2], gaps: [], listings: 2}
+RESULT	C3d t=1700ms	%{mark: 0, held: true, misses: [2], gaps: [], listings: 2}
+RESULT	C3d t=1800ms	%{mark: 0, held: true, misses: [2], gaps: [], listings: 2}
+RESULT	C3d t=1900ms	%{mark: 0, held: true, misses: [2], gaps: [], listings: 2}
+RESULT	C3d t=2000ms	%{mark: 3600, held: false, misses: [], gaps: [{"g", :sources}], listings: 3}
+RESULT	C3d t=2100ms	%{mark: 3600, held: false, misses: [], gaps: [{"g", :sources}], listings: 3}
+RESULT	C3d t=2200ms	%{mark: 3600, held: false, misses: [], gaps: [{"g", :sources}], listings: 3}
+RESULT	C3d t=2300ms	%{mark: 3600, held: false, misses: [], gaps: [{"g", :sources}], listings: 3}
+RESULT	C3d t=2400ms	%{mark: 3600, held: false, misses: [], gaps: [{"g", :sources}], listings: 3}
+RESULT	C3d t=2500ms	%{mark: 3600, held: false, misses: [], gaps: [{"g", :sources}], listings: 3}
+DONE
